@@ -1,0 +1,191 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header-navegación */
+header {
+    background-color: #0B2D26;
+    padding: 1rem 0;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
+.menu-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.menu-list a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Banner */
+#main-banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.grid-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Main content */
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* sobre nosotros */
+.nosotros-img,
+.mision-img,
+.historia-img {
+    width: 100%;
+    max-width: 500px; /* Ajusta según tu preferencia */
+    height: auto; /* Mantiene la proporción */
+    object-fit: cover; /* Recorta la imagen si es necesario */
+    border-radius: 8px; /* Opcional: bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: sombra */
+    display: block;
+    margin: 0 auto; /* Centra la imagen */
+}
+
+
+/* Proyecto card */
+.proyecto {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.card {
+    margin: 0 auto;
+}
+
+/* Carrusel */
+
+/* Sección de equipo */
+.team-section {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos del carrusel */
+#equipoCarousel {
+    position: relative;
+    margin: 2rem auto;
+}
+
+/* Tarjetas de equipo */
+.team-card {
+    margin: 1rem;
+    border: none;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(11, 45, 38, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+.team-card .card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+.team-card .card-body {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.team-card .card-title {
+    color: #0B2D26;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.team-card .card-text {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* Controles del carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    opacity: 0.7;
+    background-color: #0B2D26;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #0B2D26;
+    border-radius: 50%;
+    padding: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .team-card {
+        margin: 0.5rem;
+    }
+    
+    .team-card .card-img-top {
+        height: 200px;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #0B2D26;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.contact\&socialContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.social-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid white;
+    border-radius: 4px;
+}
