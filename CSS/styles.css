@@ -32,15 +32,6 @@ header {
     text-decoration: none;
 }
 
-/* Banner */
-#main-banner {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
 .grid-container {
     width: 100%;
     max-width: 1200px;
@@ -62,15 +53,14 @@ main {
 .mision-img,
 .historia-img {
     width: 100%;
-    max-width: 500px; /* Ajusta según tu preferencia */
-    height: auto; /* Mantiene la proporción */
-    object-fit: cover; /* Recorta la imagen si es necesario */
-    border-radius: 8px; /* Opcional: bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: sombra */
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: block;
-    margin: 0 auto; /* Centra la imagen */
+    margin: 0 auto;
 }
-
 
 /* Proyecto card */
 .proyecto {
@@ -84,7 +74,6 @@ main {
 }
 
 /* Carrusel */
-
 /* Sección de equipo */
 .team-section {
     padding: 4rem 0;
@@ -150,17 +139,6 @@ main {
     padding: 1rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .team-card {
-        margin: 0.5rem;
-    }
-    
-    .team-card .card-img-top {
-        height: 200px;
-    }
-}
-
 /* Footer */
 footer {
     background-color: #0B2D26;
@@ -188,4 +166,93 @@ footer {
     padding: 0.5rem 1rem;
     border: 1px solid white;
     border-radius: 4px;
+}
+
+/*nosotros*/
+.team-container {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+    padding-bottom: 40px;
+}
+
+.participant-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s;
+    box-shadow: 3px 2px 10px gray;
+}
+
+.participant-card:hover {
+    transform: translateY(-10px);
+}
+
+.participant-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #072AC8;
+    margin-bottom: 10px;
+}
+
+.role {
+    font-size: 1.1rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.linkedin-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0077b5;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.linkedin-btn:hover {
+    background-color: #005b8a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .team-card {
+        margin: 0.5rem;
+    }
+
+    .story-container {
+        flex-direction: column;
+    }
+
+    .image-container,
+    .text-container {
+        max-width: 100%;
+    }
+
+    .story-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .team-card .card-img-top {
+        height: 200px;
+    }
 }
