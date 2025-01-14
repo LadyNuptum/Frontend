@@ -5,11 +5,6 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
-}
-
 .contact-container {
     max-width: 800px;
     margin: 40px auto;
@@ -24,6 +19,13 @@ h1 {
     font-size: 24px;
 }
 
+#tiltleInfoForm{
+    color: #0B2D26;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
 /* Contenedor principal */
 .contact-content {
     display: flex;
@@ -34,8 +36,7 @@ h1 {
 /* Caja de información */
 .info-box {
     flex: 1;
-    background-color: #f0f0f0;
-    padding: 20px;
+    padding: 100px 20px;
     min-height: 200px;
     border: 2px solid #ddd;
     border-radius: 8px;
@@ -67,7 +68,6 @@ h1 {
 .form-group textarea {
     width: 100%;
     padding: 12px;
-    background-color: #f0f0f0;
     border: 2px solid #ddd;
     border-radius: 4px;
     font-size: 14px;
@@ -85,43 +85,45 @@ h1 {
 }
 
 /* Estilo del botón */
-button {
+#btnSubmit {
+    font-weight:600;
     width: 100%;
     padding: 12px;
-    background-color: #234572;
+    background-color: #0B2D26;
     color: white;
-    border: none;
-    border-radius: 4px;
+    border: #0B2D26;
+    border-radius: 100px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: #0056b3;
+#btnSubmit:hover {
+    background-color: #1d7c68;
 }
 
 /* Contenedor de iconos sociales */
 .social-icons {
     display: flex;
     gap: 50px;
-    margin-top: 20px;
-    justify-content: flex-start;
+    margin: 5px;
+    justify-content: center;
 }
 
 /* Estilo individual para cada icono social */
 .social-icon {
     width: 40px;
     height: 40px;
-    background-color: #f0f0f0;
-    border: 2px solid #ddd;
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: #333;
     transition: transform 0.3s;
+}
+
+.social-icon img{
+    width: 35px;
+    height: auto;
 }
 
 .social-icon:hover {

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+    <link rel="stylesheet" href="/CSS/styles.css" />
+    <link rel="stylesheet" href="/CSS/form.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="icon"></div>
+      <nav class="menu">
+        <ul class="menu-list">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="aboutUs.html">Nosotros</a></li>
+          <li><a href="#proyectos">lista de Productos</a></li>
+          <li><a href="#certificaciones">Ingreso</a></li>
+          <li><a href="#contacto">Carrito de compras</a></li>
+        </ul>
+      </nav>
+    </header>
+
+<!--Contenedor para el banner -->
+<div class="banner">
+  <div class="graphic-circles">
+    <img class="graphic-logo absolute" src="/imagenes/semilla1.png" />
+    <img
+      class="graphic-circle-1 absolute"
+      src="/imagenes/circulo.png"
+      alt="Logo"
+    />
+    <img
+      class="graphic-circle-2 absolute"
+      src="/imagenes/pngwing.com.png"
+      alt="CSS"
+    />
+    <img
+      class="graphic-energy absolute"
+      src="/imagenes/iluminacion.png"
+      alt="Energía"
+    />
+  </div>
+
+  <div class="info">
+    <h1 class="title s-center">AgroApp</h1>
+    <p class="descriptionBanner s-center">
+      Transformando el campo con tecnología e innovación
+    </p>
+  </div>
+</div>
+
+    <!--Main de Formulario -->
+    <main>
+      <div class="container about-section">
+        <!-- Formulario -->
+        <div class="contact-container">
+          <h1>Contáctenos</h1>
+
+          <div class="contact-content">
+            <div class="info-box">
+              <h2 id="tiltleInfoForm">AgroAPP</h2>
+              <div class="info_form">
+                <p>
+                  ¡Queremos escucharte! Escríbenos para resolver dudas, recibir
+                  sugerencias o colaborar en nuestra misión de apoyar a los
+                  agricultores.
+                </p>
+              </div>
+            </div>
+            <div class="form-box">
+              <form action="https://formspree.io/f/mkggyelq" method="POST">
+                <div class="form-group">
+                  <input
+                    id="name"
+                    name="name"
+                    placeholder="Nombre"
+                  />
+                </div>
+                <div class="form-row">
+                  <div class="form-group half">
+                    <input
+                      type="text"
+                      id="email"
+                      name="email"
+                      placeholder="Correo"
+                    />
+                  </div>
+                  <div class="form-group half">
+                    <input
+                      type="text"
+                      id="phone"
+                      name="phone"
+                      placeholder="Teléfono"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    placeholder="Mensaje"
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <button id="btnSubmit" type="submit">Enviar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="social-icons">
+            <a
+              href="https://www.instagram.com/"
+              class="social-icon"
+              title="Instagram "
+              target="_blank" 
+            >
+              <i><img src="/imagenes/icono-ig.png" alt="icono_instagram" /></i>
+            </a>
+            <a
+              href="https://www.facebook.com/?locale=es_LA"
+              class="social-icon"
+              title="Facebook"
+              target="_blank" 
+            >
+              <i><img src="/imagenes/icono-fb.png" alt="icono_facebook" /></i>
+            </a>
+            <a
+              href="https://www.whatsapp.com/?lang=es_LA"
+              class="social-icon"
+              title="Instagram"
+              target="_blank" 
+            >
+              <i><img src="/imagenes/icono-wa.png" alt="icono_whatsapp" t/></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contacto">
+      <div class="contact&social">
+        <div class="contact&socialContainer">
+          <h2>Contacto y Redes Sociales</h2>
+          <div class="social-links">
+            <a href="#" class="social-link">LinkedIn</a>
+            <a href="#" class="social-link">GitHub</a>
+            <a href="#" class="social-link">Twitter</a>
+          </div>
+          <div class="contact-info">
+            <p>
+              ¿Interesado en trabajar juntos?:
+              <a href="/HTML/form.html">contactenos</a>
+            </p>
+            <p>Envíame un mensaje a: agroappmarket@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/JS/form.js" type="text/javascript"></script>
+  </body>
+</html>
