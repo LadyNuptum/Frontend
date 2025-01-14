@@ -7,6 +7,11 @@ body {
     flex-direction: column;
 }
 
+.contact-info p a{
+    text-decoration: underline;
+    color: #F3D914;
+}
+
 /* Header-navegación */
 header {
     background-color: #0B2D26;
