@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us</title>
     <link rel="stylesheet" href="/CSS/styles.css" />
-    
+
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -17,51 +17,53 @@
   </head>
   <body>
     <header>
-      <div class="icon"></div>
-      <nav class="menu">
-        <ul class="menu-list">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#sobre-mi">Nosotros</a></li>
-          <li><a href="#proyectos">lista de Productos</a></li>
-          <li><a href="#certificaciones">Ingreso</a></li>
-          <li><a href="#contacto">Carrito de compras</a></li>
-        </ul>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="/HTML/aboutUs.html">
+            <img src="/imagenes/agroapp_logo-01.png" alt="AgroApp_Logo" />
+          </a>
+          <button
+            class="navbar-toggler" type="button" btn-primary data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/HTML/aboutUs.html">Sobre Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Ingresar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="bi bi-cart"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </header>
 
-    <!--Contenedor para el banner -->
-    <div class="banner">
-      <div class="graphic-circles">
-        <img class="graphic-logo absolute" src="/imagenes/semilla1.png" />
-        <img
-          class="graphic-circle-1 absolute"
-          src="/imagenes/circulo.png"
-          alt="Logo"
-        />
-        <img
-          class="graphic-circle-2 absolute"
-          src="/imagenes/pngwing.com.png"
-          alt="CSS"
-        />
-        <img
-          class="graphic-energy absolute"
-          src="/imagenes/iluminacion.png"
-          alt="Energía"
-        />
-      </div>
-
-      <div class="info">
-        <h1 class="title s-center">AgroApp</h1>
-        <p class="descriptionBanner s-center">
-          Transformando el campo con tecnología e innovación
-        </p>
+    <!-- Contenedor para el banner -->
+    <div class="banner">      
+      <div class="banner-1">
+        <div class="info">
+          <h1 class="title s-center">AgroApp</h1>
+        </div>
       </div>
     </div>
-
+      
     <main>
       <!--información del proyecto -->
       <div class="container about-section">
-        <!-- Sección inicial -->
+
         <div class="row align-items-center mb-5">
           <div class="col-md-6">
             <h1 class="about-heading">Sobre Nosotros</h1>
@@ -233,7 +235,7 @@
         </div>
       </div>
     </main>
-    
+
     <!-- Footer -->
     <footer id="contacto">
       <div class="contact&social">
@@ -245,7 +247,10 @@
             <a href="#" class="social-link">Twitter</a>
           </div>
           <div class="contact-info">
-            <p>¿Interesado en trabajar juntos?: <a href="/HTML/form.html">contactenos</a></p>
+            <p>
+              ¿Interesado en trabajar juntos?:
+              <a href="/HTML/form.html">contactenos</a>
+            </p>
             <p>Envíame un mensaje a: contacto@agroapp.com</p>
           </div>
         </div>
