@@ -17,12 +17,35 @@ body {
 }
 
 /* Header - Navegación */
+
+
 header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10;
+}
+
+.sticky-navbar .navbar {
+    background: rgba(11, 45, 38, 0.5);
+    backdrop-filter: blur(10px); /* Efecto borroso */
+    transition: background 0.5s ease, backdrop-filter 0.5s ease; /* Hace la Transición suave */
+}
+
+.navbar-title {
+    font-family: 'nunito';
+    font-size: 1.5rem; /* Tamaño igual al de las oras opciones */
+    color: var(--color-text); /* Mantiene el color actual de los enlaces */
+    margin-left: 1.5rem;
+    font-weight: bold;
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.3s ease; /* transición cuando aparecer */
+}
+
+.sticky-navbar .navbar-title {
+    display: block; /*aegura que se muestre */
+    opacity: 1; /*hace visible cuando el fondo es sticky */
 }
 
 .navbar {
@@ -31,14 +54,14 @@ header {
 }
 
 .navbar-toggler {
-    border: solid 1px white !important;
+    border: solid 2px white !important;
 }
 
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.9)'  strokemiterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
 }
 
-.navbar-brand img {
+.navbar-icon img {
     width: 5rem;
 }
 
@@ -63,7 +86,7 @@ header {
     background-repeat: no-repeat;
     width: 100%;
     height: 20rem;
-    position: relative; /* posición */
+    position: relative;
 }
 
 /* Capa verde (filtro) */
@@ -73,7 +96,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(11, 45, 38, 0.8); /* ultimo digito es porcentaje de opacidad*/
+    background-color: rgba(11, 45, 38, 0.8);
     z-index: 1; 
 }
 
@@ -98,9 +121,11 @@ header {
 /* Título */
 .title {
     font-family: 'Nunito', sans-serif;
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 800;
     margin: 0;
+
+
 }
 
 /* Descripción */
