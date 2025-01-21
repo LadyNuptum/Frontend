@@ -11,7 +11,7 @@
    const navbar = document.querySelector('header');//selecciona el header
    const titleContainer = document.querySelector('.navbar-title');//selecciona mi titulo del header
    
-   if (window.scrollY > 0) {//cuando scrol es mayor a 0 se activa
+   if (window.scrollY > 10) {//cuando scrol es mayor a 0 se activa
      navbar.classList.add('sticky-navbar'); // Este ctiva el fondo cristal
      titleContainer.classList.remove('d-none'); // Asegura que el título esté visible
    } else {
