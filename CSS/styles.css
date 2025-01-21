@@ -231,7 +231,6 @@ main {
     transform: translateY(-10px);
 }
 
-
 .participant-photo {
     width: 150px;
     height: 150px;
@@ -336,19 +335,6 @@ footer {
         height: 200px;
     }
 }
-
-@keyframes turn1{
-    to{
-        transform: rotate(-1turn); 
-    }
-}
-
-@keyframes turn2{
-    to{
-        transform: rotate(1turn); 
-    }
-} 
-
 
 @media (max-width: 768px) {
     .navbar-nav {
