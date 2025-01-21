@@ -3,10 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulario</title>
-    <link rel="stylesheet" href="/CSS/styles.css" />
-    <link rel="stylesheet" href="/CSS/form.css" />
-
+    <title>Contáctenos</title>
+    <link
+      rel="shortcut icon"
+      href="../imagenes/agroapp_logo-01.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../CSS/styles.css" />
+    <link rel="stylesheet" href="../CSS/form.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -20,11 +24,19 @@
     <header>
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="/HTML/aboutUs.html">
+          <a class="navbar-icon" href="../HTML/aboutUs.html">
             <img src="/imagenes/agroapp_logo-01.png" alt="AgroApp_Logo" />
           </a>
+          <div class="navbar-title d-none">
+            <span id="navbar-page-title"></span>
+          </div>
           <button
-            class="navbar-toggler" type="button" btn-primary data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            class="navbar-toggler"
+            type="button"
+            btn-primary
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
@@ -33,13 +45,18 @@
                 <a class="nav-link" href="#">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/HTML/aboutUs.html">Sobre Nosotros</a>
+                <a class="nav-link" href="../HTML/aboutUs.html"
+                  >Sobre Nosotros</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Productos</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Ingresar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../HTML/form.html">Contáctenos</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
@@ -53,10 +70,11 @@
     </header>
 
     <!-- Contenedor para el banner -->
-    <div class="banner">      
+    <div class="banner">
       <div class="banner-1">
         <div class="info">
-          <h1 class="title s-center">AgroApp</h1>
+          <h1 class="title s-center">Contáctenos</h1>
+          <p class="descriptionBanner s-center"></p>
         </div>
       </div>
     </div>
@@ -95,8 +113,6 @@
       <div class="container about-section">
         <!-- Formulario -->
         <div class="contact-container">
-          <h1>Contáctenos</h1>
-
           <div class="contact-content">
             <div class="info-box">
               <h2 id="tiltleInfoForm">AgroAPP</h2>
@@ -155,7 +171,9 @@
               title="Instagram "
               target="_blank"
             >
-              <i><img src="/imagenes/icono-ig.png" alt="icono_instagram" /></i>
+              <i
+                ><img src="../imagenes/icono-ig.png" alt="icono_instagram"
+              /></i>
             </a>
             <a
               href="https://www.facebook.com/?locale=es_LA"
@@ -163,7 +181,7 @@
               title="Facebook"
               target="_blank"
             >
-              <i><img src="/imagenes/icono-fb.png" alt="icono_facebook" /></i>
+              <i><img src="../imagenes/icono-fb.png" alt="icono_facebook" /></i>
             </a>
             <a
               href="https://www.whatsapp.com/?lang=es_LA"
@@ -171,7 +189,9 @@
               title="Instagram"
               target="_blank"
             >
-              <i><img src="/imagenes/icono-wa.png" alt="icono_whatsapp" t /></i>
+              <i
+                ><img src="../imagenes/icono-wa.png" alt="icono_whatsapp" t
+              /></i>
             </a>
           </div>
         </div>
@@ -191,7 +211,7 @@
           <div class="contact-info">
             <p>
               ¿Interesado en trabajar juntos?:
-              <a href="/HTML/form.html">contactenos</a>
+              <a href="../HTML/">Contáctanos</a>
             </p>
             <p>Envíame un mensaje a: agroappmarket@gmail.com</p>
           </div>
@@ -203,6 +223,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="/JS/form.js" type="text/javascript"></script>
+    <script src="../JS/aboutUs.js"></script>
+    <script src="../JS/form.js" type="text/javascript"></script>
   </body>
 </html>
