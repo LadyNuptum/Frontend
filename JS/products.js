@@ -4,16 +4,17 @@ let productos = [
 ];
 
 function renderProductos() {
-    const contenedorProductos = document.getElementById("contenedorProductos");
+    const contenedorProductos = document.getElementById("products-container");
     contenedorProductos.innerHTML = "";
 
     productos.forEach((producto, index) => {
         const card = document.createElement("div");
-        card.classList.add("card");
+        card.classList.add("product-card");
         card.innerHTML = `
             <img src="${producto.image}" alt="${producto.name}">
             <h3>${producto.name}</h3>
             <p>${producto.description}</p>
+            <p>${producto.unidad}</p>
             <p>Precio: $${producto.price.toFixed(2)}</p>
             <button onclick="mostrarFormularioEditar(${index})">Editar</button>
             <button onclick="eliminarProducto(${index})">Eliminar</button>
@@ -27,6 +28,7 @@ function agregarProducto() {
         id: productos.length + 1,
         name: document.getElementById("nombreProducto").value,
         description: document.getElementById("descripcionProducto").value,
+        measure: document.getElementById("unidadProducto").value,
         price: parseFloat(document.getElementById("precioProducto").value),
         image: document.getElementById("imagenProducto").value
     };
@@ -39,6 +41,7 @@ function mostrarFormularioEditar(index) {
     const producto = productos[index];
     document.getElementById("nombreProducto").value = producto.name;
     document.getElementById("descripcionProducto").value = producto.description;
+    document.getElementById("unidadProducto").value = producto.measure;
     document.getElementById("precioProducto").value = producto.price;
     document.getElementById("imagenProducto").value = producto.image;
     document.getElementById("botonAgregar").innerText = "Guardar Cambios";
@@ -50,6 +53,7 @@ function editarProducto(index) {
         id: productos[index].id,
         name: document.getElementById("nombreProducto").value,
         description: document.getElementById("descripcionProducto").value,
+        measure: document.getElementById("unidadProducto").value,
         price: parseFloat(document.getElementById("precioProducto").value),
         image: document.getElementById("imagenProducto").value
     };
@@ -65,6 +69,7 @@ function eliminarProducto(index) {
 function limpiarFormulario() {
     document.getElementById("nombreProducto").value = "";
     document.getElementById("descripcionProducto").value = "";
+    document.getElementById("unidadProducto").value = "";
     document.getElementById("precioProducto").value = "";
     document.getElementById("imagenProducto").value = "";
     document.getElementById("botonAgregar").innerText = "Agregar Producto";
