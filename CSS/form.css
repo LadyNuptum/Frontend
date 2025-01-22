@@ -86,29 +86,16 @@ h1 {
 
 /* Estilo del botón */
 #btnSubmit {
-<<<<<<< HEAD
-    font-weight:600;
-    width: 100%;
-    padding: 12px;
-    background-color: #053026;
-    color: white;
-    border: #0B2D26;
-    border-radius: 100px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-=======
   font-weight: 600;
   width: 100%;
   padding: 12px;
-  background-color: #0b2d26;
+  background-color: #053026;
   color: white;
-  border: #0b2d26;
+  border: #0B2D26;
   border-radius: 100px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
->>>>>>> 3331e04f71584cd38b5aef476550c044c5bc190b
 }
 
 #btnSubmit:hover {

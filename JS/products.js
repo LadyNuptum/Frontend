@@ -1,7 +1,138 @@
 let productos = [
-    { id: 1, name: "Producto 1", description: "Descripción del producto 1", price: 10.99, image: "/imagenes/foto_alejo.jpg" },
-    { id: 2, name: "Producto 2", description: "Descripción del producto 2", price: 19.99, image: "/imagenes/foto_alejo.jpg" }
-];
+    {
+        id: 1,
+        name: "Leche de vaca",
+        description: "Leche fresca pasteurizada de vacas seleccionadas, rica en calcio y proteínas",
+        image: "/imagenes/products/Leche_de_vaca.jpg",
+        category: "lacteos",
+        type: "Producto básico",
+        price: 2.50,
+        measure: "litro"
+    },
+    {
+        id: 2,
+        name: "Leche de cabra",
+        description: "Leche de cabra natural, más digestiva que la leche de vaca y con alto valor nutricional",
+        image: "/imagenes/products/Leche_de_cabra.jpg",
+        category: "lacteos",
+        type: "Producto especializado",
+        price: 3.75,
+        measure: "litro"
+    },
+    {
+        id: 3,
+        name: "Leche de oveja",
+        description: "Leche de oveja pura, ideal para elaboración de quesos y con mayor contenido graso",
+        image: "/imagenes/products/Leche_de_oveja.jpg",
+        category: "lacteos",
+        type: "Producto especializado",
+        price: 4.00,
+        measure: "litro"
+    },
+    {
+        id: 4,
+        name: "Yogur natural",
+        description: "Yogur tradicional sin azúcares añadidos, elaborado mediante fermentación láctica natural",
+        image: "/imagenes/products/Yogur_natural.jpg",
+        category: "lacteos",
+        type: "Producto básico",
+        price: 1.80,
+        measure: "litro"
+    },
+    {
+        id: 5,
+        name: "Yogur griego",
+        description: "Yogur cremoso de estilo griego, con alto contenido en proteínas y textura extra suave",
+        image: "/imagenes/products/Yogur_griego.jpg",
+        category: "lacteos",
+        type: "Producto especializado",
+        price: 2.50,
+        measure: "litro"
+    },
+    {
+        id: 6,
+        name: "Yogur de frutas",
+        description: "Yogur con trozos de frutas naturales seleccionadas y preparado de frutas",
+        image: "/imagenes/products/Yogur_de_frutas.jpg",
+        category: "lacteos",
+        type: "Producto preparado",
+        price: 2.00,
+        measure: "litro"
+    },
+    {
+        id: 7,
+        name: "Queso fresco",
+        description: "Queso suave y ligero sin madurar, ideal para ensaladas y desayunos",
+        image: "/imagenes/products/Queso_fresco.jpg",
+        category: "lacteos",
+        type: "Producto básico",
+        price: 3.50,
+        measure: "libra"
+    },
+    {
+        id: 8,
+        name: "Queso curado",
+        description: "Queso madurado durante varios meses, con sabor intenso y textura firme",
+        image: "/imagenes/products/Queso_curado.jpg",
+        category: "lacteos",
+        type: "Producto madurado",
+        price: 6.00,
+        measure: "libra"
+    },
+    {
+        id: 9,
+        name: "Queso de cabra",
+        description: "Queso elaborado con leche de cabra, de sabor característico y textura cremosa",
+        image: "/imagenes/products/Queso_de_cabra.jpg",
+        category: "lacteos",
+        type: "Producto especializado",
+        price: 5.50,
+        measure: "libra"
+    },
+    {
+        id: 10,
+        name: "Queso manchego",
+        description: "Queso tradicional español con denominación de origen, elaborado con leche de oveja manchega",
+        image: "/imagenes/products/Queso_manchego.jpg",
+        category: "lacteos",
+        type: "Producto denominación de origen",
+        price: 8.00,
+        measure: "libra"
+    },
+    {
+        id: 11,
+        name: "Queso ricotta",
+        description: "Queso suave italiano de textura ligera y granulosa, ideal para postres y rellenos",
+        image: "/imagenes/products/Queso_ricotta.jpg",
+        image_alt: "Queso ricotta en envase",
+        category: "lacteos",
+        type: "Producto fresco",
+        price: 3.20,
+        measure: "libra"
+    },
+    {
+        id: 12,
+        name: "Queso crema",
+        description: "Queso suave y untable, perfecto para preparaciones culinarias y postres",
+        image: "/imagenes/products/Queso_crema.jpg",
+        image_alt: "Queso crema en envase",
+        category: "lacteos",
+        type: "Producto para untar",
+        price: 2.80,
+        measure: "libra"
+    },
+    {
+        id: 13,
+        name: "Mantequilla",
+        description: "Mantequilla cremosa elaborada con nata de leche de vaca, ideal para cocinar y untar",
+        image: "/imagenes/products/Mantequilla.jpg",
+        category: "lacteos",
+        type: "Producto básico",
+        price: 3.00,
+        measure: "libra"
+    }
+]
+
 
 function renderProductos() {
     const contenedorProductos = document.getElementById("products-container");
@@ -14,8 +145,8 @@ function renderProductos() {
             <img src="${producto.image}" alt="${producto.name}">
             <h3>${producto.name}</h3>
             <p>${producto.description}</p>
-            <p>${producto.unidad}</p>
-            <p>Precio: $${producto.price.toFixed(2)}</p>
+            <p><strong>${producto.measure}</strong></p>
+            <p><strong>Precio: $${producto.price.toFixed(2)}</strong></p>
             <button onclick="mostrarFormularioEditar(${index})">Editar</button>
             <button onclick="eliminarProducto(${index})">Eliminar</button>
         `;
