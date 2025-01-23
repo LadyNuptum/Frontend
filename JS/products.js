@@ -6,7 +6,7 @@ let productos = [
         image: "/imagenes/products/Leche_de_vaca.jpg",
         category: "lacteos",
         type: "Producto básico",
-        price: 2.50,
+        price: 10000,
         measure: "litro"
     },
     {
@@ -16,7 +16,7 @@ let productos = [
         image: "/imagenes/products/Leche_de_cabra.jpg",
         category: "lacteos",
         type: "Producto especializado",
-        price: 3.75,
+        price: 15000,
         measure: "litro"
     },
     {
@@ -26,7 +26,7 @@ let productos = [
         image: "/imagenes/products/Leche_de_oveja.jpg",
         category: "lacteos",
         type: "Producto especializado",
-        price: 4.00,
+        price: 16000,
         measure: "litro"
     },
     {
@@ -36,7 +36,7 @@ let productos = [
         image: "/imagenes/products/Yogur_natural.jpg",
         category: "lacteos",
         type: "Producto básico",
-        price: 1.80,
+        price: 7200,
         measure: "litro"
     },
     {
@@ -46,7 +46,7 @@ let productos = [
         image: "/imagenes/products/Yogur_griego.jpg",
         category: "lacteos",
         type: "Producto especializado",
-        price: 2.50,
+        price: 10000,
         measure: "litro"
     },
     {
@@ -56,7 +56,7 @@ let productos = [
         image: "/imagenes/products/Yogur_de_frutas.jpg",
         category: "lacteos",
         type: "Producto preparado",
-        price: 2.00,
+        price: 8000,
         measure: "litro"
     },
     {
@@ -66,7 +66,7 @@ let productos = [
         image: "/imagenes/products/Queso_fresco.jpg",
         category: "lacteos",
         type: "Producto básico",
-        price: 3.50,
+        price: 14000,
         measure: "libra"
     },
     {
@@ -76,7 +76,7 @@ let productos = [
         image: "/imagenes/products/Queso_curado.jpg",
         category: "lacteos",
         type: "Producto madurado",
-        price: 6.00,
+        price: 24000,
         measure: "libra"
     },
     {
@@ -86,7 +86,7 @@ let productos = [
         image: "/imagenes/products/Queso_de_cabra.jpg",
         category: "lacteos",
         type: "Producto especializado",
-        price: 5.50,
+        price: 22000,
         measure: "libra"
     },
     {
@@ -96,7 +96,7 @@ let productos = [
         image: "/imagenes/products/Queso_manchego.jpg",
         category: "lacteos",
         type: "Producto denominación de origen",
-        price: 8.00,
+        price: 32000,
         measure: "libra"
     },
     {
@@ -107,7 +107,7 @@ let productos = [
         image_alt: "Queso ricotta en envase",
         category: "lacteos",
         type: "Producto fresco",
-        price: 3.20,
+        price: 12800,
         measure: "libra"
     },
     {
@@ -118,7 +118,7 @@ let productos = [
         image_alt: "Queso crema en envase",
         category: "lacteos",
         type: "Producto para untar",
-        price: 2.80,
+        price: 11200,
         measure: "libra"
     },
     {
@@ -128,10 +128,10 @@ let productos = [
         image: "/imagenes/products/Mantequilla.jpg",
         category: "lacteos",
         type: "Producto básico",
-        price: 3.00,
+        price: 12000,
         measure: "libra"
     }
-]
+];
 
 
 function renderProductos() {
@@ -144,13 +144,21 @@ function renderProductos() {
         card.innerHTML = `
             <img src="${producto.image}" alt="${producto.name}">
             <h3>${producto.name}</h3>
-            <p>${producto.description}</p>
-            <p><strong>${producto.measure}</strong></p>
-            <p><strong>Precio: $${producto.price.toFixed(2)}</strong></p>
-            <button onclick="mostrarFormularioEditar(${index})">Editar</button>
-            <button onclick="eliminarProducto(${index})">Eliminar</button>
+            <p class="description">${producto.description}</p>
+            <div class="info-container">
+                <p class="cant">${producto.measure}</p>
+                <p class="price">Precio: $${formatearPrecio(producto.price)}</p>
+            </div>
+            <button class="add-to-cart"> 🛒Agregar</button>
         `;
         contenedorProductos.appendChild(card);
+    });
+}
+
+function formatearPrecio(precio) {
+    return precio.toLocaleString("es-CO", {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
     });
 }
 

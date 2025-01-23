@@ -1,29 +1,10 @@
 /* Estilos generales */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .contact-container {
   max-width: 800px;
   margin: 40px auto;
   padding: 20px;
   border: 2px solid #ddd;
   border-radius: 8px;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 24px;
-}
-
-#tiltleInfoForm {
-  color: #0b2d26;
-  text-align: center;
-  margin-bottom: 20px;
-  font-weight: 600;
 }
 
 /* Contenedor principal */
