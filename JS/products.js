@@ -161,7 +161,7 @@ function renderProductos() {
                 <p class="cant">${producto.measure}</p>
                 <p class="price">Precio: $${formatearPrecio(producto.price)}</p>
             </div>
-            <button class="add-to-cart"> 🛒Agregar</button>
+            <button class="add-to-cart" onclick="mostrarModalAgregado('${producto.name}')"> 🛒Agregar</button>
         `;
     contenedorProductos.appendChild(card);
   });
@@ -231,5 +231,16 @@ function limpiarFormulario() {
     .setAttribute("onclick", "agregarProducto()");
 }
 
-// Inicializar la lista de productos al cargar la página
 document.addEventListener("DOMContentLoaded", renderProductos);
+
+function mostrarModalAgregado(nombreProducto) {
+  // Obtener el modal y sus elementos
+  const modal = new bootstrap.Modal(document.getElementById('addedToCartModal'));
+  const modalBody = document.querySelector('#addedToCartModal .modal-body');
+
+  // Actualizar el contenido del modal con el nombre del producto
+  modalBody.textContent = `Has agregado " ${nombreProducto}" al carrito.`;
+
+  // Mostrar el modal
+  modal.show();
+}

@@ -83,6 +83,56 @@
   background-color: #218838;
 }
 
+/* Estilos para el modal */
+#addedToCartModal .modal-content {
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#addedToCartModal .modal-header {
+  background-color: #28a745;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-align: center;
+}
+
+#addedToCartModal .modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: justify;
+  margin-left: 7rem;
+}
+
+#addedToCartModal .modal-body {
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+}
+
+#addedToCartModal .modal-footer {
+  border-top: none;
+}
+
+#addedToCartModal .btn-secondary {
+  background-color: #6c757d;
+  border: none;
+}
+
+#addedToCartModal .btn-secondary:hover {
+  background-color: #262726;
+}
+
+#addedToCartModal .btn-primary {
+  background-color: #28a745;
+  border: none;
+}
+
+#addedToCartModal .btn-primary:hover {
+  background-color: #218838;
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
   .product-card {
