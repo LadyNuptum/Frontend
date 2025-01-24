@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre Nosotros</title>
+    <link rel="stylesheet" href="/CSS/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet"/>
+  </head>
+  <style>
+    :root {
+    --color-primary: #0B2D26;
+    --color-secondary: #097B35;
+    --color-accent: #7DBA36;
+    --color-background: #FFFFFF;
+    --color-highlight: #F3D914;
+    --color-text: #FFFFFF;
+}
+
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header - Navegación */
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.sticky-navbar .navbar {
+    background: rgba(11, 45, 38, 0.5);
+    backdrop-filter: blur(10px); /* Efecto borroso */
+    transition: background 0.5s ease, backdrop-filter 0.5s ease; /* Hace la Transición suave */
+}
+
+.navbar-title {
+    font-family: 'nunito';
+    font-size: 1.5rem; /* Tamaño igual al de las oras opciones */
+    color: var(--color-text); /* Mantiene el color actual de los enlaces */
+    margin-left: 1.5rem;
+    font-weight: bold;
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.3s ease; /* transición cuando aparecer */
+}
+
+.sticky-navbar .navbar-title {
+    display: block; /*aegura que se muestre */
+    opacity: 1; /*hace visible cuando el fondo es sticky */
+}
+
+.navbar {
+    background: transparent; 
+    padding: 1rem 2rem;
+}
+
+.navbar-toggler {
+    border: solid 1px white !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.9)'  strokemiterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+    
+}
+
+.navbar-icon img {
+    width: 5rem;
+}
+
+.nav-link {
+    color: var(--color-text) !important;
+    font-size: 1rem;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-secondary) !important;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/imagenes/fondo-banner.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 20rem;
+    position: relative;
+}
+
+/* Capa verde (filtro) */
+.banner-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(11, 45, 38, 0.8);
+    z-index: 1; 
+}
+
+/* Texto centrado */
+.banner-content {
+    position: relative; 
+    z-index: 0;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* Información dentro del banner */
+.info {
+    text-align: center;
+    color: var(--color-background);
+    padding: 10rem 1rem 4rem 1rem;
+    display: flexbox;
+    font-size: 100rem;
+}
+
+/* Título */
+.title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+
+
+}
+
+/* Descripción */
+.descriptionBanner {
+    font-size: 1.8rem;
+    font-style: italic;
+    margin-top: 1rem;
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+
+/* contenido Main */
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* sobre nosotros */
+.nosotros-img,
+.mision-img,
+.historia-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
+}
+
+/* Sección de equipo */
+.team-section {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 0 100px 30px;
+}
+
+/* Tarjetas de equipo */
+.team-card {
+    margin: 1rem;
+    border: none;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(11, 45, 38, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+.team-card .card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+.team-card .card-body {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.team-card .card-title {
+    color: #0B2D26;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.team-card .card-text {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/*nosotros*/
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 10px ;
+    max-width: 1200px;
+    margin: 30px 0;
+}
+
+.participant-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s;
+    box-shadow: 3px 2px 10px gray;
+    width: 300px;
+}
+
+.participant-card:hover {
+    transform: translateY(-10px);
+}
+
+
+.participant-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    color:#F3D914;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.role {
+    font-size: 1.1rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.linkedin-btn {
+    font-family: sans-serif;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0B2D26;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.linkedin-btn:hover {
+    background-color: #207a68;
+}
+
+
+/* Footer */
+footer {
+    background-color: #0B2D26;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.contact-info p a{
+    text-decoration: underline;
+    color: #F3D914;
+}
+
+.contact\&socialContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.social-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid white;
+    border-radius: 4px;
+}
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .team-card {
+        margin: 0.5rem;
+    }
+
+    .story-container {
+        flex-direction: column;
+    }
+
+    .image-container,
+    .text-container {
+        max-width: 100%;
+    }
+
+    .story-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .team-card .card-img-top {
+        height: 200px;
+    }
+}
+
+@keyframes turn1{
+    to{
+        transform: rotate(-1turn); 
+    }
+}
+
+@keyframes turn2{
+    to{
+        transform: rotate(1turn); 
+    }
+} 
+
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .info{
+        padding: 3.5rem 1rem 4rem 1rem;
+    }
+
+    .banner {
+        height: 20rem; /* Reduce la altura del banner en pantallas pequeñas */
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .descriptionBanner {
+        font-size: 1.2rem;
+    }
+}
+  </style>
+  <body>  
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-icon" href="/HTML/aboutUs.html">
+            <img src="/imagenes/agroapp_logo-01.png" alt="AgroApp_Logo" />
+          </a>
+          <div class="navbar-title d-none">
+            <span id="navbar-page-title"></span>
+          </div>
+          <button
+            class="navbar-toggler" type="button" btn-primary data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/HTML/aboutUs.html">Sobre Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Ingresar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./form.html">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="bi bi-cart"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Contenedor para el banner -->
+    <div class="banner">      
+      <div class="banner-1">
+        <div class="info">
+          <h1 class="title center">Sobre Nosotros</h1>
+          <p class="descriptionBanner s-center"></p>
+        </div>
+      </div>
+    </div>
+      
+    <main>
+      <!--información del proyecto -->
+      <div class="container about-section">
+
+        <div class="row align-items-center mb-4">
+          <div class="col-md-6">
+            <h1 class="about-heading">Sobre Nosotros</h1>
+            <p class="about-text">
+              En AgroApp, conectamos directamente a los agricultores con los
+              consumidores finales. Inspirados por la realidad del campo
+              colombiano, buscamos eliminar intermediarios para que los
+              campesinos reciban un pago justo y los consumidores disfruten de
+              productos frescos y accesibles. Transformamos el sector agrícola
+              con tecnología e innovación.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <img
+              src="/imagenes/sobre_nosotros.jpg"
+              alt="Nosotros AgroApp"
+              class="nosotros-img"
+            />
+          </div>
+        </div>
+
+        <hr>
+
+        <!-- Sección de Misión -->
+        <div class="row align-items-center mission-section">
+          <div class="col-md-6 mb-2">
+            <img
+              src="/imagenes/mision.jpg"
+              alt="Misión AgroApp"
+              class="mision-img"
+            />
+          </div>
+          <div class="col-md-6">
+            <div class="text-container">
+              <h2 class="mission-heading">
+                Nuestra Misión: Impulsar el Crecimiento del Sector Agrícola
+              </h2>
+              <p class="about-text">
+                Nuestra misión es impulsar el crecimiento del sector agrícola
+                siendo un puente entre el campo y la ciudad. Con AgroApp,
+                ofrecemos una solución tecnológica que beneficia tanto a los
+                agricultores como a los consumidores, promoviendo la
+                sostenibilidad, la justicia económica, la soberanía alimentaria
+                y el acceso directo a productos frescos.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección de Historia -->
+        <div class="row align-items-center story-section">
+          <div class="col-md-6">
+            <h2 class="mission-heading">Nuestra Historia</h2>
+            <p class="about-text">
+              AgroApp nació de la necesidad de ofrecer una solución directa a
+              los problemas del campo colombiano. Inspirados por las
+              dificultades que enfrentan los agricultores, desarrollamos una
+              plataforma que conecta el trabajo del campesino con las mesas de
+              los consumidores, eliminando intermediarios y fomentando el
+              comercio justo.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <img
+              src="/imagenes/historia.jpg"
+              alt="Historia AgroApp"
+              class="historia-img"
+            />
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Sección de tarjetas equipo de trabajo -->
+      <div class="team-container">
+        <div class="participant-card">
+          <img
+            src="/imagenes/foto_alejo.jpg"
+            alt="Foto de Alejandro"
+            class="participant-photo"
+          />
+          <h3>Alejandro</h3>
+          <p class="role">Desarrollador Full-Stack</p>
+          <p class="description">
+            Se especializa en construir soluciones robustas y optimizar
+            sistemas, utilizando lenguajes como Python y Java.
+          </p>
+          <a
+            href="https://www.linkedin.com/in/pedro-alejandro-gutierrez-garcia-05530796/"
+            target="_blank"
+            class="linkedin-btn"
+            >LinkedIn</a
+          >
+        </div>
+        <div class="participant-card">
+          <img
+            src="/imagenes/Foto_juli.png"
+            alt="Foto de Julieth"
+            class="participant-photo"
+          />
+          <h3>Julieth</h3>
+          <p class="role">Desarrolladora Full-Stack</p>
+          <p class="description">
+            Crea interfaces visuales atractivas y responsivas, utilizando HTML,
+            CSS y JavaScript para garantizar una excelente experiencia de
+            usuario.
+          </p>
+          <a
+            href="https://www.linkedin.com/in/julievela/"
+            target="_blank"
+            class="linkedin-btn"
+            >LinkedIn</a
+          >
+        </div>
+        <div class="participant-card">
+          <img
+            src="/imagenes/Foto_Oscar.jpg"
+            alt="Foto de Oscar"
+            class="participant-photo"
+          />
+          <h3>Oscar</h3>
+          <p class="role">Desarrollador Full-Stack</p>
+          <p class="description">
+            Crea experiencias visuales atractivas y funcionales, combinando
+            creatividad y estrategia en cada diseño.
+          </p>
+          <a
+            href="https://www.linkedin.com/in/oscar-torres-fullstack-java-developer/"
+            target="_blank"
+            class="linkedin-btn"
+            >LinkedIn</a
+          >
+        </div>
+        <div class="participant-card">
+          <img
+            src="/imagenes/foto_nata.jpeg"
+            alt="Foto de Natalia"
+            class="participant-photo"
+          />
+          <h3>Natalia</h3>
+          <p class="role">Desarrolladora Full-Stack</p>
+          <p class="description">
+            Construye soluciones completas para el frontend y backend,
+            garantizando aplicaciones eficientes y escalables.
+          </p>
+          <a
+            href="http://www.linkedin.com/in/nataliaberriozuletaiozuleta-desarrolloweb"
+            target="_blank"
+            class="linkedin-btn"
+            >LinkedIn</a
+          >
+        </div>
+
+        <div class="participant-card">
+          <img
+            src="/imagenes/foto-javier.jfif"
+            alt="Foto de Javier"
+            class="participant-photo"
+          />
+          <h3>Javier</h3>
+          <p class="role">Desarrollador Full-Stack</p>
+          <p class="description">
+            Diseñador enfocado en la experiencia del usuario, Javier asegura que
+            AgroApp sea accesible y funcional para todos.
+          </p>
+          <a
+            href="https://www.linkedin.com/in/javier-carabali-8017581a9"
+            target="_blank"
+            class="linkedin-btn"
+            >LinkedIn</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contacto">
+      <div class="contact&social">
+        <div class="contact&socialContainer">
+          <h2>Contacto y Redes Sociales</h2>
+          <div class="social-links">
+            <a href="#" class="social-link">LinkedIn</a>
+            <a href="#" class="social-link">GitHub</a>
+            <a href="#" class="social-link">Twitter</a>
+          </div>
+          <div class="contact-info">
+            <p>
+              ¿Interesado en trabajar juntos?:
+              <a href="/HTML/form.html">Contáctenos</a>
+            </p>
+            <p>Envíame un mensaje a: contacto@agroapp.com</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+         // Obtener el título de la página
+ const pageTitle = document.title;
+
+// Insertar el título en el navbar
+const navbarTitle = document.getElementById('navbar-page-title');
+navbarTitle.textContent = pageTitle;
+
+//comentarios oscar 
+// mostrar y ocultar el fondo sticky y el título
+window.onscroll = function () { //onscroll sigue le scroll para una accion determinada
+  const navbar = document.querySelector('header');//selecciona el header
+  const titleContainer = document.querySelector('.navbar-title');//selecciona mi titulo del header
+  
+  if (window.scrollY > 100) {//cuando scrol es mayor a 0 se activa
+    navbar.classList.add('sticky-navbar'); // Este ctiva el fondo cristal
+    titleContainer.classList.remove('d-none'); // Asegura que el título esté visible
+  } else {
+    navbar.classList.remove('sticky-navbar'); // Desactivar fondo cristal
+    titleContainer.classList.add('d-none'); // oculta el titulo cuando está en la parte superior
+  }
+};
+
+
+    </script>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"crossorigin="anonymous"></script>
+  </body>
+</html>
