@@ -86,7 +86,7 @@ function clearError(element) {
 
 // Función principal de validación en Submit
 function validateFormOnSubmit(event) {
-  event.preventDefault(); // Prevenir envío por defecto
+  event.preventDefault();
 
   let isValid = true;
   const errors = [];
@@ -95,9 +95,7 @@ function validateFormOnSubmit(event) {
   Object.keys(formInputs).forEach((inputName) => {
     const input = formInputs[inputName];
     const value = input.element.value.trim();
-    clearError(input.element); // Limpiar errores previos
-
-    // Validar required
+    clearError(input.element);
     if (input.rules.required && !value) {
       isValid = false;
       errors.push({
