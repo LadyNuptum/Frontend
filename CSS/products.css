@@ -18,6 +18,12 @@
   padding-bottom: 70px;
   transition: transform 0.3s ease;
   position: relative;
+  display: grid;
+}
+
+p .description{
+  text-align: justify;
+
 }
 
 .info-container {
