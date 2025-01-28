@@ -109,7 +109,7 @@ let productos = [
       },
       {
         id: 11,
-        name: Cubios,
+        name: "Cubios",
         description: "Tubérculos andinos de sabor único, ideales para sopas y guisos.",
         image: "/imagenes/products/cubios.jpg",
         category: "Hortalizas",
