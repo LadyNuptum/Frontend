@@ -2,6 +2,7 @@
 .cart-layout {
   display: flex;
   gap: 20px;
+  margin-top: 20px;
 }
 
 .product-details {
@@ -9,18 +10,28 @@
 }
 
 .order-summary {
-  flex: 1;
+  flex: 1
 }
 
-/* Tarjeta de producto */
+/* Tarjeta producto */
 .card {
   background-color: #fff;
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 4px 6px rgba(17, 17, 17, 0.1);
-  
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+p.description {
+  text-align: justify;
+  margin-top: 1rem;
+
 }
 
+.card img{
+  height: 100%;
+  width: 100px;
+  border-radius: 10px;
+}
 .product-title {
   font-size: 1.5rem;
   font-weight: bold;
@@ -33,27 +44,11 @@
   margin-bottom: 20px;
 }
 
-.btn {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
-
 .btn-danger {
   background-color: #dc3545;
   color: white;
-}
-
-.btn-secondary {
-  background-color: #6c757d;
-  color: white;
-}
-
-.btn-primary {
-  background-color: #007bff;
-  color: white;
+  height: 40px;
+  text-align: center;
 }
 
 .product-quantity {
@@ -82,29 +77,6 @@
   margin-bottom: 20px;
 }
 
-.shipping-info {
-  margin-bottom: 20px;
-}
-
-.shipping-text {
-  font-size: 0.9rem;
-  color: #6c757d;
-}
-
-.shipping-link {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.shipping-link:hover {
-  text-decoration: underline;
-}
-
-.shipping-free {
-  color: #28a745;
-  font-weight: bold;
-}
-
 /* Resumen de compra */
 .summary-title {
   font-size: 1.25rem;
@@ -113,7 +85,7 @@
 }
 
 .summary-table {
-  text-decoration: none;
+  margin-bottom: 20px;
 }
 
 .summary-row {
@@ -143,4 +115,10 @@
 
 .btn-checkout:hover {
   background-color: #218838;
+}
+
+.empty-cart-img {
+  width: 100px; /* Ajusta el tamaño según necesites */
+  display: block;
+  margin: 0 auto;
 }

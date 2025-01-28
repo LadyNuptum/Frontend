@@ -32,19 +32,22 @@ header {
   transition: background 0.5s ease, backdrop-filter 0.5s ease;
 }
 
+
+
 .navbar-title {
+  
   font-family: "nunito";
   font-size: 1.5rem; 
   color: var(--color-text);
-  margin-left: 1.5rem;
+  margin-right: 2.5rem;
   font-weight: bold;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .sticky-navbar .navbar-title {
-  display: block;
-  opacity: 1;
+  
+  opacity: 1; 
 }
 
 .navbar {
@@ -62,6 +65,7 @@ header {
 
 .navbar-icon img {
   width: 5rem;
+  margin-right: 1rem;
 }
 
 .nav-link {
@@ -287,12 +291,7 @@ footer {
   padding: 0 1rem;
 }
 
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1rem 0;
-}
+
 
 .social-link {
   color: white;
@@ -308,18 +307,9 @@ footer {
     margin: 0.5rem;
   }
 
-  .story-container {
-    flex-direction: column;
-  }
-
   .image-container,
   .text-container {
     max-width: 100%;
-  }
-
-  .story-image {
-    max-width: 100%;
-    height: auto;
   }
 
   .team-card .card-img-top {
