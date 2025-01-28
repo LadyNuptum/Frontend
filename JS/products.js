@@ -148,15 +148,18 @@ let productos = [
 
 let carrito = [];
 
+// Cargar el carrito desde localStorage
 function cargarCarrito() {
     const carritoGuardado = localStorage.getItem("carrito");
     carrito = carritoGuardado ? JSON.parse(carritoGuardado) : [];
 }
 
+// Guardar el carrito en localStorage
 function guardarCarrito() {
     localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
+// Renderizar los productos
 function renderProductos() {
     const contenedorProductos = document.getElementById("products-container");
     contenedorProductos.innerHTML = "";
@@ -178,15 +181,24 @@ function renderProductos() {
     });
 }
 
+// Agregar un producto al carrito
 function agregarAlCarrito(productId) {
-    const producto = productos.find((p) => p.id === productId);
-    if (producto) {
-        carrito.push(producto);
-        guardarCarrito();
-        mostrarModalAgregado(producto.name);
+    const productoEnCarrito = carrito.find((p) => p.id === productId);
+    if (productoEnCarrito) {
+        productoEnCarrito.cantidad += 1;
+        mostrarModalProductoExistente(productoEnCarrito.name);
+    } else {
+        const producto = productos.find((p) => p.id === productId);
+        if (producto) {
+            producto.cantidad = 1;
+            carrito.push(producto);
+            mostrarModalAgregado(producto.name);
+        }
     }
+    guardarCarrito();
 }
 
+// Formatear precios
 function formatearPrecio(precio) {
     return precio.toLocaleString("es-CO", {
         minimumFractionDigits: 0,
@@ -194,6 +206,7 @@ function formatearPrecio(precio) {
     });
 }
 
+// Mostrar el modal
 function mostrarModalAgregado(nombreProducto) {
     const modal = new bootstrap.Modal(document.getElementById("addedToCartModal"));
     const modalBody = document.querySelector("#addedToCartModal .modal-body");
@@ -201,6 +214,15 @@ function mostrarModalAgregado(nombreProducto) {
     modal.show();
 }
 
+// Mostrar el modal
+function mostrarModalProductoExistente(nombreProducto) {
+    const modal = new bootstrap.Modal(document.getElementById("addedToCartModal"));
+    const modalBody = document.querySelector("#addedToCartModal .modal-body");
+    modalBody.textContent = `El producto "${nombreProducto}" ya estaba en el carrito, añadiendo 1 unidad.`;
+    modal.show();
+}
+
+// Cargar el carrito al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
     cargarCarrito();
     renderProductos();
