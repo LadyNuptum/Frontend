@@ -390,7 +390,7 @@ let productos = [
         id: 42,
         name: "Chorizo",
         description: "Embutido ahumado y sazonado, típico de la región.",
-        image: "/imagenes/products/chorizo.jpg",
+        image: "/imagenes/products/chorizos.jpg",
         category: "Carnes",
         price: 22000,
         measure: "1 kg",
