@@ -140,17 +140,16 @@ p .description {
 
 /* Sidebar del carrito */
 
-.card-sidebar{
+.card-sidebar {
   margin: 10px;
-  border:solid 1px #d6dbd8 ;
+  border: solid 1px #d6dbd8;
   border-radius: 0.6rem;
   padding: 1rem;
-
-} 
+}
 #cart-sidebar {
   position: fixed;
   top: 0;
-  right: -400px; /* Oculta la sidebar por defecto */
+  right: -400px;
   width: 400px;
   height: 100%;
   background-color: #fff;
@@ -160,12 +159,12 @@ p .description {
 }
 
 #cart-sidebar.open {
-  right: 0; /* Muestra la sidebar */
+  right: 0;
 }
 
 .sidebar-header {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
   padding: 15px;
   margin-top: 0.5rem;
@@ -218,7 +217,7 @@ p .description {
 }
 
 .empty-cart-img {
-  width: 100px; /* Ajusta el tamaño según necesites */
+  width: 100px;
   display: block;
   margin: 0 auto;
 }

@@ -4,10 +4,9 @@ function cargarCarrito() {
   const carritoGuardado = localStorage.getItem("carrito");
   carrito = carritoGuardado ? JSON.parse(carritoGuardado) : [];
 
-  // Asegurar que cada producto tenga la propiedad `quantity`
   carrito = carrito.map((producto) => ({
     ...producto,
-    quantity: producto.quantity || 1, // Si no tiene quantity, se establece en 1
+    quantity: producto.quantity || 1,
   }));
 
   renderCarrito();
@@ -40,7 +39,9 @@ function renderCarrito() {
           </div>
           
           <div class="product-price">
-            <span class="price">$${formatearPrecio(producto.price * producto.quantity)}</span>
+            <span class="price">$${formatearPrecio(
+              producto.price * producto.quantity
+            )}</span>
           </div>
         </div>
       `;
@@ -56,7 +57,7 @@ function cambiarCantidad(index, cambio) {
   producto.quantity += cambio;
 
   if (producto.quantity < 1) {
-    producto.quantity = 1; // No permitir cantidades menores a 1
+    producto.quantity = 1;
   }
 
   guardarCarrito();
@@ -64,26 +65,33 @@ function cambiarCantidad(index, cambio) {
 }
 
 function actualizarResumenCompra() {
-  const total = carrito.length === 0 ? 0 : carrito.reduce((sum, producto) => {
-    return sum + producto.price * producto.quantity;
-  }, 0);
+  const total =
+    carrito.length === 0
+      ? 0
+      : carrito.reduce((sum, producto) => {
+          return sum + producto.price * producto.quantity;
+        }, 0);
 
   const resumenCompra = document.querySelector(".order-summary .card");
   resumenCompra.innerHTML = `
     <h3 class="summary-title">Resumen de compra</h3>
     <div class="summary-table">
-      ${carrito.length === 0 
-        ? `<p>El carrito está vacío.</p><img src="../imagenes/carro-vacio.png" alt="Carrito vacío" class="empty-cart-img">` 
-        : carrito
-            .map(
-              (producto) => `
+      ${
+        carrito.length === 0
+          ? `<p>El carrito está vacío.</p><img src="../imagenes/carro-vacio.png" alt="Carrito vacío" class="empty-cart-img">`
+          : carrito
+              .map(
+                (producto) => `
             <div class="summary-row">
               <span>${producto.name} (x${producto.quantity})</span>
-              <span>$${formatearPrecio(producto.price * producto.quantity)}</span>
+              <span>$${formatearPrecio(
+                producto.price * producto.quantity
+              )}</span>
             </div>
           `
-            )
-            .join("")}
+              )
+              .join("")
+      }
     </div>
     <div class="total">
       <span>Total</span>
@@ -92,7 +100,6 @@ function actualizarResumenCompra() {
     <button class="btn-checkout">Continuar compra</button>
   `;
 }
-
 
 function eliminarDelCarrito(index) {
   carrito.splice(index, 1);
