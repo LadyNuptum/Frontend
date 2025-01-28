@@ -18,6 +18,11 @@
   padding-bottom: 70px;
   transition: transform 0.3s ease;
   position: relative;
+  display: grid;
+}
+
+p .description {
+  text-align: justify;
 }
 
 .info-container {
@@ -131,6 +136,90 @@
 
 #addedToCartModal .btn-primary:hover {
   background-color: #218838;
+}
+
+/* Sidebar del carrito */
+
+.card-sidebar {
+  margin: 10px;
+  border: solid 1px #d6dbd8;
+  border-radius: 0.6rem;
+  padding: 1rem;
+}
+#cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 400px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+#cart-sidebar.open {
+  right: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin-top: 0.5rem;
+  border: none;
+}
+
+.sidebar-header h3 {
+  padding: 1rem;
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: center;
+  color: darkgreen;
+}
+
+#close-sidebar {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#sidebar-content {
+  padding: 15px;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+  border: none;
+}
+
+.sidebar-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+#go-to-cart {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#go-to-cart:hover {
+  background-color: #218838;
+}
+
+.empty-cart-img {
+  width: 100px;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Responsive Design */
