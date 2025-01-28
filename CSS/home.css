@@ -20,6 +20,7 @@
     width: 100%; 
     overflow: hidden;
     position: relative;
+    padding: 1rem;
   }
   
   .slider .move {
@@ -37,7 +38,7 @@
   
   .slider .box img {
     width: 100%; 
-    height: 100%; 
+    height: 80px; 
     object-fit: cover; 
   }
   
@@ -54,6 +55,8 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   padding:  1rem 0;
+  margin-top: -50px;
+  
 }
 
 .card-features{
@@ -66,7 +69,7 @@ padding: 1rem 0;
 }
 
 .card-features i{
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--color-secondary);
 }
 
@@ -153,7 +156,7 @@ height: 2px;
 position: absolute;
 bottom: -1rem;
 left: 50%;
-color: var(--color-text);
+background-color: var(--color-text);
 transform: translate(-50%, 50%);
 }
 
@@ -227,15 +230,11 @@ button:hover {
 }
 
 
+/* ==== Sección publicaciones ==== */
 
-
-
-
-
-
-
-
-
+.specials{
+  display: flex;
+}
 
 
   
@@ -263,8 +262,7 @@ button:hover {
     
   }
 
-  
-  
+    
   @media (max-width: 470px) {
    
   }

@@ -12,7 +12,7 @@ const images = [
     '/imagenes/products/leche_condensada.jpg',
     '/imagenes/products/Leche_de_oveja.jpg',
     '/imagenes/products/Pepino.jpg',
-    '/imagenes/products/Leche_de_oveja.jpg.jpg',
+    '/imagenes/products/carnes.jpeg',
     '/imagenes/products/Zanahoria.jpg',
     '/imagenes/products/Queso_manchego.jpg',
 ];
