@@ -3,13 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carrito de Compras</title>
+    <title>Carrito</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link
       rel="shortcut icon"
       href="../imagenes/agroapp_logo-01.png"
       type="image/x-icon" />
-    <link rel="stylesheet" href="../CSS/styles.css" />
     <link rel="stylesheet" href="../CSS/cart.css" />
+    <link rel="stylesheet" href="../CSS/styles.css" />
+    <link rel="stylesheet" href="../CSS/products.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet" />
@@ -18,7 +22,6 @@
       rel="stylesheet" />
   </head>
   <body>
-    <!-- Navbar -->
     <header>
       <nav class="navbar navbar-expand-lg">
         <div class="container">
@@ -56,8 +59,11 @@
                   href="../HTML/contact-form.html">Contacto</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <i class="bi bi-cart"></i>
+                <a class="nav-link" href="#">Ingresar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../HTML/cart.html">
+                  <i class="fa-solid fa-cart-shopping"></i>
                 </a>
               </li>
             </ul>
@@ -66,30 +72,29 @@
       </nav>
     </header>
 
-    <!-- Banner -->
+    <!-- Contenedor para el banner -->
     <div class="banner">
       <div class="banner-1">
         <div class="info">
-          <h1 class="title center">Carrito de Compras</h1>
+          <h1 class="title center">Carrito</h1>
           <p class="descriptionBanner s-center"></p>
         </div>
       </div>
     </div>
 
+    <!-- Sección del carrito -->
     <main class="container">
       <div class="cart-layout">
-        <!-- Vista 1: Productos en el carrito -->
+        <!-- Vista 1: Descripción del producto -->
         <div class="product-details">
-          <!-- Los productos se renderizarán dinámicamente aquí -->
+          <div id="cart-container"></div>
         </div>
 
         <!-- Vista 2: Resumen de la compra -->
         <div class="order-summary">
           <div class="card">
-            <h3 class="summary-title">Resumen de Compra</h3>
-            <div class="summary-table">
-              <!-- Las filas del resumen se renderizarán dinámicamente aquí -->
-            </div>
+            <h3 class="summary-title">Resumen de compra</h3>
+            <div class="summary-table"></div>
             <div class="total">
               <span>Total</span>
               <span>$ 0</span>
@@ -124,6 +129,7 @@
 
     <!-- Scripts -->
     <script src="../JS/cart.js"></script>
+    <script src="../JS/aboutUs.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
