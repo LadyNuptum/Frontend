@@ -146,6 +146,15 @@ position: relative;
   color: rgb(74, 86, 74);
 }
 
+/* .bx{
+  font-size: 27px;
+  position: absolute;
+  transform: translateX(80px);
+   cursor:pointer;
+  color:rgb(74, 86, 74);
+ padding: 0.5rem;
+} */
+
 .form-register input[type="checkbox"] {
   width: auto;
   margin-left: 2rem;
@@ -179,6 +188,7 @@ position: relative;
   rgba(125, 186, 54, 0.8), 
   rgba(67, 149, 53, 0.8),                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
   rgba(9, 123, 53, 0.8));
+
 }
 
 .login-link {
@@ -209,10 +219,11 @@ gap: 1rem;
       width: 100%; 
   }
   .info-register h1 {
+    margin-top: 1rem;
       font-size: 1.5rem; 
   }
   .container-left {
-    height: 20vh; 
+    height: 25vh; 
   }
   .info-register p {
       font-size: 1rem; 
