@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     clearError(input);
     const errorDiv = document.createElement("div");
     errorDiv.className = "error-message";
-    errorDiv.style.color = "red";
+    errorDiv.style.color = "white";
     errorDiv.style.fontSize = "12px";
     errorDiv.style.marginTop = "5px";
     errorDiv.textContent = message;
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function clearError(input) {
     const errorDiv = input.parentElement.querySelector(".error-message");
     if (errorDiv) errorDiv.remove();
-    input.style.border = "3px solid #27d604";
+    input.style.border = "2px solid #27d604";
   }
 
   // validar campos
