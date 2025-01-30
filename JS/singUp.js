@@ -16,17 +16,17 @@ document.addEventListener("DOMContentLoaded", () => {
     password: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/,
   };
 
-  // nmnsajeserror
+  // Mensajes de error
   const errorMessages = {
     name: "El nombre debe contener solo letras (2-30 caracteres).",
     lastName: "El apellido debe tener entre 2 y 30 caracteres y solo letras.",
     email: "Ingrese un correo electrónico válido.",
     phone: "El teléfono debe tener 10 dígitos numéricos.",
-    password:
-      "La contraseña debe tener al menos 6 caracteres, una letra y un número.",
+    password: "La contraseña debe tener al menos 6 caracteres, una letra y un número.",
     "confirm-password": "Las contraseñas no coinciden.",
     acept: "Debe aceptar los términos y condiciones.",
     empty: "Este campo no puede estar vacío.",
+    emailExists: "Este correo electrónico ya está registrado.",
   };
 
   // mensaje de error
@@ -112,6 +112,18 @@ document.addEventListener("DOMContentLoaded", () => {
       showError(aceptTerms, errorMessages["acept"]);
       isValid = false;
     }
+
+    // Verificar si el correo ya está registrado
+    const emailInput = document.getElementById("email");
+    const email = emailInput.value.trim();
+    const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+    const emailExists = existingUsers.some((user) => user.email === email);
+
+    if (emailExists) {
+      showError(emailInput, errorMessages.emailExists);
+      isValid = false;
+    }
+
 
     if (isValid) {
       // objeto Josn con datos del usuario
