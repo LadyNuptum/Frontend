@@ -4,6 +4,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const aceptTerms = document.getElementById("acept");
   const inputs = form.querySelectorAll("input:not([type='submit'])");
 
+  // Función para verificar credenciales en localStorage
+  async function verificarCredenciales(email, password) {
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    // Encriptar la contraseña ingresada para comparar
+    const encryptedPassword = await hashPassword(password);
+    
+    // Buscar usuario que coincida tanto en email como en contraseña
+    const userFound = users.find(user => 
+      user.email === email && user.password === encryptedPassword
+    );
+
+    // Redirige a la pagina de una
+    if (userFound) {
+      window.location.href = "/HTML/home.html"; 
+      return true;
+    }
+    return false;
+  }
+
   // desactiva btn
   btnSubmit.disabled = true;
 
@@ -70,6 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return false;
       }
     }
+    
     // confirma contraseña
     else if (inputType === "confirm-password") {
       if (value !== document.getElementById("password").value) {
@@ -77,6 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return false;
       }
     }
+    
     // patrones definidos
     else if (patterns[inputType] && !patterns[inputType].test(value)) {
       showError(input, errorMessages[inputType]);
@@ -92,80 +113,84 @@ document.addEventListener("DOMContentLoaded", () => {
     btnSubmit.disabled = !aceptTerms.checked;
   });
 
-  // alidación tiempo real
+  // validación tiempo real
   inputs.forEach((input) => {
     input.addEventListener("input", () => {
       validateField(input);
     });
   });
 
-  // envio del form
+  // envío del form
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    let isValid = true;
-    inputs.forEach((input) => {
-      if (!validateField(input)) isValid = false;
-    });
-
-    if (!aceptTerms.checked) {
-      showError(aceptTerms, errorMessages["acept"]);
-      isValid = false;
-    }
-
-    // Verificar si el correo ya está registrado
     const emailInput = document.getElementById("email");
-    const email = emailInput.value.trim();
-    const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
-    const emailExists = existingUsers.some((user) => user.email === email);
+    const passwordInput = document.getElementById("password");
 
-    if (emailExists) {
-      showError(emailInput, errorMessages.emailExists);
-      isValid = false;
-    }
+   // Primero verificar si las credenciales existen para iniciar sesión
+   if (await verificarCredenciales(emailInput.value.trim(), passwordInput.value.trim())) {
+      return; // Si existe, la función ya hizo la redirección
+   }
 
+   let isValid = true;
+   inputs.forEach((input) => {
+     if (!validateField(input)) isValid = false;
+   });
 
-    if (isValid) {
-      // objeto Josn con datos del usuario
-      const userData = {};
-      inputs.forEach((input) => {
-        if (input.id !== "confirm-password") {
-          userData[input.id] =
-            input.type === "checkbox" ? input.checked : input.value.trim();
-        }
-      });
+   if (!aceptTerms.checked) {
+     showError(aceptTerms, errorMessages["acept"]);
+     isValid = false;
+   }
 
-      // encriptacion contraseña
-      const encryptedPassword = await hashPassword(userData.password);
-      userData.password = encryptedPassword;
+   // Verificar si el correo ya está registrado
+   const email = emailInput.value.trim();
+   const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+   const emailExists = existingUsers.some((user) => user.email === email);
 
-      // save en localStorage
-      const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
-      existingUsers.push(userData);
-      localStorage.setItem("users", JSON.stringify(existingUsers));
+   if (emailExists) {
+     showError(emailInput, errorMessages.emailExists);
+     isValid = false;
+   }
 
-      // mensaje de éxito
-      const messageContainer = document.querySelector("#success-message");
-      messageContainer.innerHTML = `<p>Registro exitoso ✔</p>`;
-      btnSubmit.disabled = true;
+   if (isValid) {
+     // objeto JSON con datos del usuario
+     const userData = {};
+     inputs.forEach((input) => {
+       if (input.id !== "confirm-password") {
+         userData[input.id] =
+           input.type === "checkbox" ? input.checked : input.value.trim();
+       }
+     });
 
-      
-      setTimeout(() => {
-        form.reset();
-        messageContainer.innerHTML = "";
-      }, 3000);
-    }
-  });
+     // encriptacion contraseña
+     const encryptedPassword = await hashPassword(userData.password);
+     userData.password = encryptedPassword;
 
-  //encriptar la contraseña usando SHA-256
-  async function hashPassword(password) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(password);
-    const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    const hashHex = hashArray
-      .map((byte) => byte.toString(16).padStart(2, "0"))
-      .join("");
-    return hashHex;
-  }
+     // save en localStorage
+     existingUsers.push(userData);
+     localStorage.setItem("users", JSON.stringify(existingUsers));
+
+     // mensaje de éxito
+     const messageContainer = document.querySelector("#success-message");
+     messageContainer.innerHTML = `<p>Registro exitoso ✔</p>`;
+     btnSubmit.disabled = true;
+
+     setTimeout(() => {
+       form.reset();
+       messageContainer.innerHTML = "";
+     }, 3000);
+   }
+ });
+
+ //encriptar la contraseña usando SHA-256
+ async function hashPassword(password) {
+   const encoder = new TextEncoder();
+   const data = encoder.encode(password);
+   const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+   const hashArray = Array.from(new Uint8Array(hashBuffer));
+   const hashHex = hashArray
+     .map((byte) => byte.toString(16).padStart(2, "0"))
+     .join("");
+   return hashHex;
+ }
 });
