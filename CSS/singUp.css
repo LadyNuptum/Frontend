@@ -5,3 +5,352 @@
   margin-top: 10px;
   text-align: center;
 }
+
+.body{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; 
+    overflow-y: auto; 
+    line-height: 1.6;
+   
+}
+
+.container-register{
+    display: flex;
+     width: 100%;
+     height: 100vh;
+    margin: 0 auto; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+    
+.container-left {
+      width: 50%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; 
+      position: relative;
+      background-image: url("../imagenes/Home/register.png");
+      background-size: cover; 
+      background-position: center; 
+      background-repeat: no-repeat; 
+  }
+  
+  .container-left::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 52, 0, 0.5);
+      z-index: 1;
+  }
+  
+  .info-register {
+      color: white; 
+      z-index: 2; 
+      position: relative; 
+      text-align: center; 
+      padding: 20px; 
+  }
+  
+  .info-register h1 {
+      font-size: 2rem;
+      margin-bottom: 10px; 
+  }
+  
+  .info-register p {
+      font-size: 1.2rem; 
+  }
+  
+  
+  .register-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 50%;
+    background-color: #f0f0f0;
+    padding: 6rem;
+  }
+  
+  .form-register {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    background-color: rgba(13, 58, 36, 1);
+      padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+  }
+  
+  .form-register h2 {
+    text-align: center; 
+    margin-bottom: 1.5rem; 
+    margin-top: 2rem;
+    font-size: 1.5rem; 
+    color: #ffffff; 
+    
+  }
+  
+  .form-register input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  
+  .form-register input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;   
+  }
+  
+  .term {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+  .form-register .btn-register {
+    width: 100%;
+    padding: 10px;
+    background-image: url("/imagenes/");
+    border: none;
+    border-radius: 4px;
+    color: rgba(13, 58, 36, 1);
+    cursor: pointer;
+  }
+  
+  .form-register .btn-register:hover {
+    background-color: #b6cfbf;
+  }
+  
+  .login-link {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .login-link a {
+    color: #eff4eb;
+    text-decoration: none;
+   
+  }
+  
+  .login-link a:hover {
+    text-decoration: underline;
+    color:  #f3d914;
+  }
+  
+  .register-group {
+    display: flex;
+    flex-wrap: wrap;  
+    gap: 1rem;
+  }
+  
+  .register-row {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+    @media (max-width: 768px) {
+        .container-register {
+          flex-direction: column; 
+        }
+        .container-left, .register-content {
+          width: 100%; 
+        }
+      } */
+
+
+/* === Estilos para register===*/
+
+body {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; 
+  overflow-y: auto; 
+  line-height: 1.6;
+}
+
+.container-register {
+  display: flex;
+  flex-direction: row; /* Asegura que los hijos se alineen en fila */
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+.container-left {
+  width: 50%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  position: relative;
+  background-image: url("../imagenes/Home/register.png");
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+}
+
+.container-left::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 52, 0, 0.5);
+  z-index: 1;
+}
+
+.info-register {
+  color: white; 
+  z-index: 2; 
+  position: relative; 
+  text-align: center; 
+  padding: 20px; 
+}
+
+.info-register h1 {
+  font-size: 2rem;
+  margin-bottom: 10px; 
+}
+
+.info-register p {
+  font-size: 1.2rem; 
+}
+
+.register-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 50%;
+  background-color: #f0f0f0;
+  padding: 6rem;
+}
+
+.form-register {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px; /* Limita el ancho máximo del formulario */
+  background-color: rgba(13, 58, 36, 1);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+}
+
+.form-register h2 {
+  text-align: center; 
+  margin-bottom: 1.5rem; 
+  margin-top: 2rem;
+  font-size: 1.5rem; 
+  color: #ffffff; 
+}
+
+.form-register input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.form-register input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;   
+}
+
+.term {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Alinea el contenido a la izquierda */
+  gap: 10px;
+}
+
+.form-register .btn-register {
+  width: 100%;
+  padding: 10px;
+  background-image: url("/imagenes/");
+  border: none;
+  border-radius: 4px;
+  color: rgba(13, 58, 36, 1);
+  cursor: pointer;
+}
+
+.form-register .btn-register:hover {
+  background-color: #b6cfbf;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.login-link a {
+  color: #eff4eb;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+  color: #f3d914;
+}
+
+.register-group {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 1rem;
+}
+
+.register-row {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .container-register {
+      flex-direction: column; 
+  }
+  .container-left, .register-content {
+      width: 100%; 
+  }
+  .info-register h1 {
+      font-size: 1.5rem; 
+  }
+  .info-register p {
+      font-size: 1rem; 
+  }
+  .register-content {
+      padding: 2rem; 
+  }
+  .form-register {
+      padding: 1rem; 
+  }
+}
