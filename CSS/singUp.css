@@ -1,11 +1,7 @@
 .success-message {
-    font-family: 'nunito';
-    color: green;
-    font-size: 14px;
-    margin-top: 10px;
-    text-align: center;
-  }
-
-  input #register-row{
-    display: inline;
-  }
+  font-family: "nunito";
+  color: green;
+  font-size: 2rem;
+  margin-top: 10px;
+  text-align: center;
+}
