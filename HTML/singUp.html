@@ -23,6 +23,8 @@
   </head>
   <body>
 
+ 
+
 <main class="container-register">
 <div class="container-left">
 <div class="info-register">
@@ -42,7 +44,7 @@
       </div>
     </div>
     <div class="register-group">
-      <div class="register-row s-center ">
+      <div class="register-row ">
         <input type="text" id="email" name="email" placeholder="ejemplo@correo.com *"/>
       </div>
       <div class="register-row">
@@ -50,22 +52,27 @@
       </div>
     </div>
     <div class="register-group">
-      <div class="register-row">
-        <input type="password" id="password" name="password" placeholder="Contraseña *"/>
+      <div class="register-row ">
+        <input type="password" class="pass" id="password" name="password" placeholder="Contraseña *"/>
+        <i class='bx  bx-show-alt'></i>
       </div>
       <div class="register-row">
-        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirmar contraseña *"/>
+        <input type="password" class="pass"  id="confirm-password" name="confirm-password" placeholder="Confirmar contraseña *"/>
+      <i class='bx bx-show-alt'></i>
       </div>
     </div>
-    <div class="register-row term">
+    <div class=" term">
       <input type="checkbox" id="acept" name="acept"/>
       <label for="acept"> Acepto términos y condiciones <span>*</span></label>
     </div>
     <input class="btn-register" type="submit" value="Registrar">
     <div class="login-link">
       <p> ¿Ya tienes una cuenta? </p><a href="#">Inicia Sesión</a>
+    </div>
     </form>
-  </div>
 </div>
 </div>
 </main>
+<script src="../JS/register.js"></script>
+</body>
+</html>
