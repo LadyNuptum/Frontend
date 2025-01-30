@@ -1,17 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Registro</title>
-  <link rel="shortcut icon" href="../imagenes/agroapp_logo-01.png" type="image/x-icon" />
-  <link rel="stylesheet" href="../CSS/styles.css" />
-  <link rel="stylesheet" href="../CSS/singUp.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" />
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link
+      rel="shortcut icon"
+      href="../imagenes/agroapp_logo-01.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../CSS/styles.css" />
+    <link rel="stylesheet" href="../CSS/singUp.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-icon" href="../HTML/aboutUs.html">
+            <img src="../imagenes/agroapp_logo-01.png" alt="AgroApp_Logo" />
+          </a>
+          <div class="navbar-title d-none">
+            <span id="navbar-page-title"></span>
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            btn-primary
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="../HTML/home.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../HTML/aboutUs.html"
+                  >Sobre Nosotros</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../HTML/products.html">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../HTML/singUp.html">Ingresar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../HTML/contact-form.html"
+                  >Contacto</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../HTML/cart.html">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Contenedor para el banner -->
+    <div class="banner">
+      <div class="banner-1">
+        <div class="info">
+          <h1 class="title center">Registro</h1>
+          <p class="descriptionBanner s-center"></p>
+        </div>
+      </div>
+    </div>
+
   <main class="container-register">
     <div class="container-left">
       <div class="info-register">
@@ -53,11 +126,38 @@
         <input class="btn-register" type="submit" value="Registrar" />
         <div id="success-message"></div>
         <div class="login-link">
-          <p> ¿Ya tienes una cuenta? </p><a href="#">Inicia Sesión</a>
+          <p> ¿Ya tienes una cuenta? </p><a href="../HTML/contact-form.html">Inicia Sesión</a>
         </div>
       </form>
     </div>
   </main>
+  <!-- Footer -->
+  <footer id="contacto">
+    <div class="contact&social">
+      <div class="contact&socialContainer">
+        <h2>Contacto y Redes Sociales</h2>
+        <div class="social-links">
+          <a href="#" class="social-link">LinkedIn</a>
+          <a href="#" class="social-link">GitHub</a>
+          <a href="#" class="social-link">Twitter</a>
+        </div>
+        <div class="contact-info">
+          <p>
+            ¿Interesado en trabajar juntos?:
+            <a href="../HTML/contact-form.html">Contáctenos</a>
+          </p>
+          <p>Envíame un mensaje a: contacto@agroapp.com</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../JS/aboutUs.js"></script>
   <script src="../JS/singUp.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
 </body>
 </html>
