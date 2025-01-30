@@ -1,6 +1,3 @@
-
-
-
 //*  Funionalidad mostrar contraseña
 
 
@@ -26,7 +23,7 @@ if (passInputs.length === icons.length) {
     });
   });
 } else {
-  console.error("Número de inputs y iconos no coincide.");
+  console.error("Número de inputs e iconos no coincide.");
 }
 
 
