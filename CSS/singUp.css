@@ -1,3 +1,32 @@
+.register-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pass {
+  width: 100%;
+  padding-right: 40px; /* Espacio para el icono */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: #666;
+  font-size: 20px;
+}
+input.input{
+  padding-right: 2.5rem;
+}
 
 #success-message p {
   font-family: "nunito";
@@ -13,22 +42,29 @@
   display: flex;
   width: 100%;
   height: 100vh;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow-x: hidden; 
-    overflow-y: auto; 
-    line-height: 1.6;
-   
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; 
+  overflow-y: auto; 
+  line-height: 1.6;align-items: center;
+  justify-content: center;
+  font-family: 'Nunito', sans-serif;
 }
 
 main.container-register{
     display: flex;
-     width: 100%;
+    width: 100%;
      height: 100vh;
     margin: 100px auto; 
     padding: 0; 
-    box-sizing: border-box; 
+    box-sizing: border-box;   display: flex;
+  flex-direction: row; 
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto; 
+  padding: 0; 
+  box-sizing: border-box; 
 }
     
 .container-left {
@@ -163,11 +199,6 @@ main.container-register{
     gap: 1rem;
   }
   
-  .register-row {
-    flex: 1 1 45%;
-    display: flex;
-    flex-direction: column;
-  }
   
     @media (max-width: 768px) {
         .container-register {
@@ -181,21 +212,9 @@ main.container-register{
 
 /* === Estilos para register===*/
 
-body {
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow-x: hidden; 
-  overflow-y: auto; 
-  line-height: 1.6;
-}
-
 .container-register {
   display: flex;
-  flex-direction: row; /* Asegura que los hijos se alineen en fila */
+  flex-direction: row; 
   width: 100%;
   height: 100vh;
   margin: 0 auto; 
@@ -204,8 +223,8 @@ body {
 }
 
 .container-left {
-  width: 50%;
-  min-height: 100vh;
+  width: 47%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center; 
@@ -214,6 +233,7 @@ body {
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
+  transition: height 0.5s ease; 
 }
 
 .container-left::before {
@@ -228,17 +248,20 @@ body {
 }
 
 .info-register {
-  color: white; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+    color: white; 
   z-index: 2; 
   position: relative; 
-  text-align: center; 
-  padding: 20px; 
+    text-align: center;
+padding: 1.5rem;
+gap: 1rem;
 }
 
 .info-register h1 {
   font-size: 2rem;
-  margin-bottom: 10px; 
-}
+  }
 
 .info-register p {
   font-size: 1.2rem; 
@@ -250,19 +273,20 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 50%;
-  background-color: #f0f0f0;
-  padding: 6rem;
+  width: 53%;
+  background-color: #d2d6d4;
+  
 }
 
 .form-register {
+  
   display: flex;
   flex-direction: column;
   gap: 1rem;
   width: 100%;
-  max-width: 500px; /* Limita el ancho máximo del formulario */
+  max-width: 650px;
   background-color: rgba(13, 58, 36, 1);
-  padding: 2rem;
+  padding: 0.5rem 2rem ;
   border-radius: 8px;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
   color: #ffffff;
@@ -275,55 +299,9 @@ body {
   font-size: 1.5rem; 
   color: #ffffff; 
 }
-
-.form-register input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: none;
-  border-radius: 4px;
-  font-size: 0.9rem;
-}
-
-.form-register input[type="checkbox"] {
-  width: auto;
-  margin-right: 10px;   
-}
-
-.term {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; /* Alinea el contenido a la izquierda */
-  gap: 10px;
-}
-
-.form-register .btn-register {
-  width: 100%;
-  padding: 10px;
-  background-image: url("/imagenes/");
-  border: none;
-  border-radius: 4px;
-  color: rgba(13, 58, 36, 1);
-  cursor: pointer;
-}
-
-.form-register .btn-register:hover {
-  background-color: #b6cfbf;
-}
-
-.login-link {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.login-link a {
-  color: #eff4eb;
-  text-decoration: none;
-}
-
-.login-link a:hover {
-  text-decoration: underline;
-  color: #f3d914;
+.form-register h2:hover{
+  padding-top: -2px;
+  font-size: 1.7rem;
 }
 
 .register-group {
@@ -332,11 +310,97 @@ body {
   gap: 1rem;
 }
 
-.register-row {
-  flex: 1 1 45%;
-  display: flex;
-  flex-direction: column;
+
+.form-register input {
+  width: 100%;
+  padding: 8px;
+  
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
 }
+
+
+.pass{
+  font-size: 1.5rem;
+  width: 400px;
+  padding: 10px 5px;
+position: relative;
+}
+.pass i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: rgb(74, 86, 74);
+}
+
+/* .bx{
+  font-size: 27px;
+  position: absolute;
+  transform: translateX(80px);
+   cursor:pointer;
+  color:rgb(74, 86, 74);
+ padding: 0.5rem;
+} */
+
+.form-register input[type="checkbox"] {
+  width: auto;
+  margin-left: 2rem;
+    }
+
+.term {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  gap: 1rem;
+  font-size: 0.8rem;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.form-register .btn-register {
+  width: auto;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+   cursor: pointer;
+   font-weight: 500;
+   color: #0b2d26;
+}
+
+.form-register .btn-register:hover {
+  background-image: linear-gradient(to right, 
+  rgba(243, 217, 20, 0.8), 
+  rgba(125, 186, 54, 0.8), 
+  rgba(67, 149, 53, 0.8),                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+  rgba(9, 123, 53, 0.8));
+
+}
+
+.login-link {
+  display: flex;
+  justify-content: center;
+gap: 1rem;
+  text-align: center;
+ font-size: 0.8rem;
+}
+
+.login-link a {
+  color: #eff4eb;
+  text-decoration: none;
+
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+  color: #f3d914;
+}
+
 
 @media (max-width: 768px) {
   .container-register {
@@ -346,7 +410,11 @@ body {
       width: 100%; 
   }
   .info-register h1 {
+    margin-top: 1rem;
       font-size: 1.5rem; 
+  }
+  .container-left {
+    height: 25vh; 
   }
   .info-register p {
       font-size: 1rem; 

@@ -13,8 +13,8 @@
       href="../imagenes/agroapp_logo-01.png"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="../CSS/styles.css" />
-    <link rel="stylesheet" href="../CSS/singUp.css">
+    <link rel="stylesheet" href="." />
+    <link rel="stylesheet" href="../CSS/singUp.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -23,6 +23,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   </head>
   <body>
     <header>
@@ -84,80 +85,119 @@
         </div>
       </div>
     </div>
-
-  <main class="container-register">
-    <div class="container-left">
-      <div class="info-register">
-        <h1>Únete a AgroApp y apoya a nuestros campesinos</h1>
-        <p>Regístrate ahora y accede a una variedad de productos frescos, naturales y de la mejor calidad</p>
-      </div>
-    </div>
-    <div class="register-content">
-      <form action="" class="form-register">
-        <h2>¡Regístrate aquí!</h2>
-        <div class="register-group">
-          <div class="register-row">
-            <input type="text" id="lastName" name="lastName" placeholder="Apellido *" />
-          </div>
-          <div class="register-row s-center">
-            <input type="text" id="name" name="name" placeholder="Nombre *" />
-          </div>
-        </div>
-        <div class="register-group">
-          <div class="register-row s-center">
-            <input type="text" id="email" name="email" placeholder="ejemplo@correo.com *" />
-          </div>
-          <div class="register-row">
-            <input type="text" id="phone" name="phone" placeholder="Teléfono" />
-          </div>
-        </div>
-        <div class="register-group">
-          <div class="register-row">
-            <input type="password" id="password" name="password" placeholder="Contraseña *" />
-          </div>
-          <div class="register-row">
-            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirmar contraseña *" />
-          </div>
-        </div>
-        <div class="register-row term">
-          <input type="checkbox" id="acept" name="acept" />
-          <label for="acept"> Acepto <a href="/assets/terms.pdf" target="_blank">términos y condiciones</a> <span>*</span></label>
-        </div>
-        <input class="btn-register" type="submit" value="Registrar" />
-        <div id="success-message"></div>
-        <div class="login-link">
-          <p> ¿Ya tienes una cuenta? </p><a href="../HTML/contact-form.html">Inicia Sesión</a>
-        </div>
-      </form>
-    </div>
-  </main>
-  <!-- Footer -->
-  <footer id="contacto">
-    <div class="contact&social">
-      <div class="contact&socialContainer">
-        <h2>Contacto y Redes Sociales</h2>
-        <div class="social-links">
-          <a href="#" class="social-link">LinkedIn</a>
-          <a href="#" class="social-link">GitHub</a>
-          <a href="#" class="social-link">Twitter</a>
-        </div>
-        <div class="contact-info">
+    <main class="container-register">
+      <div class="container-left">
+        <div class="info-register">
+          <h1>Únete a AgroApp y apoya a nuestros campesinos</h1>
           <p>
-            ¿Interesado en trabajar juntos?:
-            <a href="../HTML/contact-form.html">Contáctenos</a>
+            Regístrate ahora y accede a una variedad de productos frescos,
+            naturales y de la mejor calidad
           </p>
-          <p>Envíame un mensaje a: contacto@agroapp.com</p>
         </div>
       </div>
-    </div>
-  </footer>
-
-  <script src="../JS/aboutUs.js"></script>
-  <script src="../JS/singUp.js"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"
-  ></script>
-</body>
+      <div class="register-content">
+        <form action="" class="form-register">
+          <h2>¡Regístrate aquí!</h2>
+          <div class="register-group">
+            <div class="register-row">
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                placeholder="Apellido *"
+              />
+            </div>
+            <div class="register-row s-center">
+              <input type="text" id="name" name="name" placeholder="Nombre *" />
+            </div>
+          </div>
+          <div class="register-group">
+            <div class="register-row">
+              <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder="ejemplo@correo.com *"
+              />
+            </div>
+            <div class="register-row">
+              <input
+                type="text"
+                id="phone"
+                name="phone"
+                placeholder="Teléfono"
+              />
+            </div>
+          </div>
+          <div class="register-group">
+            <div class="register-row">
+              <input
+                type="password"
+                class="pass"
+                id="password"
+                name="password"
+                placeholder="Contraseña *"
+              />
+              <span id="icon"><i class="bx bx-show-alt"></i></span>
+              
+            </div>
+            <div class="register-row">
+              <input
+                type="password"
+                class="pass"
+                id="confirm-password"
+                name="confirm-password"
+                placeholder="Confirmar contraseña *"
+              />
+              <span id="icon"><i class="bx bx-show-alt"></i></span>
+            </div>
+          </div>
+          <div class="term">
+            <input type="checkbox" id="acept" name="acept" />
+            <label for="acept">
+              Acepto
+              <a href="/assets/terms.pdf" target="_blank"
+                >términos y condiciones</a
+              >
+              <span>*</span></label
+            >
+          </div>
+          <input class="btn-register" type="submit" value="Registrar" />
+          <div id="success-message"></div>
+          <div class="login-link">
+            <p>¿Ya tienes una cuenta?</p>
+            <a href="#">Inicia Sesión</a>
+          </div>
+        </form>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer id="contacto">
+      <div class="contact&social">
+        <div class="contact&socialContainer">
+          <h2>Contacto y Redes Sociales</h2>
+          <div class="social-links">
+            <a href="#" class="social-link">LinkedIn</a>
+            <a href="#" class="social-link">GitHub</a>
+            <a href="#" class="social-link">Twitter</a>
+          </div>
+          <div class="contact-info">
+            <p>
+              ¿Interesado en trabajar juntos?:
+              <a href="../HTML/contact-form.html">Contáctenos</a>
+            </p>
+            <p>Envíame un mensaje a: contacto@agroapp.com</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../JS/aboutUs.js"></script>
+    <script src="../JS/singUp.js"></script>
+    <script src="../JS/register.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

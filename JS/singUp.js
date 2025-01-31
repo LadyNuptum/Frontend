@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     clearError(input);
     const errorDiv = document.createElement("div");
     errorDiv.className = "error-message";
-    errorDiv.style.color = "white";
+    errorDiv.style.color = "red";
     errorDiv.style.fontSize = "12px";
     errorDiv.style.marginTop = "5px";
     errorDiv.textContent = message;
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function clearError(input) {
     const errorDiv = input.parentElement.querySelector(".error-message");
     if (errorDiv) errorDiv.remove();
-    input.style.border = "2px solid #27d604";
+    input.style.border = "3px solid #27d604";
   }
 
   // validar campos
@@ -169,3 +169,31 @@ document.addEventListener("DOMContentLoaded", () => {
     return hashHex;
   }
 });
+
+//*  Funionalidad mostrar contraseña
+
+
+const passInputs = document.querySelectorAll('.pass');
+const icons = document.querySelectorAll('.bx');
+
+
+if (passInputs.length === icons.length) {
+  
+  passInputs.forEach((input, index) => {
+    const icon = icons[index];
+
+    icon.addEventListener("click", e => {
+      if (input.type === "password") {
+        input.type = "text";
+        icon.classList.remove("bx-show-alt");
+        icon.classList.add("bx-hide");
+      } else {
+        input.type = "password";
+        icon.classList.add("bx-show-alt");
+        icon.classList.remove("bx-hide");
+      }
+    });
+  });
+} else {
+  console.error("Número de inputs e iconos no coincide.");
+}
