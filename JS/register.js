@@ -39,3 +39,15 @@ window.addEventListener('scroll', () => {
     containerLeft.style.height = '100vh';
   }
 });
+
+//* Optimizar esta funcion para Inicio de Sesion
+const containerLeftS = document.querySelector('.container-left-s');
+
+window.addEventListener('scroll', () => {
+  const scrollPositions = window.scrollY;
+  if (scrollPositions > 100) { 
+    containerLeftS.style.height = '20vh';
+  } else {
+    containerLeftS.style.height = '100vh';
+  }
+});
