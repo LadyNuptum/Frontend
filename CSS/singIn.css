@@ -138,7 +138,7 @@ body {
      color: #0b2d26;
   }
   
-  .form-register .btn-register:hover {
+  .form-register .btn-register:hover   {
     background-image: linear-gradient(to right, 
     rgba(243, 217, 20, 0.8), 
     rgba(125, 186, 54, 0.8), 
