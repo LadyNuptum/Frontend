@@ -2,9 +2,19 @@
   position: relative;
   display: flex;
   align-items: center;
+  /* width: fit-content; */
   flex: 1 1 45%;
   display: flex;
   flex-direction: column;
+}
+
+.pass {
+  width: 100%;
+  padding-right: 40px; /* Espacio para el icono */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
 #icon {
@@ -15,7 +25,9 @@
   font-size: 1.5rem;
 }
 
-
+input.input {
+  padding-right: 2.5rem;
+}
 
 #success-message p {
   font-family: "nunito";
@@ -78,19 +90,16 @@ main.container-register {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 52, 0, 0.5);
+  background-color: #0b2d26;
   z-index: 1;
 }
 
-.info-register {  display: flex;
-  flex-direction: column;
-  align-items: center;
+.info-register {
   color: white;
   z-index: 2;
   position: relative;
   text-align: center;
-  padding: 1.5rem;
-  gap: 1rem;
+  padding: 20px;
 }
 
 .info-register h1 {
@@ -127,9 +136,9 @@ form.form-register {
 
 .form-register h2 {
   text-align: center;
-  margin-bottom: 1rem;
-  margin-top: 2.5rem;
-  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  font-size: 1.5rem;
   color: #ffffff;
 }
 
@@ -164,7 +173,6 @@ form.form-register {
   font-size: 1.5rem;
   font-family: "nunito";
   font-weight: bold;
-  border:#27d604 solid 5px;
 }
 
 .form-register .btn-register:hover {
@@ -194,8 +202,30 @@ form.form-register {
   box-sizing: border-box;
 }
 
+.container-left {
+  width: 47%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  background-image: url("../imagenes/Home/register.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: height 0.5s ease;
+}
 
-
+.container-left::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 52, 0, 0.5);
+  z-index: 1;
+}
 
 .info-register {
   display: flex;
@@ -210,9 +240,7 @@ form.form-register {
 }
 
 .info-register h1 {
-  font-family: 'nunito';
-  font-weight: 500;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .info-register p {
@@ -265,10 +293,32 @@ form.form-register {
   font-size: 0.9rem;
 }
 
+.pass {
+  font-size: 1.5rem;
+  width: 400px;
+  padding: 10px 5px;
+  position: relative;
+}
+.pass i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: rgb(74, 86, 74);
+}
 
+/* .bx{
+  font-size: 27px;
+  position: absolute;
+  transform: translateX(80px);
+   cursor:pointer;
+  color:rgb(74, 86, 74);
+ padding: 0.5rem;
+} */
 
 .form-register input[type="checkbox"] {
-  margin-top: 10px;
   width: auto;
   margin-left: 2rem;
 }
@@ -284,19 +334,15 @@ form.form-register {
 }
 
 .form-register .btn-register {
-  font-family:'nunito';
   width: auto;
   margin-left: 15%;
   margin-right: 15%;
+  padding: 8px;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
-  font-weight: bold;
-  display: grid;
-  position: relative;
-  border-radius: 8px;
-  color: #0f3f35;
-  font-size: 1.4rem;
-
+  font-weight: 500;
+  color: #0b2d26;
 }
 
 .form-register .btn-register:hover {
@@ -307,27 +353,19 @@ form.form-register {
     rgba(67, 149, 53, 0.8),
     rgba(9, 123, 53, 0.8)
   );
-  color: #d1e7e3;
 }
 
 .login-link {
-  display: flex ;
+  display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 1rem;
   text-align: center;
-  font-size: 0.9rem;
-  color: #eff4eb;
-  text-decoration: none;
+  font-size: 0.8rem;
 }
 
 .login-link a {
-  color: #0d6efd;
+  color:#0d6efd;
   text-decoration: underline;
-}
-
-.login-link a:hover {
-  text-decoration: underline;
-  color: #f3d914;
 }
 
 @media (max-width: 768px) {
