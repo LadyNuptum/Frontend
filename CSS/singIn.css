@@ -60,6 +60,10 @@
   color: #ffffff;
 }
 
+.form-login input[type="checkbox"] {
+  width: auto;
+  margin-left: 2rem;
+}
 
 .form-login input {
   width: 100%;
