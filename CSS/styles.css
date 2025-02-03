@@ -21,6 +21,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: 'nunito';
 }
 /* Header - Navegación */
 header {
@@ -241,12 +242,12 @@ main {
   margin-bottom: 15px;
 }
 
-h3 {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.5rem;
-  color: #f3d914;
+.summary-title {
+  font-family: 'nunito';
+  font-size: 1.8rem;
+  color: #0b2d26;
   margin-bottom: 10px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .role {
