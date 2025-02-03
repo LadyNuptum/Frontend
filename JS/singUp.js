@@ -158,11 +158,14 @@ document.addEventListener("DOMContentLoaded", () => {
       // Mostrar mensaje de éxito
       const messageContainer = document.querySelector("#success-message");
       btnSubmit.disabled = true;
+
+      form.reset();
+      inputs.forEach(input => clearError(input)); // Borra los estilos de error también
   
       // Redirigir a la página de inicio de sesión después de 3 segundos
       setTimeout(() => {
         window.location.href = "logIn.html"; // Redirige a logIn.html
-      }, 3000);
+      }, 300);
     }
   });
 

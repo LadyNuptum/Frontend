@@ -5,6 +5,10 @@
   margin-top: 20px;
 }
 
+.fa-solid, .fas {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
 .product-details {
   flex: 2;
 }
