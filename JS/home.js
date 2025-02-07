@@ -1,5 +1,4 @@
 
-
 // Funcionalidad de carousel de publicidad página home
 const images = [
     '/imagenes/products/Cebollas.jpg',
@@ -30,9 +29,7 @@ sliderMove.appendChild(box);
 
 
 
-
-  // Funcionalidad de carousel del banner página home
-
+// ========== Inicia  Funcionalidad para carousel Destacados ===========*//
 const slide = document.querySelector('.carousel-slide');
 const img = document.querySelectorAll('.carousel-slide img');
 
@@ -41,6 +38,7 @@ const nextBtn = document.querySelector('#next-btn');
 
 let imgActual = 0;
 const totalImg = img.length;
+let direccion = 1;
 
 function carouselPosition() {
       const desplazamiento = -imgActual * 100; 
@@ -48,7 +46,12 @@ function carouselPosition() {
 }
 
 function siguienteImg() {
-    imgActual = (imgActual + 1) % totalImg;
+    if(imgActual === totalImg-1){
+      direccion = -1;
+    }else if(imgActual === 0){
+direccion = 1;
+    }
+    imgActual= (imgActual+ direccion+totalImg)% totalImg;
     carouselPosition();
 }
 nextBtn.addEventListener('click', () => {
@@ -57,9 +60,9 @@ nextBtn.addEventListener('click', () => {
 });
 
 prevBtn.addEventListener('click', () => {
-    imgActual = (imgActual - 1 + totalImg) % totalImg; 
-    carouselPosition();
-    reiniciarCarousel();
+  direccion = -1;
+  siguienteImg(); 
+  reiniciarCarousel();
 });
 
 let autoSlide = setInterval(siguienteImg, 3000);
@@ -67,8 +70,9 @@ let autoSlide = setInterval(siguienteImg, 3000);
 const reiniciarCarousel = () => {
     clearInterval(autoSlide);
     autoSlide = setInterval(siguienteImg, 3000);
-}
+};
 
+// ==========  Termina Funcionalidad para carousel Destacados ===========*//
 
 
 
