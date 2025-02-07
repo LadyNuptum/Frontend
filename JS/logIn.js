@@ -1,39 +1,63 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
+  const navbar = document.querySelector("header");
+  const titleContainer = document.querySelector(".navbar-title");
+  const navbarToggler = document.querySelector(".navbar-toggler");
+
+  // Detectar el navbar colapsado
+  function isNavbarExpanded() {
+    return navbarToggler && navbarToggler.classList.contains("active");
+  }
+
+  // Manejar el scroll y el fondo del navbar
+  function handleScroll() {
+    if (window.scrollY > 5 || isNavbarExpanded()) {
+      navbar.classList.add("sticky-navbar");
+      titleContainer.classList.remove("d-none");
+      navbar.style.background = "rgba(11, 45, 38, 0.1)";
+      navbar.style.backdropFilter = "blur(10px)";
+    } else {
+      navbar.classList.remove("sticky-navbar");
+      titleContainer.classList.add("d-none");
+      navbar.style.background = "";
+      navbar.style.backdropFilter = "";
+    }
+  }
+
+  // Evento de scroll
+  window.addEventListener("scroll", handleScroll);
+
+  // Evento del toggler
+  if (navbarToggler) {
+    navbarToggler.addEventListener("click", function () {
+      this.classList.toggle("active"); // Agrega una clase para detectar si está expandido
+      handleScroll(); // Llamamos a handleScroll para forzar el cambio
+    });
+  }
+
+  // ------------------------------------
+  //         FORMULARIO LOGIN
+  // ------------------------------------
   const form = document.querySelector(".form-login");
   const btnSubmit = document.querySelector(".btn-login");
   const inputs = form.querySelectorAll("input:not([type='submit'])");
-  const passwordInput = document.getElementById("password");
-  const eyeIcon = document.getElementById("eye");
 
-  // Desactiva el botón de enviar inicialmente
-  btnSubmit.disabled = true;
 
-  // Patrones de validación
+  // Validaciones
   const patterns = {
     email: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
     password: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/,
   };
 
-  // Mensajes de error
-  const errorMessages = {
-    email: "Ingrese un correo electrónico válido.",
-    password:
-      "La contraseña debe tener al menos 6 caracteres, una letra y un número.",
-    empty: "Este campo no puede estar vacío.",
-    invalidCredentials: "Correo o contraseña incorrectos.",
-  };
-
   function showError(input, message) {
-    clearError(input);
-    const errorDiv = document.createElement("div");
-    errorDiv.className = "error-message";
-    errorDiv.style.color = "red";
-    errorDiv.style.fontSize = "12px";
-    errorDiv.style.marginTop = "5px";
-    errorDiv.textContent = message;
-    input.style.border = "2px solid red";
-    input.parentElement.appendChild(errorDiv);
-  }
+  clearError(input);
+  const errorDiv = document.createElement("div");
+  errorDiv.className = "error-message";
+  errorDiv.textContent = message;
+  errorDiv.style.color = "red"; // Agregar color rojo al mensaje
+  errorDiv.style.fontSize= "0.7rem ";
+  input.style.border = "2px solid red";
+  input.parentElement.appendChild(errorDiv);
+}
 
   function clearError(input) {
     const errorDiv = input.parentElement.querySelector(".error-message");
@@ -46,12 +70,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const value = input.value.trim();
 
     if (!value) {
-      showError(input, errorMessages.empty);
+      showError(input, "Este campo no puede estar vacío.");
       return false;
     }
 
     if (patterns[inputType] && !patterns[inputType].test(value)) {
-      showError(input, errorMessages[inputType]);
+      showError(input, inputType === "email" ? "Correo inválido." : "Contraseña débil.");
       return false;
     }
 
@@ -82,18 +106,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const user = existingUsers.find((user) => user.email === email);
 
     if (!user || (await hashPassword(password)) !== user.password) {
-      showError(
-        document.getElementById("email"),
-        errorMessages.invalidCredentials
-      );
-      showError(
-        document.getElementById("password"),
-        errorMessages.invalidCredentials
-      );
+      showError(document.getElementById("email"), "Correo o contraseña incorrectos.");
+      showError(document.getElementById("password"), "Correo o contraseña incorrectos.");
       return;
     }
 
-    // Simulación de inicio de sesión
     localStorage.setItem("loggedInUser", JSON.stringify(user));
     window.location.href = "../HTML/home.html";
   });
@@ -102,47 +119,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const encoder = new TextEncoder();
     const data = encoder.encode(password);
     const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    return hashArray.map((byte) => byte.toString(16).padStart(2, "0")).join("");
+    return Array.from(new Uint8Array(hashBuffer))
+      .map(byte => byte.toString(16).padStart(2, "0"))
+      .join("");
   }
 
- 
-//*  Funionalidad mostrar contraseña
+  // ------------------------------------
+  //         MOSTRAR/Ocultar CONTRASEÑA
+  // ------------------------------------
+  const passInputs = document.querySelectorAll('.pass');
+  const icons = document.querySelectorAll('.bx');
 
+  if (passInputs.length === icons.length) {
+    passInputs.forEach((input, index) => {
+      const icon = icons[index];
 
-const passInputs = document.querySelectorAll('.pass');
-const icons = document.querySelectorAll('.bx');
-
-
-if (passInputs.length === icons.length) {
-  
-  passInputs.forEach((input, index) => {
-    const icon = icons[index];
-
-    icon.addEventListener("click", e => {
-      if (input.type === "password") {
-        input.type = "text";
-        icon.classList.remove("bx-show-alt");
-        icon.classList.add("bx-hide");
-      } else {
-        input.type = "password";
-        icon.classList.add("bx-show-alt");
-        icon.classList.remove("bx-hide");
-      }
+      icon.addEventListener("click", () => {
+        const isPassword = input.type === "password";
+        input.type = isPassword ? "text" : "password";
+        icon.classList.toggle("bx-show-alt", !isPassword);
+        icon.classList.toggle("bx-hide", isPassword);
+      });
     });
-  });
-} else {
-  console.error("Número de inputs e iconos no coincide.");
-}
-
-
-  eyeIcon.addEventListener("click", () => {
-    if (passwordInput.type === "password") {
-      passwordInput.type = "text";
-      eyeIcon.innerHTML = '<i class="bx bx-hide"></i>';
-    } else {
-      passwordInput.type = "password";
-      eyeIcon.innerHTML = '<i class="bx bx-show-alt"></i>';
-    }
-  });
+  } else {
+    console.error("Número de inputs e iconos no coincide.");
+  }
 });
