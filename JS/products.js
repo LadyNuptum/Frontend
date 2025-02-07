@@ -532,7 +532,8 @@ function guardarCarrito() {
 function renderProductos() {
   const contenedorProductos = document.getElementById("products-container");
   contenedorProductos.innerHTML = "";
-
+/* poner titulo (href) y agrupo el div(por categoria) 
+no agrupe por categoria */
   productos.forEach((producto) => {
       const card = document.createElement("div");
       card.classList.add("product-card");
