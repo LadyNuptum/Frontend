@@ -1,17 +1,14 @@
-// Obtener el título de la página
 const pageTitle = document.title;
 
-// Insertar el título en el navbar
 const navbarTitle = document.getElementById("navbar-page-title");
 navbarTitle.textContent = pageTitle;
 
-// mostrar y ocultar el fondo sticky y el título
 window.onscroll = function () {
   
   const navbar = document.querySelector("header");
   const titleContainer = document.querySelector(".navbar-title");
 
-  if (window.scrollY > 10) {
+  if (window.scrollY > 100) {
     navbar.classList.add("sticky-navbar");
     titleContainer.classList.remove("d-none");
   } else {
