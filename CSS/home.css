@@ -193,7 +193,35 @@ button:hover {
 
 /* =========  publicaciones ========== */
 
+/* === Sección Nuestra huella === */
 
+.huella-img {
+  width: 85%;
+  max-width: 500px;
+  height: 20rem;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
+}
+
+
+.specials{
+  display: flex;
+}
+
+/* === Sección destacados === */
+.destacado-img {
+  width: 75%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
+}
 
 /*========= Inicia Estilos Sección Blogs ===========*/
 .blogs {
