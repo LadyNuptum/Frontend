@@ -18,7 +18,7 @@
   width: 100%;
   overflow: hidden;
   position: relative;
-  padding: 0.5rem;
+ 
 }
 
 .slider .move {
@@ -213,8 +213,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin-bottom: 1rem;
-}
+  }
 
 .card-blog .container-imgb {
   border-radius: 1.5rem;
@@ -343,9 +342,7 @@ button:hover {
     font-weight: 700;
   }
 
-  .card-category {
-    height: 7rem;
-  }
+ 
 
   .card-category p {
     font-size: 1.8rem;
@@ -360,8 +357,10 @@ button:hover {
   .container-blogs {
     overflow: hidden;
     grid-template-columns: repeat(2, 1fr);
-    height: 36rem;
-    gap: 2rem;
+       gap: 2rem;
+  }
+  .hidde-blog-3{
+    display: none;
   }
 }
 
@@ -377,7 +376,7 @@ button:hover {
   }
 
   .heading-1 {
-    font-size: 2.2rem;
+    font-size: 1.7rem;
   }
 
   .container-categories {
@@ -394,9 +393,7 @@ button:hover {
   .card-category span {
     font-size: 1rem;
   }
-  .heading-1 {
-    font-size: 1.5rem;
-  }
+  
 
   .card-blog .container-imgb,
   .content-blog {
@@ -411,8 +408,10 @@ button:hover {
   .container-blogs {
     overflow: hidden;
     grid-template-columns: 1fr;
-    height: 42rem;
-    gap: 6rem;
+   gap: 6rem;
+  }
+  .hidde-blog-2, .hidde-blog-3{
+    display: none;
   }
 
   .content-blog h3 {
