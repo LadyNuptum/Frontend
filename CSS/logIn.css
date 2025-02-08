@@ -1,0 +1,282 @@
+:root {
+  --color-primary: #0b2d26;
+  --color-secondary: #097b35;
+  --color-accent: #7dba36;
+  --color-background: #ffffff;
+  --color-highlight: #f3d914;
+  --color-text: #ffffff;
+}
+/*banner*/
+.banner-logIn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/imagenes/fondo-banner.png"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 7rem;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.banner-1-logIn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 59, 51, 0.8);
+  z-index: 1;
+}
+
+.navbar-logIn {
+  background: rgba(11, 45, 38, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+}
+
+
+/* Estilos para el texto "Inicio sesión" en el navbar */
+span.navbar-text {
+  font-family: 'Nunito', sans-serif; /* Usa la misma fuente que el resto de la página */
+  font-size: 1.9rem; /* Tamaño de fuente */
+  font-weight: 600; /* Grosor de la fuente */
+  color:#ffffff; /* Usa el color definido en :root */
+  margin-left: 3rem; /* Espacio entre el ícono y el texto */
+  margin-right: auto; /* Empuja los nav-item hacia la derecha */
+  display: flex;
+  align-items: center; /* Centra verticalmente el texto */
+}
+/* Estilos para formulario de inicio*/
+
+.info-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  z-index: 2;
+  position: relative;
+  text-align: center;
+  padding: 1.5rem;
+  gap: 1rem;
+}
+
+.info-login h1 {
+  font-family: 'nunito';
+  font-weight: 500;
+  font-size: 3rem;
+}
+
+.info-login p {
+  font-family: 'nunito';
+  font-size: 1.5rem;
+}
+
+.login-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 54%;
+  background-color: #d2d6d4;
+}
+
+/*contenedero del formulario*/
+
+.login-row {
+  position: relative;
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 55%;
+  max-width: 400px;
+  background-color:#0b2d26;
+  padding: 0.5rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+}
+
+.form-login h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 2.5rem;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.form-login input[type="checkbox"] {
+  width: auto;
+  margin-left: 2rem;
+}
+
+.form-login input {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* boton*/
+.form-login .btn-login {
+  background-color: #ffffff;
+  display: grid;
+  position: relative;
+  width: auto;
+  margin-left: 15%;
+  margin-right: 15%;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  color: #0f3f35;
+  font-size: 1.1rem;
+}
+
+.form-login .btn-login:hover {
+  background-image: linear-gradient(
+    to right,
+    rgba(243, 217, 20, 0.8),
+    rgba(125, 186, 54, 0.8),
+    rgba(67, 149, 53, 0.8),
+    rgba(9, 123, 53, 0.8)
+  );
+  color: #d1e7e3;
+}
+
+
+
+/*link-login*/
+
+.login-link {
+  display: flex ;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #eff4eb;
+  text-decoration: none;
+}
+
+.login-link a {
+  color: #0d6efd;
+  text-decoration: underline;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+  color: #f3d914;
+}
+
+
+
+/*  inicio*/
+.container-left-s {
+  width: 47%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  background-image: url("../imagenes/img-singin.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.5s ease;
+}
+
+.container-left-s::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 52, 0, 0.5);
+  z-index: 1;
+}
+
+.container-login {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80%;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#eyeIcon{
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: #666;
+  font-size: 1.5rem;
+}
+
+/* #success-message p {
+  font-family: "nunito";
+  color: #27d604;
+  font-size: 2rem;
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: underline 2px;
+  margin: 0 0;
+} */
+
+/* media querys*/
+
+@media (max-width: 768px) {
+  .container-login {
+    flex-direction: column;
+  }
+  .container-left-s {
+    display: none;
+  }
+
+  .container-left {
+    height: 25vh;
+  }
+
+  .info-login p {
+    font-size: 1rem;
+  }
+  
+  .form-login {
+    padding: 1rem;
+    width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-login {
+    flex-direction: column;
+  }
+  .container-left,
+  .login-content {
+    width: 100%;
+    height: 34rem
+  }
+ 
+  .info-login p {
+    font-size: 1rem;
+  }
+  .login-content {
+    padding: 1rem;
+  }
+  .form-logIn {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .login-group {
+    display: grid;
+  }
+}

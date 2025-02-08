@@ -22,6 +22,27 @@
   border: 2px solid #ddd;
   border-radius: 8px;
 }
+/*=============================================================================================================== */
+/* Ajuse de la imagen de fondo */
+.info-box {
+  background-image: url('/imagenes/campo.jpg');
+  background-size: cover; /* Para que cubra todo el contenedor */
+  background-position: center; /* Centra la imagen */
+  
+}
+/* Estilo del título */
+#tiltleInfoForm {
+  color: #ffff;
+}
+
+/* Estilo del párrafo */
+.info_form {
+  color: #ffff;
+  font-size: 17px; /* Tamaño del texto */
+  text-align: justify;
+}
+
+/*=============================================================================================================== */
 
 /* Caja del formulario */
 .form-box {
