@@ -1,10 +1,13 @@
 /* modificaciones Generales*/
-/* Se modifica el margin del footer eb esta página*/
-.footer-home{
-margin-top: 0 !important;
-} 
+/* Se modifica el margin del footer en esta página*/
+.footer-home {
+  margin-top: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-/* ======= Estilos carousel publicidad home =======*/
+/* ======= Estilos slaider infinito - publicidad home =======*/
 .slider-box {
   margin: 0;
   justify-content: center;
@@ -13,7 +16,7 @@ margin-top: 0 !important;
 }
 
 .slider {
- height: auto;
+  height: auto;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -130,10 +133,13 @@ margin-top: 0 !important;
   cursor: pointer;
 }
 
+.card-category a {
+  text-decoration: none;
+}
+
 .card-category span:hover {
   color: var(--color-accent);
 }
-
 
 /* ======= Estilos carousel destacados página home ======= */
 .carousel {
@@ -179,24 +185,25 @@ margin-top: 0 !important;
   z-index: 10;
 }
 
-#prev-btn {
+.prev-btn {
   left: 10px;
 }
 
-#next-btn {
+.next-btn {
   right: 10px;
 }
 
 button:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
-/* ======= Termina carousel destacados página home ======= */
+/* ======================== */
 
 
 /* =========  publicaciones ========== */
 
-/* === Sección Nuestra huella === */
 
+
+/* === Sección Nuestra huella === */
 .huella-img {
   width: 85%;
   max-width: 500px;
@@ -208,8 +215,7 @@ button:hover {
   margin: 2rem auto 3rem auto;
 }
 
-
-.specials{
+.specials {
   display: flex;
 }
 
@@ -243,7 +249,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  }
+}
 
 .card-blog .container-imgb {
   border-radius: 1.5rem;
@@ -295,7 +301,7 @@ button:hover {
 }
 
 .content-blog h3 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-bottom: 0.7rem;
   color: var(--color-primary);
   font-weight: 600;
@@ -311,8 +317,9 @@ button:hover {
 .content-blog p {
   margin-top: 0.7rem;
   font-size: 1rem;
-  color: #777;
-  font-family: 'Poppins', sans-serif;
+  color: #555;
+  text-align: justify;
+  font-family: "Poppins", sans-serif;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -327,21 +334,167 @@ button:hover {
 
 .btn-read-more {
   padding: 0.6rem 1.8rem;
-  background-color: var(--color-accent);
+  background-color: var(--color-primary);
   opacity: 90%;
   color: #fff;
   text-transform: uppercase;
   font-size: 0.8rem;
+  font-weight: 600;
   border-radius: 2rem;
   margin: 0.7rem 0 5rem;
   display: inline-block;
   cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  border: none;
 }
 
 .btn-read-more:hover {
-  background-color: var(--color-primary);
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
+/* ======= Estilo modal imagen blog ===== */
+
+.image-modal-blog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+
+.image-modal-content {
+  max-width: 30%;
+  max-height: 50%;
+}
+
+.image-modal-content img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
 }
 /*========= Termina  Sección Blogs ===========*/
+
+
+
+/* ========= Estilos Para Modal e iconos lateralesGenerales ========= */
+.sticky-icons, .middle-icons {
+  position: fixed;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.sticky-icons {
+  top: 30%;
+  max-height: 70vh;
+ }
+
+
+.middle-icons {
+  top: 50%;
+  transform: translateY(-50%);
+ 
+}
+
+
+.sticky-icon:hover, .sticky-icons div:hover {
+  transform: scale(1.1);
+}
+
+
+#whatsappIcon, #contactIcon {
+  font-size: 25px;
+  border-radius: 30%;
+}
+
+#whatsappIcon {
+  background: #25d366;
+  margin-top: 200px;
+ 
+ 
+}
+
+#contactIcon {
+  color: var(--color-primary);
+}
+
+/* 🔹 Contenedor Sticky */
+.sticky {
+  position: fixed;
+  bottom: 20px;
+  right: 90px;
+  width: 400px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+
+#offerIcon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 215, 0, 0.8); 
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  animation: offerBlink 4s infinite ease-in-out;
+  transition: all 0.3s ease-in-out;
+
+}
+
+#offerIcon span {
+  animation: hideText 4s infinite;
+  color: var(--color-primary);
+ }
+
+#stickyContainer {
+  position: fixed;
+  bottom: 20%;
+  right: 10px;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
 
 
 
@@ -358,14 +511,45 @@ button:hover {
   }
 }
 
+/* ======== animaciones blog  =========*/
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* ==== icono oferta cerrado  ===  */
+@keyframes offerBlink {
+  0%, 100% { transform: scale(1); }  
+  50% { transform: scale(1.2); }
+}
+
+@keyframes hideText {
+  0%, 60% { opacity: 1; } 
+  61%, 100% { opacity: 0; } 
+}
+
+
 
 /* ======= Responsive  → MEDIA QUERIES   ======= */
 
 @media (max-width: 768px) {
-  html {
-    font-size: 80%;
+  .card-blog .content-blog p {
+    font-size: 90%;
   }
-
   .heading-1 {
     font-size: 2rem;
     font-weight: 700;
@@ -384,19 +568,34 @@ button:hover {
   .container-blogs {
     overflow: hidden;
     grid-template-columns: repeat(2, 1fr);
-       gap: 2rem;
+    gap: 2rem;
   }
-  .hidde-blog-3{
+  .hidde-blog-3 {
     display: none;
+  }
+
+/*=== lateral publicidad ===*/
+  .sticky {
+    width: 80px;
+    height: 80px;
+    padding: 5px;
+    text-align: center;
+  }
+
+  .hidden-sticky {
+    display: none;
+  }
+
+  #offerIcon {
+    width: 50px;
+    height: 50px;
+    font-size: 12px;
+    margin-bottom: 20px;
   }
 }
 
 /*=========  Mobile ==========*/
 @media (max-width: 468px) {
-  html {
-    font-size: 90%;
-  }
-
   .carousel-button {
     width: 27px;
     height: 27px;
@@ -420,7 +619,6 @@ button:hover {
   .card-category span {
     font-size: 1rem;
   }
-  
 
   .card-blog .container-imgb,
   .content-blog {
@@ -435,9 +633,10 @@ button:hover {
   .container-blogs {
     overflow: hidden;
     grid-template-columns: 1fr;
-   gap: 6rem;
+    gap: 6rem;
   }
-  .hidde-blog-2, .hidde-blog-3{
+  .hidde-blog-2,
+  .hidde-blog-3 {
     display: none;
   }
 
@@ -453,3 +652,4 @@ button:hover {
     font-size: 0.7rem;
   }
 }
+

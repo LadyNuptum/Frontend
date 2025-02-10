@@ -1,0 +1,27 @@
+/* ===== estilos contenido blogs ====*/
+
+.content-blg{
+    width: 90%;
+    margin: 30px auto 30px;
+    border: 1px solid red;
+}
+
+.content-blg .main-content-blg{
+width: 70%;
+float: left;
+border: 1px solid blue;
+}
+
+.content-blg .sidebar{
+    width: 30%;
+    float: left;
+    border: 1px dashed green;
+    height: 300px;
+
+}
+
+.clearfix::after{
+    content: '';
+   display: block;
+   clear: both; 
+}

@@ -282,14 +282,19 @@ main {
 footer {
   background-color: #0b2d26;
   color: white;
-  padding: 1rem 0 0rem 0;
+  padding: 1rem 5rem 0rem 5rem;
   text-align: center;
   margin-top:2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .social-links {
-  margin: 1.5rem 0 1.5rem 0;
-}
+  display: flex;
+  justify-content:center;
+ }
 
 .contact-info p a {
   text-decoration: underline;
@@ -307,10 +312,8 @@ footer {
 .contact\&socialContainer {
   max-width: 1200px;
   margin-top: 5px;
-  padding: 0 0.5rem;
+ 
 }
-
-
 
 .social-link {
   color: white;
@@ -339,6 +342,7 @@ footer {
   .team-card .card-img-top {
     height: 200px;
   }
+  
 }
 
 @media (max-width: 768px) {
@@ -357,10 +361,24 @@ footer {
   .descriptionBanner {
     font-size: 1.2rem;
   }
+  
+  
 }
 
 @media (max-width: 470px) {
   .title {
     font-size: 1.8rem;
   }
+  
+  footer {
+   padding: 1rem 1rem 0rem 1rem;
+  
+  }
+
+ .social-link {
+   padding: 0.4rem 0.4rem;
+  margin: 0.5rem;
+  flex-wrap: wrap;
+}
+  
 }

@@ -19,6 +19,7 @@
   height: 7rem;
   position: relative;
   margin-bottom: 2rem;
+  
 }
 
 .banner-1-logIn {
@@ -40,14 +41,14 @@
 
 /* Estilos para el texto "Inicio sesión" en el navbar */
 span.navbar-text {
-  font-family: 'Nunito', sans-serif; /* Usa la misma fuente que el resto de la página */
-  font-size: 1.9rem; /* Tamaño de fuente */
-  font-weight: 600; /* Grosor de la fuente */
-  color:#ffffff; /* Usa el color definido en :root */
-  margin-left: 3rem; /* Espacio entre el ícono y el texto */
-  margin-right: auto; /* Empuja los nav-item hacia la derecha */
+  font-family: 'Nunito', sans-serif; 
+  font-size: 1.9rem;
+  font-weight: 600; 
+  color:#ffffff; 
+  margin-left: 3rem; 
+  margin-right: auto; 
   display: flex;
-  align-items: center; /* Centra verticalmente el texto */
+  align-items: center; 
 }
 /* Estilos para formulario de inicio*/
 
@@ -82,8 +83,31 @@ span.navbar-text {
   align-items: center;
   height: 100vh;
   width: 54%;
-  background-color: #d2d6d4;
+  position: relative;
+  border-radius: 0px 15px 15px 0px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
+/*==== Botón regresar a Inicio ========*/
+#home-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--color-primary);
+  transition: color 0.3s ease;
+  z-index: 10; 
+}
+
+#home-button:hover {
+  color: var(--color-accent);
+}
+/*=================*/
+
 
 /*contenedero del formulario*/
 
@@ -184,6 +208,7 @@ span.navbar-text {
   background-position: center;
   background-repeat: no-repeat;
   transition: all 0.5s ease;
+  border-radius: 15px 0px 0px 15px;
 }
 
 .container-left-s::before {
@@ -195,6 +220,7 @@ span.navbar-text {
   height: 100%;
   background-color: rgba(0, 52, 0, 0.5);
   z-index: 1;
+  border-radius: 15px 0px 0px 15px;
 }
 
 .container-login {
@@ -205,6 +231,8 @@ span.navbar-text {
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
+  border-radius: 15px 0px 0px 15px;
+ 
 }
 
 #eyeIcon{

@@ -546,6 +546,7 @@ function renderProductos() {
     for (const categoria in productosPorCategoria) {
         const tituloCategoria = document.createElement("h2");
         tituloCategoria.textContent = categoria.toUpperCase();
+        tituloCategoria.id=`categoria-${categoria.toLowerCase()}`;
         contenedorProductos.appendChild(tituloCategoria);
 
         const contenedorCategoria = document.createElement("div");
