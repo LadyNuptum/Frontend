@@ -155,3 +155,4 @@ Object.keys(formInputs).forEach((inputName) => {
     clearError(input);
   });
 });
+

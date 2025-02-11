@@ -515,6 +515,7 @@ let productos = [
     }
 ];
 
+
 let carrito = [];
 
 // Cargar el carrito desde localStorage
@@ -611,35 +612,6 @@ function mostrarModalProductoExistente(nombreProducto) {
     const modalBody = document.querySelector("#addedToCartModal .modal-body");
     modalBody.textContent = `El producto "${nombreProducto}" ya estaba en el carrito, añadiendo 1 unidad.`;
     modal.show();
-}
-
-function toggleSidebar() {
-    const sidebar = document.getElementById("cart-sidebar");
-    sidebar.classList.toggle("open");
-}
-
-// Función para actualizar la sidebar
-function actualizarSidebar() {
-    const sidebarContent = document.getElementById("sidebar-content");
-    sidebarContent.innerHTML = "";
-
-    if (carrito.length === 0) {
-        sidebarContent.innerHTML = "<p>Tu carrito está vacío.</p>";
-        return;
-    }
-
-    carrito.forEach((producto, index) => {
-        const item = document.createElement("div");
-        item.classList.add("cart-item");
-        item.innerHTML = `
-          <div class="card-sidebar">
-            <h4 >${producto.name}</h4>
-            <p>Precio: $${formatearPrecio(producto.price)}</p>
-            <button class="btn btn-danger" onclick="eliminarDelCarrito(${index})">Eliminar</button>
-          </div>
-        `;
-        sidebarContent.appendChild(item);
-    });
 }
 
 // Cargar el carrito al cargar la página
