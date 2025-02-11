@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Validaciones
   const patterns = {
     email: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
-    password: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/,
+    
   };
 
   function showError(input, message) {
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const errorDiv = document.createElement("div");
   errorDiv.className = "error-message";
   errorDiv.textContent = message;
-  errorDiv.style.color = "red"; // Agregar color rojo al mensaje
+  errorDiv.style.color = "red"; 
   errorDiv.style.fontSize= "0.7rem ";
   input.style.border = "2px solid red";
   input.parentElement.appendChild(errorDiv);
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (patterns[inputType] && !patterns[inputType].test(value)) {
-      showError(input, inputType === "email" ? "Correo inválido." : "Contraseña débil.");
+      showError(input, inputType === "email" ? "Correo inválido." : "");
       return false;
     }
 
@@ -146,7 +146,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
 //== funcion boton regresar ======
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -154,3 +153,4 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = "../HTML/home.html"; 
   });
 });
+

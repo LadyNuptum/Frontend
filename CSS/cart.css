@@ -1,3 +1,57 @@
+:root {
+  --color-primary: #0b2d26;
+  --color-secondary: #097b35;
+  --color-accent: #7dba36;
+  --color-background: #ffffff;
+  --color-highlight: #f3d914;
+  --color-text: #ffffff;
+}
+/*banner*/
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/imagenes/fondo-banner.png"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 7rem;
+  position: relative;
+  margin-bottom: 2rem;
+  
+}
+
+.banner-1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 59, 51, 0.8);
+  z-index: 1;
+}
+
+.navbar-logIn {
+  background: rgba(11, 45, 38, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+}
+
+
+/* Estilos para el texto "Inicio sesión" en el navbar */
+span.navbar-text {
+  font-family: 'Nunito', sans-serif; 
+  font-size: 1.9rem;
+  font-weight: 600; 
+  color:#ffffff; 
+  margin-left: 3.5rem; 
+  margin-right: auto; 
+  /* display: block;
+  margin: 0 auto;  */
+}
+
+
 /* Layout del carrito */
 .cart-layout {
   display: flex;
@@ -116,11 +170,15 @@ h3.summary-title {
   background-color: #218838;
 }
 
-img.empty-cart-img{
-  width: 50%;
-  display: block;
 
+.img-carrito{
+display: flex;
+justify-content: center;
 }
+img.empty-cart-img{
+  width: 50%; 
+ }
+
 h2.empty-cart {
   font-family: 'nunito';
   font-weight: 100;
@@ -178,6 +236,17 @@ h2.empty-cart {
 
 @media (max-width: 768px) {
 
+  span.navbar-text {
+    font-family: 'Nunito', sans-serif; 
+    font-size: 1.9rem;
+    font-weight: 600; 
+    color:#ffffff; 
+    margin-left: 3.5; 
+    margin-right: auto; 
+    /* display: block;
+    margin: 0 auto;  */
+  }
+
   .container-features {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.8rem;
@@ -203,6 +272,18 @@ h2.empty-cart {
 
 
 @media (max-width: 567px) {
+
+  
+  span.navbar-text {
+    font-family: 'Nunito', sans-serif; 
+    font-size: 1.9rem;
+    font-weight: 600; 
+    color:#ffffff; 
+    margin-left: 3.5; 
+    margin-right: auto; 
+    /* display: block;
+    margin: 0 auto;  */
+  }
   img.empty-cart-img{
     width: 80%;
   }

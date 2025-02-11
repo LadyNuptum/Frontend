@@ -21,8 +21,10 @@ function renderCarrito() {
 
   if (carrito.length === 0) {
     contenedorProductos.innerHTML = `
-      <h2 class="empty-cart"> El Carrito está vacío</h2>
-      <img src="../imagenes/carro-vacio.png" alt="Carrito vacío" class="empty-cart-img">
+      <h2 class="empty-cart"> El carrito está vacío</h2>
+      <div class="img-carrito">   
+        <img src="../imagenes/carro-vacio.png" alt="Carrito vacío" class="empty-cart-img">
+      </div>
     `;
     return;
   }

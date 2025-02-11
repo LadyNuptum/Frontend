@@ -1,4 +1,23 @@
-// Funcionalidad de carousel de publicidad página home
+//==== Función para optimizar carga de imágedes ====
+document.addEventListener("DOMContentLoaded", function () {
+  const images = document.querySelectorAll("img[data-src]");
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.srcset = img.dataset.srcset || "";
+        img.removeAttribute("data-src");
+        observer.unobserve(img);
+      }
+    });
+  });
+
+  images.forEach((img) => observer.observe(img));
+});
+
+// Funció  carousel de publicidad página home
 const images = [
   "/imagenes/products/Cebollas.jpg",
   "/imagenes/products/Calabacion.jpg",
@@ -100,7 +119,7 @@ function amplifyImg() {
     modal.classList.add("image-modal-blog");
     modal.innerHTML = `
             <div class="image-modal-content">
-              <a href="../HTML/blog.html"> <img src="${src}" alt="Imagen ampliada"> </a>
+              <a href="https://www.agropinos.com/blog/agricultura-y-cuidado-medioambiental"> <img src="${src}" alt="Imagen ampliada"> </a>
             </div>
         `;
 
@@ -126,7 +145,7 @@ function amplifyImg() {
 }
 //======================================================
 
-// ====== Funciones par anavegación de pagina Inicio=====
+// ====== Funciones para navegación de pagina Inicio=====
 document.addEventListener("DOMContentLoaded", () => {
   // ======  Navegación del Carrusel =======
   const carouselImages = document.querySelectorAll(".carousel-slide img");
@@ -162,28 +181,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//======= Función Para div lateral de publicidad======
-const sticky = (() => {
-  const stickyContainer = document.getElementById("stickyContainer");
-  const offerIcon = document.getElementById("offerIcon");
-
-  if (!stickyContainer || !offerIcon) {
-    console.error("❌ Error: Página no Encontrada");
-    return;
-  }
-
-  const btnSticky = (isOpen) => {
-    stickyContainer.style.display = isOpen ? "block" : "none";
-    offerIcon.style.display = isOpen ? "none" : "flex";
-  };
-
-  return {
-    close: () => btnSticky(false),
-    open: () => btnSticky(true),
-  };
-})();
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelector(".close-btn")?.addEventListener("click", sticky.close);
-  document.getElementById("offerIcon")?.addEventListener("click", sticky.open);
-});
 //=========================================================
+
+
+
+
