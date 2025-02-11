@@ -7,7 +7,7 @@
   --color-text: #ffffff;
 }
 /*banner*/
-.banner-logIn {
+.banner {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +22,7 @@
   
 }
 
-.banner-1-logIn {
+.banner-1{
   position: absolute;
   top: 0;
   left: 0;

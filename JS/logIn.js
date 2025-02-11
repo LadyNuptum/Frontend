@@ -146,7 +146,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
 //== funcion boton regresar ======
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -154,3 +153,4 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = "../HTML/home.html"; 
   });
 });
+
