@@ -519,13 +519,13 @@ let carrito = [];
 
 // Cargar el carrito desde localStorage
 function cargarCarrito() {
-    const carritoGuardado = localStorage.getItem("carrito");
-    carrito = carritoGuardado ? JSON.parse(carritoGuardado) : [];
+  const carritoGuardado = localStorage.getItem("carrito");
+  carrito = carritoGuardado ? JSON.parse(carritoGuardado) : [];
 }
 
 // Guardar el carrito en localStorage
 function guardarCarrito() {
-    localStorage.setItem("carrito", JSON.stringify(carrito));
+  localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
 // Renderizar los productos
@@ -592,18 +592,18 @@ function agregarAlCarrito(productId) {
 
 // Formatear precios
 function formatearPrecio(precio) {
-    return precio.toLocaleString("es-CO", {
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0,
-    });
+  return precio.toLocaleString("es-CO", {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+  });
 }
 
 // Mostrar el modal
 function mostrarModalAgregado(nombreProducto) {
-    const modal = new bootstrap.Modal(document.getElementById("addedToCartModal"));
-    const modalBody = document.querySelector("#addedToCartModal .modal-body");
-    modalBody.textContent = `Has agregado "${nombreProducto}" al carrito.`;
-    modal.show();
+  const modal = new bootstrap.Modal(document.getElementById("addedToCartModal"));
+  const modalBody = document.querySelector("#addedToCartModal .modal-body");
+  modalBody.textContent = `Has agregado "${nombreProducto}" al carrito.`;
+  modal.show();
 }
 
 // Mostrar el modal

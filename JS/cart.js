@@ -4,6 +4,12 @@ let carrito = [];
 function cargarCarrito() {
   const carritoGuardado = localStorage.getItem("carrito");
   carrito = carritoGuardado ? JSON.parse(carritoGuardado) : [];
+
+  carrito = carrito.map((producto) => ({
+    ...producto,
+    quantity: producto.quantity || 1,
+  }));
+
   renderCarrito();
   renderResumenCompra();
 }
@@ -14,7 +20,10 @@ function renderCarrito() {
   contenedorProductos.innerHTML = "";
 
   if (carrito.length === 0) {
-    contenedorProductos.innerHTML = "<p>El carrito está vacío.</p>";
+    contenedorProductos.innerHTML = `
+      <h2 class="empty-cart"> El Carrito está vacío</h2>
+      <img src="../imagenes/carro-vacio.png" alt="Carrito vacío" class="empty-cart-img">
+    `;
     return;
   }
 
