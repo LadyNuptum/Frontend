@@ -10,13 +10,14 @@
 }
 /*=======  Derecha ====*/
 .contact-container {
-  max-height: 70vh;
+  max-height: 70%;
  width: 50%;
-  margin: 40px auto;
-  padding: 20px;
+  margin: 150px auto;
+  padding: 50px;
   border: 2px solid #ddd;
-  border-radius: 10px;
+  border-radius: 2px;
   background-color: #0b2d26;
+  /*clip-path: inset(90px 0); */
   
   }
   /*=======  Deracha ====*/
@@ -46,7 +47,7 @@
   background-position: center; 
   background-repeat: no-repeat; 
   transition: all 0.5s ease;
-  border-radius: 0px 15px  15px 0px;
+  
   
   
 }
@@ -152,34 +153,3 @@
   transform: translateY(-3px);
 }
 
-/* Responsive para pantallas pequeñas */
-@media (max-width: 768px) {
-  .contact-content {
-    flex-direction: column;
-  }
-
-  .contact-container {
-    width: 80%;
-  }
-
-  /* Ocultar el .info-box (y la imagen dentro) */
-  .info-box {
-    display: none;
-  }
-
-  .form-row {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .form-group.half {
-    width: 100%;
-  }
-}
-
-@media (max-width: 468px) {
-  
-  .contact-container {
-    width: 100%;
-  }
-}
