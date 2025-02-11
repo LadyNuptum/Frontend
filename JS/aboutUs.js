@@ -8,7 +8,7 @@ window.onscroll = function () {
   const navbar = document.querySelector("header");
   const titleContainer = document.querySelector(".navbar-title");
 
-  if (window.scrollY > 10) {
+  if (window.scrollY > 100) {
     navbar.classList.add("sticky-navbar");
     titleContainer.classList.remove("d-none");
   } else {

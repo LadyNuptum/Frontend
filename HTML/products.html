@@ -7,22 +7,21 @@
     <link
       rel="shortcut icon"
       href="../imagenes/agroapp_logo-01.png"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="../CSS/products.css" />
+      type="image/x-icon" />
     <link rel="stylesheet" href="../CSS/styles.css" />
+    <link rel="stylesheet" href="../CSS/products.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg">
+      <!-- Contenedor navbar -->
+      <nav class="navbar navbar-expand-lg" >
         <div class="container">
           <a class="navbar-icon" href="../HTML/aboutUs.html">
             <img src="../imagenes/agroapp_logo-01.png" alt="AgroApp_Logo" />
@@ -42,7 +41,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#">Inicio</a>
+                <a class="nav-link" href="../HTML/home.html">Inicio</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../HTML/aboutUs.html"
@@ -53,7 +52,7 @@
                 <a class="nav-link" href="../HTML/products.html">Productos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Ingresar</a>
+                <a class="nav-link" href="../HTML/logIn.html">Ingresar</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../HTML/contact-form.html"
@@ -61,8 +60,8 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <i class="bi bi-cart"></i>
+                <a class="nav-link" href="../HTML/cart.html">
+                  <i class="fa-solid fa-cart-shopping"></i>
                 </a>
               </li>
             </ul>
@@ -76,14 +75,13 @@
       <div class="banner-1">
         <div class="info">
           <h1 class="title center">Productos</h1>
-          <p class="descriptionBanner s-center"></p>
         </div>
       </div>
     </div>
     <!-- Sección de productos -->
-    <main>
+    <article id="products-main">
       <div id="products-container"></div>
-    </main>
+    </article>
     <!-- Footer -->
     <footer id="contacto">
       <div class="contact&social">
@@ -111,8 +109,7 @@
       id="addedToCartModal"
       tabindex="2"
       aria-labelledby="addedToCartModalLabel"
-      aria-hidden="true"
-    >
+      aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
@@ -123,19 +120,23 @@
               type="button"
               class="btn-close"
               data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+              aria-label="Close"></button>
           </div>
-          <div class="modal-body"> El producto ha sido agregado al carrito.</div>
+          <div class="modal-body">El producto ha sido agregado al carrito.</div>
           <div class="modal-footer">
             <button
               type="button"
               class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cerrar
+              data-bs-dismiss="modal">
+              Aceptar
             </button>
-            <button type="button" class="btn btn-primary">Ver carrito</button>
+            <button
+              id="go-to-cart-modal"
+              onclick="window.location.href='cart.html'"
+              type="button"
+              class="btn btn-primary">
+              Ver carrito
+            </button>
           </div>
         </div>
       </div>

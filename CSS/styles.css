@@ -7,6 +7,13 @@
   --color-text: #ffffff;
 }
 
+/* Estilo de textos */
+.about-text {
+  text-align: justify;
+}
+
+
+
 /* Estilos generales */
 body {
   margin: 0;
@@ -14,10 +21,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: 'nunito';
 }
-
 /* Header - Navegación */
-
 header {
   position: fixed;
   top: 0;
@@ -32,19 +38,22 @@ header {
   transition: background 0.5s ease, backdrop-filter 0.5s ease;
 }
 
+
+
 .navbar-title {
+  
   font-family: "nunito";
   font-size: 1.5rem; 
   color: var(--color-text);
-  margin-left: 1.5rem;
+  margin-right: 2.5rem;
   font-weight: bold;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .sticky-navbar .navbar-title {
-  display: block;
-  opacity: 1;
+  
+  opacity: 1; 
 }
 
 .navbar {
@@ -62,6 +71,7 @@ header {
 
 .navbar-icon img {
   width: 5rem;
+  margin-right: 1rem;
 }
 
 .nav-link {
@@ -75,7 +85,7 @@ header {
   color: var(--color-secondary)!important;
 }
 
-.banner {
+.banner{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,7 +94,7 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 20rem;
+  height: 22rem;
   position: relative;
 }
 
@@ -232,12 +242,12 @@ main {
   margin-bottom: 15px;
 }
 
-h3 {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.5rem;
-  color: #f3d914;
+.summary-title {
+  font-family: 'nunito';
+  font-size: 1.8rem;
+  color: #0b2d26;
   margin-bottom: 10px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .role {
@@ -272,34 +282,47 @@ h3 {
 footer {
   background-color: #0b2d26;
   color: white;
-  padding: 2rem 0;
+  padding: 1rem 0 0rem 0;
   text-align: center;
+  margin-top:2rem;
+}
+
+.social-links {
+  margin: 1.5rem 0 1.5rem 0;
 }
 
 .contact-info p a {
   text-decoration: underline;
   color: #f3d914;
+  margin: 1rem 0 0.5rem 0;
 }
+
+.contact-info {
+  text-decoration: underline;
+  margin: 1rem ;
+  text-decoration: none;
+}
+
 
 .contact\&socialContainer {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+  margin-top: 5px;
+  padding: 0 0.5rem;
 }
 
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1rem 0;
-}
+
 
 .social-link {
   color: white;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.5rem;
   border: 1px solid white;
   border-radius: 4px;
+  margin: 1rem;
+}
+
+.contact\&socialContainer h2{
+  margin-bottom: 2rem;
 }
 
 /* Responsividad */
@@ -308,18 +331,9 @@ footer {
     margin: 0.5rem;
   }
 
-  .story-container {
-    flex-direction: column;
-  }
-
   .image-container,
   .text-container {
     max-width: 100%;
-  }
-
-  .story-image {
-    max-width: 100%;
-    height: auto;
   }
 
   .team-card .card-img-top {
@@ -334,10 +348,6 @@ footer {
 
   .info {
     padding: 3.5rem 1rem 4rem 1rem;
-  }
-
-  .banner {
-    height: 20rem;
   }
 
   .title {
