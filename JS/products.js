@@ -5,7 +5,7 @@ let productos = [
         description:
             "Leche fresca pasteurizada de vacas seleccionadas, rica en calcio y proteínas",
         image: "/imagenes/products/Leche_de_vaca.jpg",
-        category: "lacteos",
+        category: "lácteos",
         type: "Producto básico",
         price: 10000,
         measure: "litro",
@@ -16,7 +16,7 @@ let productos = [
         description:
             "Leche de cabra natural, más digestiva que la leche de vaca y con alto valor nutricional",
         image: "/imagenes/products/Leche_de_cabra.jpg",
-        category: "lacteos",
+        category: "lácteos",
         type: "Producto especializado",
         price: 15000,
         measure: "litro",
@@ -27,7 +27,7 @@ let productos = [
         description:
             "Leche de oveja pura, ideal para elaboración de quesos y con mayor contenido graso",
         image: "/imagenes/products/Leche_de_oveja.jpg",
-        category: "lacteos",
+        category: "lácteos",
         type: "Producto especializado",
         price: 16000,
         measure: "litro",
@@ -38,7 +38,7 @@ let productos = [
         description:
             "Yogur tradicional sin azúcares añadidos, elaborado mediante fermentación láctica natural",
         image: "/imagenes/products/Yogur_natural.jpg",
-        category: "lacteos",
+        category: "lácteos",
         type: "Producto básico",
         price: 7200,
         measure: "litro",
@@ -49,7 +49,7 @@ let productos = [
         description:
             "Yogur cremoso de estilo griego, con alto contenido en proteínas y textura extra suave",
         image: "/imagenes/products/Yogur_griego.jpg",
-        category: "lacteos",
+        category: "lácteos",
         type: "Producto especializado",
         price: 10000,
         measure: "litro",
@@ -60,7 +60,7 @@ let productos = [
         description:
             "Yogur con trozos de frutas naturales seleccionadas y preparado de frutas",
         image: "/imagenes/products/Yogur_de_frutas.jpg",
-        category: "lacteos",
+        category: "lácteos",
         type: "Producto preparado",
         price: 8000,
         measure: "litro",
@@ -71,7 +71,7 @@ let productos = [
         description:
             "Queso suave y ligero sin madurar, ideal para ensaladas y desayunos",
         image: "/imagenes/products/Queso_fresco.jpg",
-        category: "lacteos",
+        category: "lácteos",
         type: "Producto básico",
         price: 14000,
         measure: "libra",
@@ -82,7 +82,7 @@ let productos = [
         description:
             "Queso madurado durante varios meses, con sabor intenso y textura firme",
         image: "/imagenes/products/Queso_curado.jpg",
-        category: "lacteos",
+        category: "lácteos",
         type: "Producto madurado",
         price: 24000,
         measure: "libra",
@@ -93,7 +93,7 @@ let productos = [
         description:
             "Queso elaborado con leche de cabra, de sabor característico y textura cremosa",
         image: "/imagenes/products/Queso_de_cabra.jpg",
-        category: "lacteos",
+        category: "lácteos",
         type: "Producto especializado",
         price: 22000,
         measure: "libra",
@@ -512,7 +512,7 @@ let productos = [
         category: "Granos",
         price: 5000,
         measure: "1 kg",
-    },
+    }
 ];
 
 let carrito = [];
@@ -530,25 +530,46 @@ function guardarCarrito() {
 
 // Renderizar los productos
 function renderProductos() {
-  const contenedorProductos = document.getElementById("products-container");
-  contenedorProductos.innerHTML = "";
-/* poner titulo (href) y agrupo el div(por categoria) 
-no agrupe por categoria */
-  productos.forEach((producto) => {
-      const card = document.createElement("div");
-      card.classList.add("product-card");
-      card.innerHTML = `
-    <img src="${producto.image}" alt="${producto.name}">
-    <h3>${producto.name}</h3>
-    <p class="description">${producto.description}</p>
-    <div class="info-container">
-        <p class="cant">${producto.measure}</p>
-        <p class="price">Precio: $${formatearPrecio(producto.price)}</p>
-    </div>
-    <button class="add-to-cart" onclick="agregarAlCarrito(${producto.id})">🛒 Agregar</button>
-  `;
-      contenedorProductos.appendChild(card);
-  });
+    const contenedorProductos = document.getElementById("products-container");
+    contenedorProductos.innerHTML = "";
+
+    // Agrupar productos por categoría
+    const productosPorCategoria = {};
+    productos.forEach(producto => {
+        if (!productosPorCategoria[producto.category]) {
+            productosPorCategoria[producto.category] = [];
+        }
+        productosPorCategoria[producto.category].push(producto);
+    });
+
+    // Renderizar productos por categoría
+    for (const categoria in productosPorCategoria) {
+        const tituloCategoria = document.createElement("h2");
+        tituloCategoria.textContent = categoria.toUpperCase();
+        tituloCategoria.id=`categoria-${categoria.toLowerCase()}`;
+        contenedorProductos.appendChild(tituloCategoria);
+
+        const contenedorCategoria = document.createElement("div");
+        
+        // Renderizar todos los productos de cada categoría
+        productosPorCategoria[categoria].forEach(producto => {
+            const card = document.createElement("div");
+            card.classList.add("product-card");
+            card.innerHTML = `
+                <img src="${producto.image}" alt="${producto.name}">
+                <h3>${producto.name}</h3>
+                <p class="description">${producto.description}</p>
+                <div class="info-container">
+                    <p class="cant">${producto.measure}</p>
+                    <p class="price">Precio: $${formatearPrecio(producto.price)}</p>
+                </div>
+                <button class="add-to-cart" onclick="agregarAlCarrito(${producto.id})">🛒 Agregar</button>
+            `;
+            contenedorCategoria.appendChild(card);
+        });
+
+        contenedorProductos.appendChild(contenedorCategoria);
+    }
 }
 
 // Agregar un producto al carrito
