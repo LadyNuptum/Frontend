@@ -173,6 +173,7 @@ h3.summary-title {
 img.empty-cart-img{
   width: 50%;
   display: block;
+  align-items: center;
 
 }
 h2.empty-cart {
