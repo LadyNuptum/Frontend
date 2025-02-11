@@ -5,6 +5,8 @@
   display: flex;
   width: 100%;
   gap: 3rem;
+  border-radius: 15px;
+  border-radius: 0px 15px  15px 0px;
 }
 /*=======  Derecha ====*/
 .contact-container {
@@ -42,6 +44,7 @@
   background-position: center; 
   background-repeat: no-repeat; 
   transition: all 0.5s ease;
+  border-radius: 15px 0px  0px 15px;
 }
 /*============================*/
 /* Caja del formulario */

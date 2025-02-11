@@ -147,10 +147,3 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-//== funcion boton regresar ======
-
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("home-button").addEventListener("click", function () {
-      window.location.href = "../HTML/home.html"; 
-  });
-});
