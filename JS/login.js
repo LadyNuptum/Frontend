@@ -145,3 +145,12 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error("Número de inputs e iconos no coincide.");
   }
 });
+
+
+//== funcion boton regresar ======
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("home-button").addEventListener("click", function () {
+      window.location.href = "../HTML/home.html"; 
+  });
+});

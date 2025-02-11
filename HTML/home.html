@@ -61,13 +61,49 @@
   <div class="banner">
     <div class="banner-1">
       <div class="info">
-        <h1 class="title center">Inicio</h1>
+        <h1 class="title center">AgroApp</h1>
         <p class="descriptionBanner s-center"></p>
       </div>
     </div>
   </div>
 
- 
+  <!--=== Lateral emergente de publicidad  ===-->
+  <div class="sticky" id="stickyContainer">
+    <button class="close-btn">✖</button>
+    <div class="carousel hidden-sticky">
+      <button class="carousel-button prev-btn">&lt;</button>
+      <div class="carousel-container hidden-sticky">
+        <div class="carousel-slide">
+          <img src="/imagenes/Home/publicidad1.jpg" alt="Historia-agroApp" class="products-home">
+          <img src="/imagenes/Home/publicidad4.jpg" alt="Productos-agroApp" class="products-home">
+          <img src="/imagenes/Home/publicdad5.jpg" alt="Ofertas-agroApp" class="products-home">
+          <img src="/imagenes/Home/publicidad9.jpg" alt="Productores-agroApp" class="products-home">
+          <img src="/imagenes/Home/publicidad7.jpg" alt="Productos-destacados" class="products-home">
+        </div>
+      </div>
+      <button class="carousel-button next-btn">&gt;</button>
+    </div>
+  </div>
+  <!--=== Icono flotante Ofertas ===-->
+  <div class="sticky-icons">
+    <div id="offerIcon">
+      <i class="fa-solid fa-fire"> <span>Ofertas</span></i>
+    </div>
+  </div>
+  <!--=== Iconos (wathsApp y contacto) ===-->
+  <div class="middle-icons">
+    <div id="whatsappIcon">
+      <a href="https://wa.me/3135822572" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+    </div>
+    <div id="emailIcon">
+      <a href="/HTML/contact-form.html">
+        <i class="fa-regular fa-comment-dots"></i>
+      </a>
+    </div>
+  </div>
+  <!--=== Termina lateral publicidad ===-->
 
 
   <main>
@@ -77,44 +113,56 @@
       <h1 class="heading-1">Categorías</h1>
       <div class="container-categories">
         <div class="card-category category-lacteos">
-          <p>Lácteos</p> <span>Ver más</span>
+          <p>Lácteos</p>
+          <a href="../HTML/products.html#categoria-lácteos">
+            <span>Ver más</span></a>
         </div>
         <div class="card-category category-hortalizas">
-          <p>Hortalizas</p> <span>Ver más</span>
+          <p>Hortalizas</p>
+          <a href="../HTML/products.html#categoria-hortalizas">
+            <span>Ver más</span></a>
         </div>
         <div class="card-category category-carnes">
-          <p>Carnes</p> <span>Ver más</span>
+          <p>Carnes</p>
+          <a href="../HTML/products.html#categoria-carnes">
+            <span>Ver más</span></a>
         </div>
         <div class="card-category category-frutas">
-          <p>Frutas</p> <span>Ver más</span>
+          <p>Frutas</p>
+          <a href="../HTML/products.html#categoria-frutas">
+            <span>Ver más</span></a>
         </div>
         <div class="card-category category-granos">
-          <p>Granos</p> <span>Ver más</span>
+          <p>Granos</p>
+          <a href="../HTML/products.html#categoria-granos">
+            <span>Ver más</span></a>
         </div>
         <div class="card-category category-conservas">
-          <p>Conservas</p> <span>Ver más</span>
+          <p>Conservas</p>
+          <a href="../HTML/products.html#categoria-conservas">
+            <span>Ver más</span></a>
         </div>
       </div>
     </section>
     <!--==== Termina Categorías ===-->
 
 
-    <!--==== Inicia Seccion Comentarios  MODIFICAR ESTA PARTE  -->
+    <!--==== Inicia Seccion  Historias  -->
     <div class="container about-section">
       <div class="row align-items-center mb-4">
         <div class="col-md-6">
-          <h1 class="about-heading">AgroApp</h1>
+          <h1 class="heading-1">Nuestra huella</h1>
           <p class="about-text">
-            En AgroApp, conectamos directamente a los agricultores con los
-            consumidores finales. Inspirados por la realidad del campo
-            colombiano, buscamos eliminar intermediarios para que los
-            campesinos reciban un pago justo y los consumidores disfruten de
-            productos frescos y accesibles. Transformamos el sector agrícola
-            con tecnología e innovación.
+            En AgroApp llevamos el campo a tu hogar de manera directa, sostenible y tecnológica. Nuestro compromiso es
+            apoyar a los campesinos, conectándolos contigo sin intermediarios, asegurando productos frescos, auténticos
+            y de la mejor calidad.
+            Con AgroApp no solo compras productos, ¡apoyas sueños y construyes un futuro más justo para el campo
+            colombiano!
+            Descubre lo mejor del campo, haz tu pedido hoy mismo.
           </p>
         </div>
         <div class="col-md-6">
-          <img src="../imagenes/sobre_nosotros.jpg" alt="Nosotros AgroApp" class="about-img" />
+          <img src="../imagenes/Home/Huella.avif" alt="Nosotros AgroApp" class="huella-img" />
         </div>
       </div>
       <hr />
@@ -122,48 +170,46 @@
 
       <!--==== Inicia Sección carousel explorar ====-->
       <div class="carousel ">
-        <button class="carousel-button" id="prev-btn">&lt;</button>
+        <button class="carousel-button prev-btn">&lt;</button>
         <div class="carousel-container">
-          <div class="carousel-slide">
-            <img src="/imagenes/Home/promo2.png" alt="Imagen 1">
-            <img src="/imagenes/Home/promo3.png" alt="Imagen 2">
-            <img src="/imagenes/Home/promo4.png" alt="Imagen 3">
-            <img src="/imagenes/Home/promo5.png" alt="Imagen 4">
-            <img src="/imagenes/Home/promo1.png" alt="Imagen 2">
+          <div class="carousel-slide ">
+            <img src="/imagenes/Home/promo2.png" alt="Historia-agroApp" class="aboutUs-home ">
+            <img src="/imagenes/Home/promo3.png" alt="Productos-agroApp" class="products-home ">
+            <img src="/imagenes/Home/promo4.png" alt="Ofertas-agroApp" class="products-home ">
+            <img src="/imagenes/Home/promo5.png" alt="Productores-agroApp" class="aboutUs-home ">
+            <img src="/imagenes/Home/promo1.png" alt="Productos-destacados" class="products-home ">
           </div>
         </div>
-        <button class="carousel-button" id="next-btn">&gt;</button>
+        <button class="carousel-button next-btn">&gt;</button>
       </div>
       <!--==== Termina Sección carousel explorar ====-->
 
 
-      <!--==== Inicia Seccion Comentarios  MODIFICAR ESTA PARTE  -->
+      <!--==== Inicia Seccion Destacados ==== -->
       <div class="container about-section">
         <div class="row align-items-center mb-4">
           <div class="col-md-6">
-            <h1 class="about-heading">AgroApp</h1>
+            <h1 class="heading-1">Destacados</h1>
             <p class="about-text">
-              En AgroApp, conectamos directamente a los agricultores con los
-              consumidores finales. Inspirados por la realidad del campo
-              colombiano, buscamos eliminar intermediarios para que los
-              campesinos reciban un pago justo y los consumidores disfruten de
-              productos frescos y accesibles. Transformamos el sector agrícola
-              con tecnología e innovación.
+              El 2 de junio, Día del Campesino, reconoce la labor de quienes cultivan la tierra, asegurando nuestra
+              alimentación y preservando tradiciones. Su esfuerzo impulsa el desarrollo rural y la sostenibilidad, por
+              lo que es esencial brindarles acceso a mercados justos, tecnología y mejores oportunidades. Celebramos su
+              dedicación y su papel fundamental en el futuro del campo.
             </p>
           </div>
           <div class="col-md-6">
-            <img src="../imagenes/sobre_nosotros.jpg" alt="Nosotros AgroApp" class="about-img" />
+            <img src="../imagenes/Home/Destacados.jpeg" alt="Nosotros AgroApp" class="destacado-img" />
           </div>
         </div>
         <hr />
 
-        <!-- ==== Inicia Sección publicciones-Blogs====-->
+        <!-- ==== Inicia Sección publicaciones-Blogs====-->
         <section class="container-b blogs">
           <h1 class="heading-1">Últimas Publicaciones</h1>
           <div class="container-blogs">
 
             <!-- === Inicia Card Blog 1 ===-->
-            <div class="card-blog">
+            <div class="card-blog blog-1">
               <div class="container-imgb">
                 <img src="../imagenes/Home/blog1 (2).jpg" alt="">
                 <div class="button-group-blog">
@@ -172,19 +218,19 @@
                 </div>
               </div>
               <div class="content-blog">
-                <h3>Titulo del blog </h3>
-                <span> FEcha de blog</span>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur unde culpa reiciendis natus
-                  laboriosam atque exercitationem ad sunt quod? Culpa consequuntur vel voluptatum fugiat accusantium
-                  quae
-                  laudantium dignissimos itaque explicabo?</p>
+                <h3>Agricultura responsable </h3>
+                <span>12/02/2025</span>
+                <p>El cambio climático es un desafío global que exige acciones inmediatas. ¿Sabías que la agricultura,
+                  tanto parte del problema como de la solución, tiene un rol crucial en este proceso? Descubre cómo las
+                  prácticas agrícolas responsables y el apoyo a los pequeños campesinos pueden ser la clave para un
+                  futuro más sostenible y resiliente. Acompáñanos en este recorrido para entender cómo cada bocado puede
+                  ser una declaración de principios en la lucha contra el cambio climático</p>
                 <div class="btn-read-more"> Leer Más</div>
               </div>
             </div>
-            <!-- === Termina Card Blog 1 ===-->
 
             <!-- === Inicia Card Blog 2 ===-->
-            <div class="card-blog hidde-blog-2">
+            <div class="card-blog blog-2 hidde-blog-2">
               <div class="container-imgb">
                 <img src="../imagenes/Home/blog2.jpg" alt="">
                 <div class="button-group-blog">
@@ -193,19 +239,19 @@
                 </div>
               </div>
               <div class="content-blog">
-                <h3>Titulo del blog </h3>
-                <span> Fecha de blog</span>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur unde culpa reiciendis natus
-                  laboriosam atque exercitationem ad sunt quod? Culpa consequuntur vel voluptatum fugiat accusantium
-                  quae
-                  laudantium dignissimos itaque explicabo?</p>
+                <h3>Conectar con lo Nuestro </h3>
+                <span> 7/02/2025</span>
+                <p>¿Te has preguntado alguna vez de dónde vienen tus alimentos y cómo impactan al planeta? Te invitamos
+                  a reconectar con el campo colombiano, valorar nuestras raíces y adoptar un consumo consciente que
+                  beneficie a los campesinos, proteja la naturaleza y nos brinde alimentos frescos y nutritivos.
+                  Descubre cómo cada elección alimentaria puede ser un acto de amor por nuestra tierra y nuestra gente.
+                </p>
                 <div class="btn-read-more"> Leer Más</div>
               </div>
             </div>
-            <!-- === Termina Card Blog 2 ===-->
 
             <!-- === Inicia Card Blog 3 ===-->
-            <div class="card-blog hidde-blog-3">
+            <div class="card-blog blog-3 hidde-blog-3">
               <div class="container-imgb">
                 <img src="../imagenes/Home/blog8.jpg" alt="">
                 <div class="button-group-blog">
@@ -214,31 +260,31 @@
                 </div>
               </div>
               <div class="content-blog">
-                <h3>Titulo del blog </h3>
-                <span> FEcha de blog</span>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur unde culpa reiciendis natus
-                  laboriosam atque exercitationem ad sunt quod? Culpa consequuntur vel voluptatum fugiat accusantium
-                  quae
-                  laudantium dignissimos itaque explicabo?</p>
+                <h3>Elecciones Alimentarias </h3>
+                <span>01/02/2025</span>
+                <p>Cada alimento que llega a tu mesa tiene una historia detrás: el esfuerzo de los campesinos, el uso de
+                  recursos naturales, el impacto en el medio ambiente. Descubre cómo tus elecciones alimentarias pueden
+                  transformar tu salud y la del planeta. ¡Acompáñanos en este viaje hacia un consumo responsable y
+                  consciente!</p>
                 <div class="btn-read-more"> Leer Más</div>
               </div>
             </div>
             <!-- === Termina Card Blog 3 ===-->
           </div>
         </section>
-      <!-- ==== Termina Sección publicciones-Blogs====-->
+        <!-- ==== Termina Sección publicciones-Blogs====-->
 
-      </main>
+  </main>
 
- <!--==== Sección carousel publicidad -->
- <div class="slider-box">
-  <div class="slider">
-    <div class="move" id="slider-move"></div>
+  <!--==== Sección carousel publicidad -->
+  <div class="slider-box">
+    <div class="slider">
+      <div class="move" id="slider-move"></div>
+    </div>
   </div>
-</div> 
 
   <!-- Footer -->
-  <footer id="contacto">
+  <footer id="contacto" class="footer-home">
     <div class="contact&social">
       <div class="contact&socialContainer">
         <h2>Contacto y Redes Sociales</h2>

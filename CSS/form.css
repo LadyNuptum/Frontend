@@ -5,16 +5,18 @@
   display: flex;
   width: 100%;
   gap: 3rem;
+  
+  
 }
 /*=======  Derecha ====*/
 .contact-container {
+  max-height: 70vh;
  width: 50%;
   margin: 40px auto;
   padding: 20px;
   border: 2px solid #ddd;
-  border-radius: 8px;
+  border-radius: 10px;
   background-color: #0b2d26;
-  
   
   }
   /*=======  Deracha ====*/
@@ -24,24 +26,29 @@
 .contact-content {
   display: flex;
   gap: 30px;
-  margin: 20px 0;
+  margin: -300px 0; 
 }
 
 
 /*=============izquierda  ===========*/
 /* Caja de información */
 .info-box {
-  width: 50%;
+  width: 45%;
   height: 100vh;
   display: flex;
+  text-align: justify;
   flex-direction: column;
+  color: #fff;
   justify-content: center; 
   position: relative;
-  background-image: url("../imagenes/img-singin.jpg");
+  background-image: url("../imagenes/campo.jpg");
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
   transition: all 0.5s ease;
+  border-radius: 0px 15px  15px 0px;
+  
+  
 }
 
 /* Caja del formulario */
@@ -49,6 +56,9 @@
 
 .form-box {
   flex: 1.5;
+  margin: 400px 0;
+  
+  
 }
 
 /* Fila para elementos en línea */
@@ -56,6 +66,8 @@
   display: flex;
   gap: 20px;
   margin-bottom: 20px;
+  
+  
 }
 
 /* Grupos de campos del formulario */
@@ -93,10 +105,10 @@
   font-weight: 600;
   width: 100%;
   padding: 12px;
-  background-color: #053026;
-  color: white;
+  background-color: #fff;
+  color: #0b2d26;
   border: #0b2d26;
-  border-radius: 100px;
+  border-radius: 10px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -116,6 +128,8 @@
   gap: 50px;
   margin: 5px;
   justify-content: center;
+  margin-top: -75%;
+
 }
 
 /* Estilo individual para cada icono social */
@@ -138,19 +152,20 @@
   transform: translateY(-3px);
 }
 
-
 /* Responsive para pantallas pequeñas */
 @media (max-width: 768px) {
   .contact-content {
     flex-direction: column;
   }
+
   .contact-container {
     width: 80%;
-      
-     }
-     .info-box {
-      display: none;
-    }
+  }
+
+  /* Ocultar el .info-box (y la imagen dentro) */
+  .info-box {
+    display: none;
+  }
 
   .form-row {
     flex-direction: column;
@@ -162,15 +177,9 @@
   }
 }
 
-
 @media (max-width: 468px) {
   
-  .info-box {
-    display: none;
-  }
   .contact-container {
     width: 100%;
-      
-     }
-
+  }
 }

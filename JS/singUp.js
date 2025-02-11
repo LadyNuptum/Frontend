@@ -273,4 +273,16 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Número de inputs e iconos no coincide.");
   }
 });
+<<<<<<< HEAD
 >>>>>>> 2a0df1867c0bff40c75c57c02ccd731345960fc9
+=======
+
+
+//== funcion boton regresar ======
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("home-button").addEventListener("click", function () {
+      window.location.href = "../HTML/home.html"; 
+  });
+});
+>>>>>>> d34305e5560b3618a6f819ae78845f83c83ca331
