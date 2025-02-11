@@ -21,58 +21,9 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
   </head>
   <body>
-    <header>
-      <!-- Contenedor navbar -->
-      <nav class="navbar navbar-expand-lg">
-        <div class="container">
-          <a class="navbar-icon" href="../HTML/aboutUs.html">
-            <img src="../imagenes/agroapp_logo-01.png" alt="AgroApp_Logo" />
-          </a>
-          <!-- Texto "Inicio sesión" agregado aquí -->
-          <span class="navbar-text">Inicio sesión</span>
-          <div class="navbar-title d-none">
-            <span id="navbar-page-title"></span>
-          </div>
-          <button
-            class="navbar-toggler"
-            type="button"
-            btn-primary
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="../HTML/home.html">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../HTML/aboutUs.html">Sobre Nosotros</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../HTML/products.html">Productos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../HTML/logIn.html">Ingresar</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../HTML/contact-form.html">Contacto</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../HTML/cart.html">
-                  <i class="fa-solid fa-cart-shopping"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <div class="banner-logIn">
-      <div class="banner-1-logIn"></div>
-    </div>
+ 
 <!-- Empieza Formulario Inicio de Sesion -->
-<main class="container-login">
+<div class="container-login">
 <div class="container-left-s">
 <div class="info-login">
   <h1>¡Te damos la bienvenida a AgroApp!<h1>
@@ -81,6 +32,7 @@
 </div>
 </div>
 <div class="login-content">
+  <button id="home-button">Volver  <i class="fa-solid fa-house"></i></button>
   <form class="form-login">
     <h2> Inicio de sesión</h2>
     <div class="login-row ">
@@ -100,27 +52,8 @@
   </form>
 </div>
 </div>
-</main>
-    <!-- Footer -->
-    <footer id="contacto">
-      <div class="contact&social">
-        <div class="contact&socialContainer">
-          <h2>Contacto y Redes Sociales</h2>
-          <div class="social-links">
-            <a href="#" class="social-link">LinkedIn</a>
-            <a href="#" class="social-link">GitHub</a>
-            <a href="#" class="social-link">Twitter</a>
-          </div>
-          <div class="contact-info">
-            <p>
-              ¿Interesado en trabajar juntos?:
-              <a href="../HTML/contact-form.html">Contáctenos</a>
-            </p>
-            <p>Envíame un mensaje a: contacto@agroapp.com</p>
-          </div>
-        </div>
-      </div>
-    </footer>
+</div>
+   
 
     <script src="../JS/logIn.js"></script>
     <script src="../JS/singUp.js"></script>

@@ -119,7 +119,7 @@ function amplifyImg() {
     modal.classList.add("image-modal-blog");
     modal.innerHTML = `
             <div class="image-modal-content">
-              <a href="../HTML/blog.html"> <img src="${src}" alt="Imagen ampliada"> </a>
+              <a href="https://www.agropinos.com/blog/agricultura-y-cuidado-medioambiental"> <img src="${src}" alt="Imagen ampliada"> </a>
             </div>
         `;
 
@@ -145,7 +145,7 @@ function amplifyImg() {
 }
 //======================================================
 
-// ====== Funciones par anavegación de pagina Inicio=====
+// ====== Funciones para navegación de pagina Inicio=====
 document.addEventListener("DOMContentLoaded", () => {
   // ======  Navegación del Carrusel =======
   const carouselImages = document.querySelectorAll(".carousel-slide img");
@@ -181,32 +181,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//======= Función Para div lateral de publicidad======
-const sticky = (() => {
-  const stickyContainer = document.getElementById("stickyContainer");
-  const offerIcon = document.getElementById("offerIcon");
-
-  if (!stickyContainer || !offerIcon) {
-    console.error("❌ Error: Página no Encontrada");
-    return;
-  }
-
-  const btnSticky = (isOpen) => {
-    stickyContainer.style.display = isOpen ? "block" : "none";
-    offerIcon.style.display = isOpen ? "none" : "flex";
-  };
-
-  return {
-    close: () => btnSticky(false),
-    open: () => btnSticky(true),
-  };
-})();
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelector(".close-btn")?.addEventListener("click", sticky.close);
-  document.getElementById("offerIcon")?.addEventListener("click", sticky.open);
-});
 //=========================================================
 
 
 
-// ========= Categorias ============
+
