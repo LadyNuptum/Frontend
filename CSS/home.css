@@ -407,7 +407,7 @@ button:hover {
 .middle-icons {
   top: 50%;
   transform: translateY(-50%);
- 
+
 }
 
 
@@ -416,29 +416,44 @@ button:hover {
 }
 
 
-#whatsappIcon, #contactIcon {
-  font-size: 25px;
-  border-radius: 30%;
-}
-
 #whatsappIcon {
-  background: #25d366;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  }
+
+  #emailIcon {
+    background-color: white;
+    width: 65px;
+    height: 65px;
+    text-align: center;
+    border-radius: 50%;
+  }
+#whatsappIcon {
+  background: var(--color-secondary);
   margin-top: 200px;
- 
- 
+
 }
 
-#contactIcon {
+#whatsappIcon i {
+  font-size: 2rem;
+  color: #fff;
+  align-self: center;
+  margin-top: 8px;
+
+}
+
+#emailIcon i {
+  font-size: 3rem;
   color: var(--color-primary);
+  margin-top: 3px;
+  font-weight: 500;
 }
 
-/* 🔹 Contenedor Sticky */
 .sticky {
   position: fixed;
-  bottom: 20px;
-  right: 90px;
-  width: 400px;
-  padding: 15px;
+  width: 250px;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   border-radius: 10px;
@@ -451,14 +466,14 @@ button:hover {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 215, 0, 0.8); 
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 215, 0, 0.8);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+color: var(--color-primary);
   cursor: pointer;
   text-align: center;
   animation: offerBlink 4s infinite ease-in-out;
@@ -467,8 +482,9 @@ button:hover {
 }
 
 #offerIcon span {
-  animation: hideText 4s infinite;
+  animation: hideText 10s infinite;
   color: var(--color-primary);
+  font-size: 0.8rem;
  }
 
 #stickyContainer {
@@ -488,7 +504,7 @@ button:hover {
   position: absolute;
   top: 5px;
   right: 5px;
-  background: red;
+  background: var(--color-accent);
   color: white;
   border: none;
   padding: 5px 10px;
@@ -499,7 +515,7 @@ button:hover {
 
 
 
-/* Movimiento infinito carousel publicidad*/
+/*=== Movimiento infinito carousel publicidad ===*/
 
 @keyframes slide {
   0% {
@@ -533,13 +549,13 @@ button:hover {
 
 /* ==== icono oferta cerrado  ===  */
 @keyframes offerBlink {
-  0%, 100% { transform: scale(1); }  
+  0%, 100% { transform: scale(1); }
   50% { transform: scale(1.2); }
 }
 
 @keyframes hideText {
-  0%, 60% { opacity: 1; } 
-  61%, 100% { opacity: 0; } 
+  0%, 60% { opacity: 1; }
+  61%, 100% { opacity: 0; }
 }
 
 
@@ -586,12 +602,22 @@ button:hover {
     display: none;
   }
 
-  #offerIcon {
+  #offerIcon,  #whatsappIcon,  #emailIcon  {
     width: 50px;
     height: 50px;
     font-size: 12px;
     margin-bottom: 20px;
   }
+ 
+ 
+  #whatsappIcon i {
+    font-size: 1.7rem;
+  }
+
+  #emailIcon i {
+    font-size: 2.5rem;
+    
+  } 
 }
 
 /*=========  Mobile ==========*/
@@ -651,5 +677,32 @@ button:hover {
     padding: 0.9rem 1.9rem;
     font-size: 0.7rem;
   }
+
+  /*--- iconos laterales b---*/
+  #offerIcon,  #whatsappIcon,  #emailIcon  {
+    width: 45px;
+    height: 45px;
+    right: 10px;
+     }
+  
+ 
+  #whatsappIcon i {
+    font-size: 1.5rem;
+    
+  }
+
+  #emailIcon i {
+    font-size: 2rem;
+    margin-top: 3px;
+    
+  } 
+  #offerIcon span {
+    font-size: 0.5rem;
+   }
+
+   .sticky-icons, .middle-icons {
+        right: 10px;
+     }
+  
 }
 
