@@ -7,7 +7,7 @@ let productos = [
         image: "/imagenes/products/Leche_de_vaca.jpg",
         category: "lácteos",
         type: "Producto básico",
-        price: 10000,
+        price: 2500,
         measure: "litro",
     },
     {
@@ -18,7 +18,7 @@ let productos = [
         image: "/imagenes/products/Leche_de_cabra.jpg",
         category: "lácteos",
         type: "Producto especializado",
-        price: 15000,
+        price: 10000,
         measure: "litro",
     },
     {
@@ -29,7 +29,7 @@ let productos = [
         image: "/imagenes/products/Leche_de_oveja.jpg",
         category: "lácteos",
         type: "Producto especializado",
-        price: 16000,
+        price: 11000,
         measure: "litro",
     },
     {
@@ -40,7 +40,7 @@ let productos = [
         image: "/imagenes/products/Yogur_natural.jpg",
         category: "lácteos",
         type: "Producto básico",
-        price: 7200,
+        price: 5000,
         measure: "litro",
     },
     {
@@ -51,7 +51,7 @@ let productos = [
         image: "/imagenes/products/Yogur_griego.jpg",
         category: "lácteos",
         type: "Producto especializado",
-        price: 10000,
+        price: 7500,
         measure: "litro",
     },
     {
@@ -62,7 +62,7 @@ let productos = [
         image: "/imagenes/products/Yogur_de_frutas.jpg",
         category: "lácteos",
         type: "Producto preparado",
-        price: 8000,
+        price: 6000,
         measure: "litro",
     },
     {
@@ -73,7 +73,7 @@ let productos = [
         image: "/imagenes/products/Queso_fresco.jpg",
         category: "lácteos",
         type: "Producto básico",
-        price: 14000,
+        price: 10000,
         measure: "libra",
     },
     {
@@ -84,7 +84,7 @@ let productos = [
         image: "/imagenes/products/Queso_curado.jpg",
         category: "lácteos",
         type: "Producto madurado",
-        price: 24000,
+        price: 18000,
         measure: "libra",
     },
     {
@@ -95,7 +95,7 @@ let productos = [
         image: "/imagenes/products/Queso_de_cabra.jpg",
         category: "lácteos",
         type: "Producto especializado",
-        price: 22000,
+        price: 16000,
         measure: "libra",
     },
     {
@@ -104,7 +104,7 @@ let productos = [
         description: "Pequeñas papas amarillas, dulces y versátiles en la cocina.",
         image: "/imagenes/products/papa_criolla.jpg",
         category: "Hortalizas",
-        price: 8000,
+        price: 5000,
         measure: "libra",
     },
     {
@@ -114,7 +114,7 @@ let productos = [
             "Tubérculos andinos de sabor único, ideales para sopas y guisos.",
         image: "/imagenes/products/cubios.jpg",
         category: "Hortalizas",
-        price: 10000,
+        price: 7000,
         measure: "libra",
     },
     {
@@ -124,7 +124,7 @@ let productos = [
             "Tubérculos similares a la papa, de sabor suave y textura firme.",
         image: "/imagenes/products/ibias.jpg",
         category: "Hortalizas",
-        price: 9000,
+        price: 6500,
         measure: "libra",
     },
     {
@@ -133,7 +133,7 @@ let productos = [
         description: "Raíz similar a la yuca, usada en purés y sopas.",
         image: "/imagenes/products/arracacha.jpg",
         category: "Hortalizas",
-        price: 7000,
+        price: 5000,
         measure: "libra",
     },
     {
@@ -142,7 +142,7 @@ let productos = [
         description: "Variedad local de zanahoria, más dulce y suave.",
         image: "/imagenes/products/zanahoria_blanca.jpg",
         category: "Hortalizas",
-        price: 6000,
+        price: 4000,
         measure: "libra",
     },
     {
@@ -151,7 +151,7 @@ let productos = [
         description: "Cebolla de tallo largo, esencial en guisos y sopas.",
         image: "/imagenes/products/cebolla_larga.jpg",
         category: "Hortalizas",
-        price: 5000,
+        price: 3000,
         measure: "libra",
     },
     {
@@ -160,7 +160,7 @@ let productos = [
         description: "Ajo fresco, cultivado en la región, ideal para condimentar.",
         image: "/imagenes/products/ajo.jpg",
         category: "Hortalizas",
-        price: 12000,
+        price: 9000,
         measure: "libra",
     },
     {
@@ -169,7 +169,7 @@ let productos = [
         description: "Hojas verdes ricas en hierro, usadas en ensaladas y guisos.",
         image: "/imagenes/products/espinaca.jpg",
         category: "Hortalizas",
-        price: 4000,
+        price: 3000,
         measure: "libra",
     },
     {
@@ -178,7 +178,7 @@ let productos = [
         description: "Hojas picantes, perfectas para ensaladas y acompañamientos.",
         image: "/imagenes/products/rucula.jpg",
         category: "Hortalizas",
-        price: 6000,
+        price: 4500,
         measure: "libra",
     },
     {
@@ -187,7 +187,7 @@ let productos = [
         description: "Fruta exótica con sabor agridulce, usada en jugos y postres.",
         image: "/imagenes/products/curuba.jpg",
         category: "Frutas",
-        price: 12000,
+        price: 8000,
         measure: "1 kg",
     },
     {
@@ -196,7 +196,7 @@ let productos = [
         description: "Fruta pequeña y ácida, perfecta para mermeladas y bebidas.",
         image: "/imagenes/products/mora.jpg",
         category: "Frutas",
-        price: 9000,
+        price: 6000,
         measure: "libra",
     },
     {
@@ -205,7 +205,7 @@ let productos = [
         description: "Fruta verde de sabor dulce y aromático, ideal para jugos.",
         image: "/imagenes/products/feijoa.jpg",
         category: "Frutas",
-        price: 10000,
+        price: 7000,
         measure: "libra",
     },
     {
@@ -214,7 +214,7 @@ let productos = [
         description: "Fruta dorada y dulce, usada en postres y ensaladas.",
         image: "/imagenes/products/uchuva.jpg",
         category: "Frutas",
-        price: 15000,
+        price: 10000,
         measure: "libra",
     },
     {
@@ -223,7 +223,7 @@ let productos = [
         description: "Fruta roja y ácida, usada en jugos y salsas.",
         image: "/imagenes/products/tomate_arbol.jpg",
         category: "Frutas",
-        price: 8000,
+        price: 5000,
         measure: "libra",
     },
     {
@@ -232,7 +232,7 @@ let productos = [
         description: "Fruta dulce y refrescante, con semillas comestibles.",
         image: "/imagenes/products/granadilla.jpg",
         category: "Frutas",
-        price: 18000,
+        price: 12000,
         measure: "1 kg",
     },
     {
@@ -242,7 +242,7 @@ let productos = [
             "Fruta tropical, dulce y aromática, ideal para jugos y postres.",
         image: "/imagenes/products/guayaba.jpg",
         category: "Frutas",
-        price: 7000,
+        price: 5000,
         measure: "libra",
     },
     {
@@ -251,7 +251,7 @@ let productos = [
         description: "Fruta ácida y jugosa, usada en bebidas tradicionales.",
         image: "/imagenes/products/lulo.jpg",
         category: "Frutas",
-        price: 11000,
+        price: 8000,
         measure: "1 kg",
     },
     {
@@ -260,7 +260,7 @@ let productos = [
         description: "Fruta dulce y jugosa, cultivada en la región.",
         image: "/imagenes/products/ciruela.jpg",
         category: "Frutas",
-        price: 14000,
+        price: 10000,
         measure: "libra",
     },
     {
@@ -269,7 +269,7 @@ let productos = [
         description: "Brevas cocidas en almíbar, un dulce típico de la región.",
         image: "/imagenes/products/breva_almibar.jpg",
         category: "Conservas",
-        price: 18000,
+        price: 12000,
         measure: "libra",
     },
     {
@@ -278,7 +278,7 @@ let productos = [
         description: "Mermelada artesanal hecha con moras cultivadas en la región.",
         image: "/imagenes/products/mermelada_mora.jpg",
         category: "Conservas",
-        price: 12000,
+        price: 9000,
         measure: "500 g",
     },
     {
@@ -287,7 +287,7 @@ let productos = [
         description: "Uchuva en almíbar, un postre tradicional.",
         image: "/imagenes/products/dulce_uchuva.jpg",
         category: "Conservas",
-        price: 15000,
+        price: 10000,
         measure: "libra",
     },
     {
@@ -297,7 +297,7 @@ let productos = [
             "Arepas de maíz amarillo, rellenas o acompañadas de queso y cuajada.",
         image: "/imagenes/products/arepas_boyacenses.jpg",
         category: "Conservas",
-        price: 5000,
+        price: 3500,
         measure: "1 unidad",
     },
     {
@@ -307,7 +307,7 @@ let productos = [
             "Duraznos enteros en un suave almíbar, perfectos para postres o como acompañamiento.",
         image: "/imagenes/products/duraznos_almibar.jpg",
         category: "Conservas",
-        price: 25000,
+        price: 18000,
         measure: "500 g",
     },
     {
@@ -317,7 +317,7 @@ let productos = [
             "Mermelada elaborada con feijoas frescas, ideal para untar o como ingrediente en recetas.",
         image: "/imagenes/products/mermelada_feijoa.jpg",
         category: "Conservas",
-        price: 22000,
+        price: 16000,
         measure: "500 g",
     },
     {
@@ -326,7 +326,7 @@ let productos = [
         description: "Miel pura producida en la región, ideal para endulzar.",
         image: "/imagenes/products/miel_abejas.jpg",
         category: "Conservas",
-        price: 30000,
+        price: 25000,
         measure: "500 g",
     },
     {
@@ -336,7 +336,7 @@ let productos = [
             "Chocolate hecho con cacao de la región, perfecto para bebidas y postres.",
         image: "/imagenes/products/chocolate_artesanal.jpg",
         category: "Conservas",
-        price: 22000,
+        price: 18000,
         measure: "500 g",
     },
     {
@@ -345,7 +345,7 @@ let productos = [
         description: "Panecillos de queso y harina de maíz, típicos de la región.",
         image: "/imagenes/products/almojabanas.jpg",
         category: "Conservas",
-        price: 3000,
+        price: 2500,
         measure: "1 unidad",
     },
     {
@@ -355,7 +355,7 @@ let productos = [
             "Tripa de res asada, típica en platos tradicionales de la región.",
         image: "/imagenes/products/chunchullo.jpg",
         category: "Carnes",
-        price: 15000,
+        price: 10000,
         measure: "500 g",
     },
     {
@@ -365,7 +365,7 @@ let productos = [
             "Embutido tradicional, ahumado y sazonado con especias locales.",
         image: "/imagenes/products/longaniza.jpg",
         category: "Carnes",
-        price: 20000,
+        price: 15000,
         measure: "1 kg",
     },
     {
@@ -374,7 +374,7 @@ let productos = [
         description: "Carne fresca de cerdo, ideal para asados y guisos.",
         image: "/imagenes/products/carne_cerdo.jpg",
         category: "Carnes",
-        price: 18000,
+        price: 14000,
         measure: "1 kg",
     },
     {
@@ -383,7 +383,7 @@ let productos = [
         description: "Pollo criollo, de sabor intenso y textura firme.",
         image: "/imagenes/products/pollo_campesino.jpg",
         category: "Carnes",
-        price: 25000,
+        price: 18500,
         measure: "1 kg",
     },
     {
@@ -392,7 +392,7 @@ let productos = [
         description: "Cortes de res frescos, ideales para asados y estofados.",
         image: "/imagenes/products/carne_res.jpg",
         category: "Carnes",
-        price: 30000,
+        price: 24000,
         measure: "1 kg",
     },
     {
@@ -401,7 +401,7 @@ let productos = [
         description: "Embutido ahumado y sazonado, típico de la región.",
         image: "/imagenes/products/chorizos.jpg",
         category: "Carnes",
-        price: 22000,
+        price: 17000,
         measure: "1 kg",
     },
     {
@@ -410,7 +410,7 @@ let productos = [
         description: "Víscera rica en hierro, usada en guisos y frituras.",
         image: "/imagenes/products/higado_res.jpg",
         category: "Carnes",
-        price: 10000,
+        price: 7000,
         measure: "1 kg",
     },
     {
@@ -419,7 +419,7 @@ let productos = [
         description: "Costillas frescas, perfectas para asar o ahumar.",
         image: "/imagenes/products/costillas_cerdo.jpg",
         category: "Carnes",
-        price: 28000,
+        price: 30000,
         measure: "1 kg",
     },
     {
@@ -428,7 +428,7 @@ let productos = [
         description: "Embutido relleno de arroz y sangre, típico de la región.",
         image: "/imagenes/products/morcilla.jpg",
         category: "Carnes",
-        price: 12000,
+        price: 13000,
         measure: "1 kg",
     },
     {
@@ -438,7 +438,7 @@ let productos = [
             "Legumbres verdes y nutritivas, comunes en platos tradicionales.",
         image: "/imagenes/products/habas.jpg",
         category: "Granos",
-        price: 6000,
+        price: 6500,
         measure: "1 kg",
     },
     {
@@ -447,7 +447,7 @@ let productos = [
         description: "Frijoles rojos y negros, base de la alimentación local.",
         image: "/imagenes/products/frijol.jpg",
         category: "Granos",
-        price: 8000,
+        price: 9000,
         measure: "1 kg",
     },
     {
@@ -456,7 +456,7 @@ let productos = [
         description: "Legumbres ricas en proteínas, ideales para sopas y guisos.",
         image: "/imagenes/products/lentejas.jpg",
         category: "Granos",
-        price: 7000,
+        price: 7500,
         measure: "1 kg",
     },
     {
@@ -465,7 +465,7 @@ let productos = [
         description: "Granos verdes y dulces, usados en sopas y ensaladas.",
         image: "/imagenes/products/arvejas.jpg",
         category: "Granos",
-        price: 5000,
+        price: 5500,
         measure: "1 kg",
     },
     {
@@ -474,7 +474,7 @@ let productos = [
         description: "Legumbres versátiles, usadas en guisos y ensaladas.",
         image: "/imagenes/products/garbanzos.jpg",
         category: "Granos",
-        price: 9000,
+        price: 10000,
         measure: "1 kg",
     },
     {
@@ -492,7 +492,7 @@ let productos = [
         description: "Grano andino rico en proteínas, usado en ensaladas y sopas.",
         image: "/imagenes/products/quinua.jpg",
         category: "Granos",
-        price: 15000,
+        price: 16000,
         measure: "1 kg",
     },
     {
@@ -501,7 +501,7 @@ let productos = [
         description: "Cereal usado en bebidas como la chicha y sopas.",
         image: "/imagenes/products/cebada.jpg",
         category: "Granos",
-        price: 6000,
+        price: 6500,
         measure: "1 kg",
     },
     {
@@ -510,7 +510,7 @@ let productos = [
         description: "Cereal usado para panes y productos horneados.",
         image: "/imagenes/products/trigo.jpg",
         category: "Granos",
-        price: 5000,
+        price: 5500,
         measure: "1 kg",
     }
 ];

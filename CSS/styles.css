@@ -40,16 +40,16 @@
 
 
 /* Estilos para el texto "Inicio sesión" en el navbar */
-span.navbar-text {
+/* span.navbar-text {
   font-family: 'Nunito', sans-serif; 
   font-size: 1.9rem;
   font-weight: 600; 
   color:#ffffff; 
   margin-left: 3rem; 
   margin-right: auto; 
-  display: flex;
-  align-items: center; 
-}
+  display: block;
+  margin: 0 auto; 
+} */
 
 /* Estilo de textos */
 .about-text {
