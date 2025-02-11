@@ -170,12 +170,15 @@ h3.summary-title {
   background-color: #218838;
 }
 
-img.empty-cart-img{
-  width: 50%;
-  display: block;
-  align-items: center;
 
+.img-carrito{
+display: flex;
+justify-content: center;
 }
+img.empty-cart-img{
+  width: 50%; 
+ }
+
 h2.empty-cart {
   font-family: 'nunito';
   font-weight: 100;
