@@ -279,13 +279,26 @@ main {
 }
 
 /* Footer */
+
 footer {
   background-color: #0b2d26;
   color: white;
-  padding: 1rem 0 0rem 0;
+  padding: 1rem 0;
   text-align: center;
-  margin-top:2rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente si es necesario */
+  width: 100%;
 }
+
+.contact&socialContainer {
+  width: 100%;
+  max-width: 600px; /* Ajusta según necesidad */
+  text-align: center;
+}
+
 
 .social-links {
   margin: 1.5rem 0 1.5rem 0;
@@ -304,11 +317,7 @@ footer {
 }
 
 
-.contact\&socialContainer {
-  max-width: 1200px;
-  margin-top: 5px;
-  padding: 0 0.5rem;
-}
+
 
 
 

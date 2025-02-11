@@ -222,6 +222,8 @@ p .description {
   margin: 0 auto;
 }
 
+
+
 /* Responsive Design */
 @media (max-width: 1200px) {
   .product-card {
