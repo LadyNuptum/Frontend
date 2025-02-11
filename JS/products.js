@@ -546,8 +546,8 @@ function renderProductos() {
     // Renderizar productos por categoría
     for (const categoria in productosPorCategoria) {
         const tituloCategoria = document.createElement("h2");
+        tituloCategoria.id = categoria;
         tituloCategoria.textContent = categoria.toUpperCase();
-        tituloCategoria.id=`categoria-${categoria.toLowerCase()}`;
         contenedorProductos.appendChild(tituloCategoria);
 
         const contenedorCategoria = document.createElement("div");
@@ -588,8 +588,6 @@ function agregarAlCarrito(productId) {
         }
     }
     guardarCarrito();
-    actualizarSidebar();
-    toggleSidebar();
 }
 
 // Formatear precios
@@ -621,4 +619,3 @@ document.addEventListener("DOMContentLoaded", () => {
     cargarCarrito();
     renderProductos();
 });
-
