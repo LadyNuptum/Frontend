@@ -55,8 +55,12 @@ span.navbar-text {
 .about-text {
   text-align: justify;
 }
-
-
+/* ===  Estilos para ACtive navbar ===*/
+.navbar-nav .nav-link.active {
+  font-weight: bold;
+  color: #28a745 !important; 
+    text-decoration: none !important;
+}
 
 /* Estilos generales */
 body {
