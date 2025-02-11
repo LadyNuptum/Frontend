@@ -7,7 +7,7 @@
   --color-text: #ffffff;
 }
 /*banner*/
-.banner-logIn {
+.banner {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +22,7 @@
   
 }
 
-.banner-1-logIn {
+.banner-1{
   position: absolute;
   top: 0;
   left: 0;
@@ -89,24 +89,7 @@ span.navbar-text {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/*==== Botón regresar a Inicio ========*/
-#home-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 24px;
-  color: var(--color-primary);
-  transition: color 0.3s ease;
-  z-index: 10; 
-}
 
-#home-button:hover {
-  color: var(--color-accent);
-}
-/*=================*/
 
 
 /*contenedero del formulario*/
@@ -243,15 +226,7 @@ span.navbar-text {
   font-size: 1.5rem;
 }
 
-/* #success-message p {
-  font-family: "nunito";
-  color: #27d604;
-  font-size: 2rem;
-  margin-top: 10px;
-  text-align: center;
-  text-decoration: underline 2px;
-  margin: 0 0;
-} */
+
 
 /* media querys*/
 

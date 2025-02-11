@@ -1,4 +1,23 @@
-// Funcionalidad de carousel de publicidad página home
+//==== Función para optimizar carga de imágedes ====
+document.addEventListener("DOMContentLoaded", function () {
+  const images = document.querySelectorAll("img[data-src]");
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.srcset = img.dataset.srcset || "";
+        img.removeAttribute("data-src");
+        observer.unobserve(img);
+      }
+    });
+  });
+
+  images.forEach((img) => observer.observe(img));
+});
+
+// Funció  carousel de publicidad página home
 const images = [
   "/imagenes/products/Cebollas.jpg",
   "/imagenes/products/Calabacion.jpg",
@@ -187,3 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("offerIcon")?.addEventListener("click", sticky.open);
 });
 //=========================================================
+
+
+
+// ========= Categorias ============
