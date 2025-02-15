@@ -75,11 +75,11 @@ INSERT INTO producto (descripcion, nombre, precio, medida, categoria, imagen) VA
 ('Queso fresco artesanal', 'Queso fresco', 10000.00, 'libra', 'Lácteos', '/imagenes/products/queso_fresco.jpg'),
 ('Papa criolla amarilla', 'Papa criolla', 5000.00, 'Kilo', 'Hortalizas', '/imagenes/products/papa_criolla.jpg'),
 ('Curuba fresca para jugos', 'Curuba', 8000.00, 'Kilo', 'Frutas', '/imagenes/products/curuba.jpg'),
-('Mermelada de mora artesanal', 'Mermelada de mora', 9000.00, '500 g', 'Conservas', '/imagenes/products/mermelada_mora.jpg'),
+('Mermelada de mora artesanal', 'Mermelada de mora', 9000.00, 'unidad', 'Conservas', '/imagenes/products/mermelada_mora.jpg'),
 ('Chorizo ahumado tradicional', 'Chorizo', 17000.00, 'Kilo', 'Carnes', '/imagenes/products/chorizo.jpg'),
 ('Frijoles rojos orgánicos', 'Fríjol', 9000.00, 'Kilo', 'Granos', '/imagenes/products/frijol.jpg'),
 ('Pollo campesino sin hormonas', 'Pollo campesino', 18500.00, 'Kilo', 'Carnes', '/imagenes/products/pollo_campesino.jpg'),
-('Chocolate artesanal de cacao puro', 'Chocolate artesanal', 18000.00, '500 g', 'Conservas', '/imagenes/products/chocolate_artesanal.jpg');
+('Chocolate artesanal de cacao puro', 'Chocolate artesanal', 18000.00, 'unidad', 'Conservas', '/imagenes/products/chocolate_artesanal.jpg');
 
 -- Insertar datos en la tabla pedido
 INSERT INTO pedido (id_usuario, fecha_pedido, total, estado) VALUES
