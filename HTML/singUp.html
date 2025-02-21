@@ -49,7 +49,7 @@
               <input type="text" id="email" name="email" placeholder="ejemplo@correo.com *" />
             </div>
             <div class="register-row">
-              <input type="text" id="phone" name="phone" placeholder="Teléfono" />
+              <input type="text" id="phone" name="phone" placeholder="Teléfono *" />
             </div>
           </div>
 
@@ -83,6 +83,11 @@
         </form>
       </div>
     </div>
+
+    <div id="custom-alert" class="custom-alert hidden">
+      <p id="alert-message"></p>
+      <button onclick="cerrarAlerta()">Aceptar</button>
+  </div>
 
     <script src="../JS/singUp.js"></script>
     <script src="../JS/logIn.js"></script>
