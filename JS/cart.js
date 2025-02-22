@@ -12,6 +12,7 @@ function cargarCarrito() {
 
   renderCarrito();
   renderResumenCompra();
+  actualizarContadorCarrito(); // Actualizar el contador al cargar la página
 }
 
 // Renderizar los productos en el carrito
@@ -21,8 +22,16 @@ function renderCarrito() {
 
   if (carrito.length === 0) {
     contenedorProductos.innerHTML = `
-      <h2 class="empty-cart"> El Carrito está vacío</h2>
-      <img src="../imagenes/carro-vacio.png" alt="Carrito vacío" class="empty-cart-img">
+      <h2 class="empty-cart"> El carrito está vacío</h2>
+      <div class="img-carrito">   
+        <img src="../imagenes/carro-vacio.png" alt="Carrito vacío" class="empty-cart-img">
+      </div>
+      <div>
+      <p>¿Quieres realizar otra compra?</p>
+      <button class="btn btn-success" onclick="irAProductos()">
+      <i class="fas fa-shopping-cart"></i> Realizar otra compra
+      </button>
+      </div>
     `;
     return;
   }
@@ -93,6 +102,7 @@ function actualizarCantidad(index, delta) {
   guardarCarrito();
   renderCarrito();
   renderResumenCompra();
+  actualizarContadorCarrito(); // Actualizar el contador
 }
 
 // Agregar un producto al carrito
@@ -108,6 +118,7 @@ function agregarAlCarrito(producto) {
   guardarCarrito();
   renderCarrito();
   renderResumenCompra();
+  actualizarContadorCarrito(); // Actualizar el contador
 }
 
 // Eliminar un producto del carrito
@@ -116,6 +127,7 @@ function eliminarDelCarrito(index) {
   guardarCarrito();
   renderCarrito();
   renderResumenCompra();
+  actualizarContadorCarrito(); // Actualizar el contador
 }
 
 // Guardar el carrito en localStorage
@@ -137,7 +149,89 @@ function vaciarCarrito() {
   guardarCarrito();
   renderCarrito();
   renderResumenCompra();
+  actualizarContadorCarrito(); // Actualizar el contador
+}
+
+// Función para actualizar el contador del carrito
+function actualizarContadorCarrito() {
+  const cartCount = document.getElementById("cart-count");
+  if (cartCount) {
+    const totalItems = carrito.reduce((total, producto) => total + producto.cantidad, 0);
+    cartCount.textContent = totalItems;
+  }
+}
+
+// Función para redirigir a la página de productos
+function irAProductos() {
+  window.location.href = "../HTML/products.html";
+}
+
+// Función para mostrar el modal de checkout
+function mostrarCheckout() {
+  if (carrito.length === 0) {
+    alert("El carrito está vacío.");
+    return;
+  }
+
+  const checkoutSummary = document.getElementById("checkout-summary");
+  checkoutSummary.innerHTML = "";
+
+  let total = 0;
+
+  carrito.forEach((producto) => {
+    total += producto.price * producto.cantidad;
+  });
+
+  // Mostrar total y métodos de pago
+  checkoutSummary.innerHTML = `
+    <div class="summary-row">
+      <span><strong>Total</strong></span>
+      <span><strong>$ ${formatearPrecio(total)}</strong></span>
+    </div>
+    <div class="payment-methods">
+      <h4>Métodos de Pago</h4>
+      <label>
+        <input type="radio" name="payment" value="transferencia"> Transferencia
+      </label>
+      <label>
+        <input type="radio" name="payment" value="tarjeta"> Tarjeta de Crédito/Débito
+      </label>
+      <label>
+        <input type="radio" name="payment" value="efectivo"> Efectivo
+      </label>
+    </div>
+  `;
+
+  // Mostrar el modal
+  const checkoutModal = new bootstrap.Modal(document.getElementById('checkoutModal'));
+  checkoutModal.show();
+}
+
+// Función para finalizar la compra
+function finalizarCompra() {
+  const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+  localStorage.setItem("paymentMethod", paymentMethod);
+
+  // Guardar detalles de la compra
+  localStorage.setItem("orderDetails", JSON.stringify(carrito));
+
+  // Limpiar el carrito
+  carrito = [];
+  guardarCarrito(); // Guardar el carrito vacío en localStorage
+  renderCarrito(); // Actualizar la vista del carrito
+  renderResumenCompra(); // Actualizar el resumen de la compra
+  actualizarContadorCarrito(); // Actualizar el contador del carrito
+
+  // Cerrar el modal
+  const checkoutModal = bootstrap.Modal.getInstance(document.getElementById('checkoutModal'));
+  checkoutModal.hide();
+
+  // Redirigir a detail-order.html en una nueva pestaña
+  window.open("detail-order.html", "_blank");
 }
 
 // Cargar el carrito al cargar la página
 document.addEventListener("DOMContentLoaded", cargarCarrito);
+
+
+

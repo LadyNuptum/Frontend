@@ -79,6 +79,9 @@
         <div class="product-details">
           <div id="cart-container"></div>
         </div>
+        
+
+        
 
         <!-- Vista 2: Resumen de la compra -->
         <div class="order-summary">
@@ -89,6 +92,9 @@
               <span>Total</span>
               <span>$ 0</span>
             </div>
+            <button class="btn btn-primary btn-checkout" onclick="mostrarCheckout()">
+    Realizar Pago
+  </button>
             <button class="btn-checkout" onclick="vaciarCarrito()">
               Vaciar Carrito
             </button>
@@ -147,6 +153,27 @@
   </div>
 </footer>
 
+
+<!-- Modal de Checkout -->
+<div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" style="align-items: center;" id="checkoutModalLabel">Resumen de Compra</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="checkout-summary"></div>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" onclick="finalizarCompra()">Finalizar Compra</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <!-- Scripts -->
     <script src="../JS/cart.js"></script>
     <script src="../JS/logIn.js"></script>
@@ -155,5 +182,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="../JS/activeNavbar.js"></script>
   </body>
 </html>
