@@ -2,13 +2,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.querySelector("header");
   const titleContainer = document.querySelector(".navbar-title");
   const navbarToggler = document.querySelector(".navbar-toggler");
+  const form = document.querySelector(".form-login");
+  const btnSubmit = document.querySelector(".btn-login");
+  const inputs = form.querySelectorAll("input:not([type='submit'])");
 
-  // Detectar el navbar colapsado
   function isNavbarExpanded() {
     return navbarToggler && navbarToggler.classList.contains("active");
   }
 
-  // Manejar el scroll y el fondo del navbar
   function handleScroll() {
     if (window.scrollY > 5 || isNavbarExpanded()) {
       navbar.classList.add("sticky-navbar");
@@ -23,41 +24,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Evento de scroll
   window.addEventListener("scroll", handleScroll);
 
-  // Evento del toggler
   if (navbarToggler) {
     navbarToggler.addEventListener("click", function () {
-      this.classList.toggle("active"); // Agrega una clase para detectar si está expandido
-      handleScroll(); // Llamamos a handleScroll para forzar el cambio
+      this.classList.toggle("active");
+      handleScroll();
     });
   }
 
-  // ------------------------------------
-  //         FORMULARIO LOGIN
-  // ------------------------------------
-  const form = document.querySelector(".form-login");
-  const btnSubmit = document.querySelector(".btn-login");
-  const inputs = form.querySelectorAll("input:not([type='submit'])");
-
-
-  // Validaciones
   const patterns = {
     email: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
-    
   };
 
   function showError(input, message) {
-  clearError(input);
-  const errorDiv = document.createElement("div");
-  errorDiv.className = "error-message";
-  errorDiv.textContent = message;
-  errorDiv.style.color = "red"; 
-  errorDiv.style.fontSize= "0.7rem ";
-  input.style.border = "2px solid red";
-  input.parentElement.appendChild(errorDiv);
-}
+    clearError(input);
+    const errorDiv = document.createElement("div");
+    errorDiv.className = "error-message";
+    errorDiv.textContent = message;
+    errorDiv.style.color = "red";
+    errorDiv.style.fontSize = "0.7rem";
+    input.style.border = "2px solid red";
+    input.parentElement.appendChild(errorDiv);
+  }
 
   function clearError(input) {
     const errorDiv = input.parentElement.querySelector(".error-message");
@@ -68,17 +57,14 @@ document.addEventListener("DOMContentLoaded", function () {
   function validateField(input) {
     const inputType = input.id;
     const value = input.value.trim();
-
     if (!value) {
       showError(input, "Este campo no puede estar vacío.");
       return false;
     }
-
     if (patterns[inputType] && !patterns[inputType].test(value)) {
-      showError(input, inputType === "email" ? "Correo inválido." : "");
+      showError(input, "Correo inválido.");
       return false;
     }
-
     clearError(input);
     return true;
   }
@@ -97,43 +83,45 @@ document.addEventListener("DOMContentLoaded", function () {
     inputs.forEach((input) => {
       if (!validateField(input)) isValid = false;
     });
-
     if (!isValid) return;
 
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
-    const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
-    const user = existingUsers.find((user) => user.email === email);
+    const userData = {
+      correo: document.getElementById("email").value.trim(),
+      contrasena: document.getElementById("password").value.trim(),
+    };
 
-    if (!user || (await hashPassword(password)) !== user.password) {
-      showError(document.getElementById("email"), "Correo o contraseña incorrectos.");
-      showError(document.getElementById("password"), "Correo o contraseña incorrectos.");
-      return;
+    try {
+      const response = await fetch("http://localhost:8080/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+
+      const data = await response.json().catch(() => ({})); // Manejar el error en caso de que la respuesta no sea JSON
+
+
+      if (!response.ok) {
+        const errorMsg = data.message || "Correo o contraseña incorrectos.";
+        showError(document.getElementById("email"), errorMsg);
+        showError(document.getElementById("password"), errorMsg);
+        return;
+      }
+
+      sessionStorage.setItem("token", data.token);
+      window.location.href = "../HTML/home.html";
+    } catch (error) {
+      console.error("Error en la solicitud:", error);
     }
-
-    localStorage.setItem("loggedInUser", JSON.stringify(user));
-    window.location.href = "../HTML/home.html";
   });
 
-  async function hashPassword(password) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(password);
-    const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-    return Array.from(new Uint8Array(hashBuffer))
-      .map(byte => byte.toString(16).padStart(2, "0"))
-      .join("");
-  }
-
-  // ------------------------------------
-  //         MOSTRAR/Ocultar CONTRASEÑA
-  // ------------------------------------
-  const passInputs = document.querySelectorAll('.pass');
-  const icons = document.querySelectorAll('.bx');
+  const passInputs = document.querySelectorAll(".pass");
+  const icons = document.querySelectorAll(".bx");
 
   if (passInputs.length === icons.length) {
     passInputs.forEach((input, index) => {
       const icon = icons[index];
-
       icon.addEventListener("click", () => {
         const isPassword = input.type === "password";
         input.type = isPassword ? "text" : "password";
@@ -146,11 +134,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-//== funcion boton regresar ======
-
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("home-button").addEventListener("click", function () {
+      const form = document.querySelector(".form-login");
+      form.reset();
       window.location.href = "../HTML/home.html"; 
   });
 });
-

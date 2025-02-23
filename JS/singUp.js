@@ -4,10 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const aceptTerms = document.getElementById("acept");
   const inputs = form.querySelectorAll("input:not([type='submit'])");
 
-  // Desactiva el botón de enviar inicialmente
-  btnSubmit.disabled = true;
+  btnSubmit.disabled = true; // Deshabilitar botón hasta aceptar términos
 
-  // Patrones de validación
   const patterns = {
     name: /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s]{2,30}$/,
     lastName: /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s]{2,30}$/,
@@ -16,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
     password: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/,
   };
 
-  // Mensajes de error
   const errorMessages = {
     name: "El nombre debe contener solo letras (2-30 caracteres).",
     lastName: "El apellido debe tener entre 2 y 30 caracteres y solo letras.",
@@ -26,10 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "confirm-password": "Las contraseñas no coinciden.",
     acept: "Debe aceptar los términos y condiciones.",
     empty: "Este campo no puede estar vacío.",
-    emailExists: "Este correo electrónico ya está registrado.",
   };
 
-  // Mostrar mensaje de error
   function showError(input, message) {
     clearError(input);
     const errorDiv = document.createElement("div");
@@ -42,45 +37,32 @@ document.addEventListener("DOMContentLoaded", () => {
     input.parentElement.appendChild(errorDiv);
   }
 
-  // Limpiar mensaje de error
   function clearError(input) {
     const errorDiv = input.parentElement.querySelector(".error-message");
     if (errorDiv) errorDiv.remove();
     input.style.border = "2px solid #27d604";
   }
 
-  // Validar campo
   function validateField(input) {
     const inputType = input.id;
     const value = input.value.trim();
 
-    // Verificar si el campo está vacío
     if (!value) {
-      showError(
-        input,
-        inputType === "name" ? errorMessages.name : errorMessages.empty
-      );
+      showError(input, errorMessages.empty);
       return false;
     }
 
-    // Validar checkbox de términos
-    if (inputType === "acept") {
-      if (!input.checked) {
-        showError(input, errorMessages[inputType]);
-        return false;
-      }
+    if (inputType === "acept" && !input.checked) {
+      showError(input, errorMessages.acept);
+      return false;
     }
 
-    // Validar confirmación de contraseña
-    else if (inputType === "confirm-password") {
+    if (inputType === "confirm-password") {
       if (value !== document.getElementById("password").value) {
         showError(input, errorMessages[inputType]);
         return false;
       }
-    }
-
-    // Validar con patrones definidos
-    else if (patterns[inputType] && !patterns[inputType].test(value)) {
+    } else if (patterns[inputType] && !patterns[inputType].test(value)) {
       showError(input, errorMessages[inputType]);
       return false;
     }
@@ -89,128 +71,85 @@ document.addEventListener("DOMContentLoaded", () => {
     return true;
   }
 
-  // Habilitar botón de enviar cuando el usuario acepte los términos
   aceptTerms.addEventListener("change", () => {
     btnSubmit.disabled = !aceptTerms.checked;
   });
 
-  // Validación en tiempo real
   inputs.forEach((input) => {
     input.addEventListener("input", () => {
       validateField(input);
     });
   });
 
-  // Envío del formulario
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-  
-    const emailInput = document.getElementById("email");
-    const passwordInput = document.getElementById("password");
-  
     let isValid = true;
     inputs.forEach((input) => {
       if (!validateField(input)) isValid = false;
     });
-  
-    if (!aceptTerms.checked) {
-      showError(aceptTerms, errorMessages["acept"]);
-      isValid = false;
-    }
-  
-    const email = emailInput.value.trim();
-    const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
-    const emailExists = existingUsers.some((user) => user.email === email);
-  
-    if (emailExists) {
-      showError(emailInput, errorMessages.emailExists);
-      isValid = false;
-    }
-  
-    if (isValid) {
-      // Mostrar el fondo oscuro y el spinner
-      const overlay = document.getElementById("overlay");
-      overlay.style.display = "flex"; // Muestra el fondo oscuro y centra el spinner
-  
-      // Crear objeto con los datos del usuario
-      const userData = {};
-      inputs.forEach((input) => {
-        if (input.id !== "confirm-password") {
-          userData[input.id] =
-            input.type === "checkbox" ? input.checked : input.value.trim();
-        }
-      });
-  
-      // Encriptar la contraseña
-      const encryptedPassword = await hashPassword(userData.password);
-      userData.password = encryptedPassword;
-  
-      // Simular un retraso de 2 segundos para el registro (opcional)
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-  
-      // Guardar en localStorage
-      existingUsers.push(userData);
-      localStorage.setItem("users", JSON.stringify(existingUsers));
-  
-      // Ocultar el fondo oscuro y el spinner
-      overlay.style.display = "none";
-  
-      // Mostrar mensaje de éxito
-      const messageContainer = document.querySelector("#success-message");
-      btnSubmit.disabled = true;
 
-      form.reset();
-      inputs.forEach(input => clearError(input)); // Borra los estilos de error también
-  
-      // Redirigir a la página de inicio de sesión después de 3 segundos
-      setTimeout(() => {
-        window.location.href = "logIn.html"; // Redirige a logIn.html
-      }, 300);
+    if (!isValid) return;
+
+    const userData = {
+      correo: document.getElementById("email").value.trim(),
+      contrasena: document.getElementById("password").value.trim(),
+      nombre: document.getElementById("name").value.trim(),
+      apellido: document.getElementById("lastName").value.trim(),
+      telefono: document.getElementById("phone").value.trim(),
+    };
+
+    try {
+      const response = await fetch("http://localhost:8080/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userData),
+      });
+
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        showError(document.getElementById("email"), result.message || "Error en el registro.");
+        return;
+      }
+
+      alert("Registro exitoso! Redirigiendo al login...");
+      window.location.href = "logIn.html";
+    } catch (error) {
+      console.error("Error en el registro:", error);
+      alert("Ocurrió un error inesperado. Intente nuevamente.");
     }
   });
-
-  // Función para encriptar la contraseña usando SHA-256
-  async function hashPassword(password) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(password);
-    const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    const hashHex = hashArray
-      .map((byte) => byte.toString(16).padStart(2, "0"))
-      .join("");
-    return hashHex;
-  }
-
-  // Función para mostrar/ocultar contraseña
+  
   const passInputs = document.querySelectorAll('.pass');
-  const icons = document.querySelectorAll('.bx');
-
-  if (passInputs.length === icons.length) {
-    passInputs.forEach((input, index) => {
-      const icon = icons[index];
-
-      icon.addEventListener("click", () => {
-        if (input.type === "password") {
-          input.type = "text";
-          icon.classList.remove("bx-show-alt");
-          icon.classList.add("bx-hide");
-        } else {
-          input.type = "password";
-          icon.classList.add("bx-show-alt");
-          icon.classList.remove("bx-hide");
-        }
+    const icons = document.querySelectorAll('.bx');
+  
+    if (passInputs.length === icons.length) {
+      passInputs.forEach((input, index) => {
+        const icon = icons[index];
+  
+        icon.addEventListener("click", () => {
+          if (input.type === "password") {
+            input.type = "text";
+            icon.classList.remove("bx-show-alt");
+            icon.classList.add("bx-hide");
+          } else {
+            input.type = "password";
+            icon.classList.add("bx-show-alt");
+            icon.classList.remove("bx-hide");
+          }
+        });
       });
-    });
-  } else {
-    console.error("Número de inputs e iconos no coincide.");
-  }
+    } else {
+      console.error("Número de inputs e iconos no coincide.");
+    } 
 });
-
-
-//== funcion boton regresar ======
 
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("home-button").addEventListener("click", function () {
+      const form = document.querySelector(".form-register");
+      form.reset();
       window.location.href = "../HTML/home.html"; 
   });
 });
+
