@@ -11,8 +11,7 @@ function cargarCarrito() {
   }));
 
   renderCarrito();
-  renderResumenCompra();
-  actualizarContadorCarrito(); // Actualizar el contador al cargar la página
+  renderResumenCompra(); 
 }
 
 // Renderizar los productos en el carrito
@@ -102,23 +101,6 @@ function actualizarCantidad(index, delta) {
   guardarCarrito();
   renderCarrito();
   renderResumenCompra();
-  actualizarContadorCarrito(); // Actualizar el contador
-}
-
-// Agregar un producto al carrito
-function agregarAlCarrito(producto) {
-  const productoEnCarrito = carrito.find(item => item.id === producto.id);
-
-  if (productoEnCarrito) {
-    productoEnCarrito.cantidad += 1;
-  } else {
-    carrito.push({ ...producto, cantidad: 1 });
-  }
-
-  guardarCarrito();
-  renderCarrito();
-  renderResumenCompra();
-  actualizarContadorCarrito(); // Actualizar el contador
 }
 
 // Eliminar un producto del carrito
@@ -127,7 +109,6 @@ function eliminarDelCarrito(index) {
   guardarCarrito();
   renderCarrito();
   renderResumenCompra();
-  actualizarContadorCarrito(); // Actualizar el contador
 }
 
 // Guardar el carrito en localStorage
@@ -149,16 +130,6 @@ function vaciarCarrito() {
   guardarCarrito();
   renderCarrito();
   renderResumenCompra();
-  actualizarContadorCarrito(); // Actualizar el contador
-}
-
-// Función para actualizar el contador del carrito
-function actualizarContadorCarrito() {
-  const cartCount = document.getElementById("cart-count");
-  if (cartCount) {
-    const totalItems = carrito.reduce((total, producto) => total + producto.cantidad, 0);
-    cartCount.textContent = totalItems;
-  }
 }
 
 // Función para redirigir a la página de productos
@@ -220,7 +191,6 @@ function finalizarCompra() {
   guardarCarrito(); // Guardar el carrito vacío en localStorage
   renderCarrito(); // Actualizar la vista del carrito
   renderResumenCompra(); // Actualizar el resumen de la compra
-  actualizarContadorCarrito(); // Actualizar el contador del carrito
 
   // Cerrar el modal
   const checkoutModal = bootstrap.Modal.getInstance(document.getElementById('checkoutModal'));

@@ -1,4 +1,3 @@
-
 let carrito = [];
 
 // Cargar el carrito desde localStorage
@@ -13,42 +12,42 @@ function guardarCarrito() {
 }
 
 // Renderizar los productos
-// async function renderProductos() {
-//     const contenedorProductos = document.getElementById("products-container");
-//     contenedorProductos.innerHTML = "";
+async function renderProductos() {
+    const contenedorProductos = document.getElementById("products-container");
+    contenedorProductos.innerHTML = "";
 
-//     // Obtener la categoría de la URL (si existe)
-//     const urlParams = new URLSearchParams(window.location.search);
-//     const categoriaSeleccionada = urlParams.get("categoria");
+    // Obtener la categoría de la URL (si existe)
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoriaSeleccionada = urlParams.get("categoria");
 
     // Agrupar productos por categoría
-//     const productosPorCategoria = new Map();
-//     try {
-//         const response = await fetch("http://localhost:8080/productos");
-//         const data = await response.json();
-//         const productos = data;
-//         localStorage.setItem("productos", JSON.stringify(productos));
+    const productosPorCategoria = new Map();
+    try {
+        const response = await fetch("http://localhost:8080/productos");
+        const data = await response.json();
+        const productos = data;
+        localStorage.setItem("productos", JSON.stringify(productos));
 
-//         productos.forEach((producto) => {
-//             if (!productosPorCategoria.has(producto.categoria)) {
-//                 productosPorCategoria.set(producto.categoria, []);
-//             }
-//             productosPorCategoria.get(producto.categoria).push(producto);
-//         });
+        productos.forEach((producto) => {
+            if (!productosPorCategoria.has(producto.categoria)) {
+                productosPorCategoria.set(producto.categoria, []);
+            }
+            productosPorCategoria.get(producto.categoria).push(producto);
+        });
 
-//         // Si hay una categoría en la URL, filtrar productos
-//         if (categoriaSeleccionada && productosPorCategoria.has(categoriaSeleccionada)) {
-//             mostrarProductosPorCategoria(categoriaSeleccionada, productosPorCategoria, contenedorProductos);
-//         } else {
-//             // Si no hay categoría en la URL, mostrar todas las categorías
-//             for (const [categoria, productosDeCategoria] of productosPorCategoria) {
-//                 mostrarProductosPorCategoria(categoria, productosPorCategoria, contenedorProductos);
-//             }
-//         }
-//     } catch (error) {
-//         console.error("Error al obtener productos:", error);
-//     }
-// }
+        // Si hay una categoría en la URL, filtrar productos
+        if (categoriaSeleccionada && productosPorCategoria.has(categoriaSeleccionada)) {
+            mostrarProductosPorCategoria(categoriaSeleccionada, productosPorCategoria, contenedorProductos);
+        } else {
+            // Si no hay categoría en la URL, mostrar todas las categorías
+            for (const [categoria, productosDeCategoria] of productosPorCategoria) {
+                mostrarProductosPorCategoria(categoria, productosPorCategoria, contenedorProductos);
+            }
+        }
+    } catch (error) {
+        console.error("Error al obtener productos:", error);
+    }
+}
 
 // Función auxiliar para mostrar productos por categoría
 function mostrarProductosPorCategoria(categoria, productosPorCategoria, contenedorProductos) {
@@ -69,7 +68,7 @@ function mostrarProductosPorCategoria(categoria, productosPorCategoria, contened
             <h3>${producto.nombre}</h3>
             <p class="description">${producto.descripcion}</p>
             <div class="info-container">
-              <p class="cant">${producto.medido}</p>
+              <p class="cant">${producto.medida}</p>
               <p class="price">Precio: $${formatearPrecio(producto.precio)}</p>
             </div>
             <button class="add-to-cart" onclick="agregarAlCarrito(${producto.idProducto})">🛒 Agregar</button>
@@ -128,21 +127,3 @@ document.addEventListener("DOMContentLoaded", () => {
     cargarCarrito();
     renderProductos();
 });
-
-//----------------------------------------------------------------------------------------------//
-
-
-
-// async function fetchProductos() {
-//     try {
-//         const response = await fetch('http://localhost:8080/productos'); // URL de tu backend
-//         if (!response.ok) {
-//             throw new Error('Error al cargar los productos');
-//         }
-//         const productos = await response.json();
-//         renderProductos(productos);
-//     } catch (error) {
-//         console.error('Error:', error);
-//     }
-// }
-

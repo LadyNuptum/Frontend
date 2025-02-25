@@ -1,37 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const navbar = document.querySelector("header");
-  const titleContainer = document.querySelector(".navbar-title");
-  const navbarToggler = document.querySelector(".navbar-toggler");
   const form = document.querySelector(".form-login");
   const btnSubmit = document.querySelector(".btn-login");
   const inputs = form.querySelectorAll("input:not([type='submit'])");
-
-  function isNavbarExpanded() {
-    return navbarToggler && navbarToggler.classList.contains("active");
-  }
-
-  function handleScroll() {
-    if (window.scrollY > 5 || isNavbarExpanded()) {
-      navbar.classList.add("sticky-navbar");
-      titleContainer.classList.remove("d-none");
-      navbar.style.background = "rgba(11, 45, 38, 0.1)";
-      navbar.style.backdropFilter = "blur(10px)";
-    } else {
-      navbar.classList.remove("sticky-navbar");
-      titleContainer.classList.add("d-none");
-      navbar.style.background = "";
-      navbar.style.backdropFilter = "";
-    }
-  }
-
-  window.addEventListener("scroll", handleScroll);
-
-  if (navbarToggler) {
-    navbarToggler.addEventListener("click", function () {
-      this.classList.toggle("active");
-      handleScroll();
-    });
-  }
 
   const patterns = {
     email: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
@@ -136,8 +106,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("home-button").addEventListener("click", function () {
-      const form = document.querySelector(".form-login");
-      form.reset();
-      window.location.href = "../HTML/home.html"; 
+    const form = document.querySelector(".form-login");
+    form.reset();
+    window.location.href = "../HTML/home.html";
   });
 });

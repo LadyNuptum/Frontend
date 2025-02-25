@@ -26,12 +26,12 @@
     <!-- Contenido del pedido -->
     <main class="container">
       <div class="order-container">
-        <h1 class="text-center">¡Compra Exitosa!</h1>
-        <p class="text-center"><span id="username"></span>,
-          <br>Gracias por tu compra.</p>
+        <h1 class="text-center">¡Pedido Exitoso!</h1>
+        <p class="text-center"><span id="username"></span>
+          <br>Gracias por elegirnos.</p>
 
         <div class="order-details">
-          <h3>Detalle de tu compra</h3>
+          <h3>Detalle de tu Pedido</h3>
           <div id="order-items"></div>
         </div>
 
@@ -52,12 +52,12 @@
           </button>
           <!-- Botón para realizar otra compra -->
           <button class="btn btn-success" onclick="irAProductos()">
-            <i class="fas fa-shopping-cart"></i> Realizar otra compra
+            <i class="fas fa-shopping-cart"></i> Realizar otro pedido
           </button>
         </div>
 
         <!-- Formulario para enviar por correo -->
-        <div id="email-form" class="email-form">
+        <div id="email-form" class="email-form" method="POST" action="https://formspree.io/FORM_ID" enctype="multipart/form-data">
           <h3>Enviar recibo por correo</h3>
           <input type="email" id="email-input" placeholder="Ingresa tu correo electrónico" required />
           <button class="btn btn-success" onclick="enviarReciboPorCorreo()">Enviar</button>
