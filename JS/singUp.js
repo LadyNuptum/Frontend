@@ -152,4 +152,3 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = "../HTML/home.html"; 
   });
 });
-
