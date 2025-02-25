@@ -141,5 +141,5 @@ function cerrarAlerta() {
 // cargar productos antes de renderizar la página 
 document.addEventListener("DOMContentLoaded", async () => {
     cargarCarrito();
-    await obtenerProductos(); 
+    await renderProductos(); 
 });
