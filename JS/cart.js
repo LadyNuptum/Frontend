@@ -40,8 +40,8 @@ function renderCarrito() {
     const card = document.createElement("div");
     card.classList.add("card");
     card.innerHTML = `
-      <h2 class="product-title">${producto.name}</h2>
-      <p class="product-description">${producto.description}</p>
+      <h2 class="product-title">${producto.nombre}</h2>
+      <p class="product-description">${producto.descripcion}</p>
       
       <div class="product-actions">
         <button class="btn btn-danger" onclick="eliminarDelCarrito(${index})">Eliminar</button>
@@ -52,7 +52,7 @@ function renderCarrito() {
         <button class="btn-quantity plus" onclick="actualizarCantidad(${index}, 1)">+</button>
       </div>
       <div class="product-price">
-        <span class="price">$ ${formatearPrecio(producto.price * producto.cantidad)}</span>
+        <span class="price">$ ${formatearPrecio(producto.precio * producto.cantidad)}</span>
       </div>
     `;
     contenedorProductos.appendChild(card);
@@ -75,13 +75,13 @@ function renderResumenCompra() {
   let total = 0;
 
   carrito.forEach((producto) => {
-    total += producto.price * producto.cantidad;
+    total += producto.precio * producto.cantidad;
 
     const row = document.createElement("div");
     row.classList.add("summary-row");
     row.innerHTML = `
-      <span>${producto.name}</span>
-      <span>$ ${formatearPrecio(producto.price * producto.cantidad)}</span>
+      <span>${producto.nombre}</span>
+      <span>$ ${formatearPrecio(producto.precio * producto.cantidad)}</span>
     `;
     contenedorResumen.appendChild(row);
   });

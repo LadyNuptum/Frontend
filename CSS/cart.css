@@ -45,10 +45,10 @@ span.navbar-text {
   font-size: 1.9rem;
   font-weight: 600; 
   color:#ffffff; 
-  margin-left: 3rem; 
+  margin-left: 3.5rem; 
   margin-right: auto; 
-  display: flex;
-  align-items: center; 
+  /* display: block;
+  margin: 0 auto;  */
 }
 
 
@@ -171,11 +171,15 @@ h3.summary-title {
   background-color: #218838;
 }
 
-img.empty-cart-img{
-  width: 50%;
-  display: block;
 
+.img-carrito{
+display: flex;
+justify-content: center;
 }
+img.empty-cart-img{
+  width: 50%; 
+ }
+
 h2.empty-cart {
   font-family: 'nunito';
   font-weight: 100;
@@ -233,6 +237,17 @@ h2.empty-cart {
 
 @media (max-width: 768px) {
 
+  span.navbar-text {
+    font-family: 'Nunito', sans-serif; 
+    font-size: 1.9rem;
+    font-weight: 600; 
+    color:#ffffff; 
+    margin-left: 3.5; 
+    margin-right: auto; 
+    /* display: block;
+    margin: 0 auto;  */
+  }
+
   .container-features {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.8rem;
@@ -258,6 +273,18 @@ h2.empty-cart {
 
 
 @media (max-width: 567px) {
+
+  
+  span.navbar-text {
+    font-family: 'Nunito', sans-serif; 
+    font-size: 1.9rem;
+    font-weight: 600; 
+    color:#ffffff; 
+    margin-left: 3.5; 
+    margin-right: auto; 
+    /* display: block;
+    margin: 0 auto;  */
+  }
   img.empty-cart-img{
     width: 80%;
   }

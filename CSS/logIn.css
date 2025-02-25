@@ -89,10 +89,27 @@ span.navbar-text {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-
-
-
 /*contenedero del formulario*/
+
+
+/*==== Botón regresar a Inicio ========*/
+#home-button {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--color-primary);
+  transition: color 0.3s ease;
+  z-index: 10; 
+}
+
+#home-button:hover {
+  color: var(--color-accent);
+}
+
 
 .login-row {
   position: relative;
@@ -152,8 +169,6 @@ span.navbar-text {
   
 }
 
-
-
 /*link-login*/
 
 .login-link {
@@ -175,7 +190,6 @@ span.navbar-text {
   text-decoration: underline;
   color: #f3d914;
 }
-
 
 
 /*  inicio*/
