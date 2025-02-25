@@ -9,23 +9,30 @@
       href="../imagenes/agroapp_logo-01.png"
       type="image/x-icon" />
     <link rel="stylesheet" href="../CSS/styles.css" />
-    <link rel="stylesheet" href="../CSS/products.css" />
+    <link rel="stylesheet" href="../CSS/products.css">
+
+    <link rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
       rel="stylesheet" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
   </head>
   <body>
     <header>
       <!-- Contenedor navbar -->
-      <nav class="navbar navbar-expand-lg" >
+      <nav class="navbar navbar-expand-lg">
         <div class="container">
           <a class="navbar-icon" href="../HTML/aboutUs.html">
             <img src="../imagenes/agroapp_logo-01.png" alt="AgroApp_Logo" />
           </a>
+          <!-- Texto -->
+          <span class="navbar-text">Productos</span>
           <div class="navbar-title d-none">
             <span id="navbar-page-title"></span>
           </div>
@@ -34,8 +41,7 @@
             type="button"
             btn-primary
             data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-          >
+            data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
@@ -44,9 +50,8 @@
                 <a class="nav-link" href="../HTML/home.html">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../HTML/aboutUs.html"
-                  >Sobre Nosotros</a
-                >
+                <a class="nav-link" href="../HTML/aboutUs.html">Sobre
+                  Nosotros</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../HTML/products.html">Productos</a>
@@ -55,9 +60,8 @@
                 <a class="nav-link" href="../HTML/logIn.html">Ingresar</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../HTML/contact-form.html"
-                  >Contacto</a
-                >
+                <a class="nav-link"
+                  href="../HTML/contact-form.html">Contacto</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../HTML/cart.html">
@@ -69,14 +73,8 @@
         </div>
       </nav>
     </header>
-
-    <!-- Contenedor para el banner -->
     <div class="banner">
-      <div class="banner-1">
-        <div class="info">
-          <h1 class="title center">Productos</h1>
-        </div>
-      </div>
+      <div class="banner-1"></div>
     </div>
     <!-- Sección de productos -->
     <article id="products-main">
@@ -141,13 +139,11 @@
         </div>
       </div>
     </div>
-
     <script src="../JS/products.js"></script>
-    <script src="../JS/aboutUs.js"></script>
+    <script src="../JS/activeNavbar.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
   </body>
 </html>

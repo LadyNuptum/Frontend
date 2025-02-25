@@ -80,7 +80,7 @@ main.container-register {
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
-}
+ }
 
 .container-left {
   width: 50%;
@@ -93,6 +93,7 @@ main.container-register {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  border-radius: 15px 0px 0px 15px ;
 }
 
 .container-left::before {
@@ -104,9 +105,11 @@ main.container-register {
   height: 100%;
   background-color: rgba(0, 52, 0, 0.5);
   z-index: 1;
+  border-radius: 15px 0px 0px 15px ;
 }
 
-.info-register {  display: flex;
+.info-register {  
+  display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
@@ -216,9 +219,8 @@ form.form-register {
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
+  border-radius: 15px 0px 0px 15px ;
 }
-
-
 
 
 .info-register {
@@ -242,7 +244,24 @@ form.form-register {
 .info-register p {
   font-size: 1.2rem;
 }
+/*==== Botón regresar a Inicio ========*/
+#home-button {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--color-primary);
+  transition: color 0.3s ease;
+  z-index: 10; 
+}
 
+#home-button:hover {
+  color: var(--color-accent);
+}
+/*=================*/
 .register-content {
   display: flex;
   flex-direction: column;
@@ -250,7 +269,7 @@ form.form-register {
   align-items: center;
   height: 100vh;
   width: 53%;
-  background-color: #d2d6d4;
+  position: relative;
 }
 
 .form-register {
@@ -324,14 +343,7 @@ form.form-register {
 }
 
 .form-register .btn-register:hover {
-  background-image: linear-gradient(
-    to right,
-    rgba(243, 217, 20, 0.8),
-    rgba(125, 186, 54, 0.8),
-    rgba(67, 149, 53, 0.8),
-    rgba(9, 123, 53, 0.8)
-  );
-  color: #d1e7e3;
+  background-color: #859a6c;
 }
 
 .login-link {

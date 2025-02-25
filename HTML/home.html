@@ -3,32 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Inicio</title>
     <link
       rel="shortcut icon"
       href="../imagenes/agroapp_logo-01.png"
-      type="image/x-icon"
-    />
+      type="image/x-icon" />
     <link rel="stylesheet" href="../CSS/styles.css" />
-    <link rel="stylesheet" href="../CSS/home.css" />
+    <link rel="stylesheet" href="../CSS/home.css">
+    <link rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+      rel="stylesheet" />
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
   </head>
   <body>
     <header>
+      <!-- Contenedor navbar -->
       <nav class="navbar navbar-expand-lg">
         <div class="container">
           <a class="navbar-icon" href="../HTML/aboutUs.html">
             <img src="../imagenes/agroapp_logo-01.png" alt="AgroApp_Logo" />
           </a>
+          <!-- Texto -->
+          <span class="navbar-text">Inicio</span>
           <div class="navbar-title d-none">
             <span id="navbar-page-title"></span>
           </div>
@@ -37,19 +40,17 @@
             type="button"
             btn-primary
             data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-          >
+            data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#">Inicio</a>
+                <a class="nav-link" href="../HTML/home.html">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../HTML/aboutUs.html"
-                  >Sobre Nosotros</a
-                >
+                <a class="nav-link" href="../HTML/aboutUs.html">Sobre
+                  Nosotros</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../HTML/products.html">Productos</a>
@@ -58,9 +59,8 @@
                 <a class="nav-link" href="../HTML/logIn.html">Ingresar</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../HTML/contact-form.html"
-                  >Contacto</a
-                >
+                <a class="nav-link"
+                  href="../HTML/contact-form.html">Contacto</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../HTML/cart.html">
@@ -72,200 +72,261 @@
         </div>
       </nav>
     </header>
-
-    <!-- Contenedor para el banner -->
     <div class="banner">
-      <div class="banner-1">
-        <div class="info">
-          <h1 class="title center">Inicio</h1>
-          <p class="descriptionBanner s-center"></p>
-        </div>
-      </div>
+      <div class="banner-1"></div>
     </div>
 
-<!--==== Sección carousel publicidad -->
-     <div class="slider-box">
-      <div class="slider">
-        <div class="move" id="slider-move"></div>
-      </div>
-    </div> 
-
-    <!--==== Inicia Main====-->    
+    <!--====  Categorías ===-->
     <main>
+      <!--==== Inicia Categorías ===-->
+      <section class=" top-categories">
+        <h1 class="heading-1">Categorías</h1>
+        <div class="container-categories">
+          <div class="card-category category-lacteos">
+            <p>Lácteos</p>
+            <a href="../HTML/products.html?categoria=LÁCTEOS"><span>Ver
+                más</span></a>
+          </div>
+          <div class="card-category category-hortalizas">
+            <p>Hortalizas</p>
+            <a href="../HTML/products.html?categoria=HORTALIZAS"><span>Ver
+                más</span></a>
+          </div>
+          <div class="card-category category-frutas">
+            <p>Frutas</p>
+            <a href="../HTML/products.html?categoria=FRUTAS"><span>Ver
+                más</span></a>
+          </div>
+          <div class="card-category category-conservas">
+            <p>Conservas</p>
+            <a href="../HTML/products.html?categoria=CONSERVAS"><span>Ver
+                más</span></a>
+          </div>
+          <div class="card-category category-carnes">
+            <p>Carnes</p>
+            <a href="../HTML/products.html?categoria=CARNES"><span>Ver
+                más</span></a>
+          </div>
+          <div class="card-category category-granos">
+            <p>Granos</p>
+            <a href="../HTML/products.html?categoria=GRANOS"><span>Ver
+                más</span></a>
+          </div>
 
-<!--==== Características ====-->
-<div class="main-container-home">
-  <section class="container-home container-features">
-    <div class="card-features">
-      <i class="fa-sharp-duotone fa-solid fa-truck-fast"></i> 
-      <div class="feature-content">
-        <span>Envíos a todo el territorio nacional</span>
+        </div>
+      </section>
+    </div>
+    <!--==== Termina Categorías ===-->
+
+    <!--==== Inicia Seccion  Historias  -->
+    <div class="container about-section">
+      <div class="row align-items-center mb-4">
+        <div class="col-md-6">
+          <h1 class="heading-1">Nuestra huella</h1>
+          <p class="about-text">
+            En AgroApp llevamos el campo a tu hogar de manera directa,
+            sostenible y tecnológica. Nuestro compromiso es
+            apoyar a los campesinos, conectándolos contigo sin intermediarios,
+            asegurando productos frescos, auténticos
+            y de la mejor calidad.
+            Con AgroApp no solo compras productos, ¡apoyas sueños y construyes
+            un futuro más justo para el campo
+            colombiano!
+            Descubre lo mejor del campo, haz tu pedido hoy mismo.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <img src="../imagenes/Home/Huella.avif" alt="Nosotros AgroApp"
+            class="huella-img" loading="lazy" />
+        </div>
       </div>
-    </div>
-    <div class="card-features">
-      <i class="fa-solid fa-wallet"></i>
-      <div class="feature-content">
-        <span>Diversos métodos de pago</span>
-      </div>
-    </div>
-    <div class="card-features">
-      <i class="fa-solid fa-shield-halved"></i>
-      <div class="feature-content">
-        <span>Compras seguras</span>
-      </div>
-    </div>
-    <div class="card-features">
-      <i class="fa-sharp fa-solid fa-location-dot"></i>
-      <div class="feature-content">
-        <span>Productores más cercanos</span>
-      </div>
-    </div>
-    </section>
+      <hr />
 
-<!--====  Categorías ===-->
-<section class="container-home top-categories">
-  <h1 class="heading-1">Categorías</h1>
-  <div class="container-categories">
-    <div class="card-category category-lacteos">
-      <p>Lácteos</p>
-      <a href="../HTML/products.html#lácteos"><span>Ver más</span></a>
-    </div>
-    <div class="card-category category-hortalizas">
-      <p>Hortalizas</p> 
-      <a href="../HTML/products.html#Hortalizas"><span>Ver más</span></a>
-    </div>
-    <div class="card-category category-carnes">
-      <p>Carnes</p>
-      <a href="../HTML/products.html#Carnes"><span>Ver más</span></a>
-    </div>
-    <div class="card-category category-frutas">
-      <p>Frutas</p>
-      <a href="../HTML/products.html#Frutas"><span>Ver más</span></a>
-    </div>
-    <div class="card-category category-granos">
-      <p>Granos</p>
-      <a href="../HTML/products.html#Granos"><span>Ver más</span></a>
-    </div>
-    <div class="card-category category-conservas">
-      <p>Conservas</p>
-      <a href="../HTML/products.html#Conservas"><span>Ver más</span></a>
-    </div>
-  </div>
- </section>
-</div>
-
-
-
- <!--Sección de Historias Que nos inspiran   MODIFICAR  -->
- <div class="container about-section">
-  <div class="row align-items-center mb-4">
-    <div class="col-md-6">
-      <h1 class="about-heading">AgroApp</h1>
-      <p class="about-text">
-        En AgroApp, conectamos directamente a los agricultores con los
-        consumidores finales. Inspirados por la realidad del campo
-        colombiano, buscamos eliminar intermediarios para que los
-        campesinos reciban un pago justo y los consumidores disfruten de
-        productos frescos y accesibles. Transformamos el sector agrícola
-        con tecnología e innovación.
-      </p>
-    </div>
-    <div class="col-md-6">
-      <img
-        src="../imagenes/sobre_nosotros.jpg"
-        alt="Nosotros AgroApp"
-        class="about-img"
-      />
-    </div>
-  </div>
-  <hr />
-
- <!--==== Sección carousel explorar-->
-      <div class="carousel">
-        <button class="carousel-button" id="prev-btn">&lt;</button>
+      <!--==== Inicia Sección carousel explorar ====-->
+      <div class="carousel ">
+        <button class="carousel-button prev-btn">&lt;</button>
         <div class="carousel-container">
-            <div class="carousel-slide">
-                <img src="/imagenes/Home/promo2.png" alt="Imagen 1">
-                <img src="/imagenes/Home/promo3.png" alt="Imagen 2">
-                <img src="/imagenes/Home/promo4.png" alt="Imagen 3">
-                <img src="/imagenes/Home/promo5.png" alt="Imagen 4">
-                <img src="/imagenes/Home/promo1.png" alt="Imagen 2">
-            </div>
+          <div class="carousel-slide ">
+            <img src="/imagenes/Home/promo2.png" alt="Historia-agroApp"
+              class="aboutUs-home " loading="lazy">
+            <img src="/imagenes/Home/promo3.png" alt="Productos-agroApp"
+              class="products-home " loading="lazy">
+            <img src="/imagenes/Home/promo4.png" alt="Ofertas-agroApp"
+              class="products-home " loading="lazy">
+            <img src="/imagenes/Home/promo5.png" alt="Productores-agroApp"
+              class="aboutUs-home " loading="lazy">
+            <img src="/imagenes/Home/promo1.png" alt="Productos-destacados"
+              class="products-home " loading="lazy">
+          </div>
         </div>
-        <button class="carousel-button" id="next-btn">&gt;</button>
+        <button class="carousel-button next-btn">&gt;</button>
       </div>
+      <!--==== Termina Sección carousel explorar ====-->
 
-
-<!-- ==== Sección publicciones-Blogs====-->
-
-<section class="container specials">
-  <h1 class="heading-1">Publicaciones</h1>
-  <div class="conainer-blogs">
-    <div class="card-blog">
-
-    </div>
-  </div>
-</section>
-
-
-
-
-
-      <!--==== Seccion Comentarios  MODIFICAR ESTA PARTE  -->
+      <!--==== Inicia Seccion Destacados ==== -->
       <div class="container about-section">
-  <div class="row align-items-center mb-4">
-    <div class="col-md-6">
-      <h1 class="about-heading">AgroApp</h1>
-      <p class="about-text">
-        En AgroApp, conectamos directamente a los agricultores con los
-        consumidores finales. Inspirados por la realidad del campo
-        colombiano, buscamos eliminar intermediarios para que los
-        campesinos reciban un pago justo y los consumidores disfruten de
-        productos frescos y accesibles. Transformamos el sector agrícola
-        con tecnología e innovación.
-      </p>
-    </div>
-    <div class="col-md-6">
-      <img
-        src="../imagenes/sobre_nosotros.jpg"
-        alt="Nosotros AgroApp"
-        class="about-img"
-      />
-    </div>
-  </div>
-  <hr />
-
-
-  </main>
-
-    <!-- Footer -->
-    <footer id="contacto">
-      <div class="contact&social">
-        <div class="contact&socialContainer">
-          <h2>Contacto y Redes Sociales</h2>
-          <div class="social-links">
-            <a href="#" class="social-link">LinkedIn</a>
-            <a href="#" class="social-link">GitHub</a>
-            <a href="#" class="social-link">Twitter</a>
-          </div>
-          <div class="contact-info">
-            <p>
-              ¿Interesado en trabajar juntos?:
-              <a href="../HTML/contact-form.html">Contáctenos</a>
+        <div class="row align-items-center mb-4">
+          <div class="col-md-6">
+            <h1 class="heading-1">Destacados</h1>
+            <p class="about-text">
+              El 2 de junio, Día del Campesino, reconoce la labor de quienes
+              cultivan la tierra, asegurando nuestra
+              alimentación y preservando tradiciones. Su esfuerzo impulsa el
+              desarrollo rural y la sostenibilidad, por
+              lo que es esencial brindarles acceso a mercados justos, tecnología
+              y mejores oportunidades. Celebramos su
+              dedicación y su papel fundamental en el futuro del campo.
             </p>
-            <p>Envíame un mensaje a: contacto@agroapp.com</p>
+          </div>
+          <div class="col-md-6">
+            <img src="../imagenes/Home/Destacados.jpeg" alt="Nosotros AgroApp"
+              class="destacado-img" loading="lazy" />
           </div>
         </div>
+        <hr />
+
+        <!-- ==== Inicia Sección publicaciones-Blogs====-->
+        <section class="container-b blogs">
+          <h1 class="heading-1">Últimas Publicaciones</h1>
+          <div class="container-blogs">
+
+            <!-- === Inicia Card Blog 1 ===-->
+            <div class="card-blog blog-1">
+              <div class="container-imgb">
+                <a
+                  href="https://www.agropinos.com/blog/politicas-por-el-cambio-climatico"><img
+                    src="../imagenes/Home/blog1 (2).jpg" alt loading="lazy"></a>
+                <div class="button-group-blog">
+                  <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                  <a
+                    href="https://www.agropinos.com/blog/politicas-por-el-cambio-climatico "><span><i
+                        class="fa-solid fa-link"></i></span></a>
+                </div>
+              </div>
+              <div class="content-blog">
+                <a
+                  href="https://www.agropinos.com/blog/politicas-por-el-cambio-climatico"><h3>Agricultura
+                    responsable </h3></a>
+                <span>12/02/2025</span>
+                <p>El cambio climático es un desafío global que exige acciones
+                  inmediatas. ¿Sabías que la agricultura,
+                  tanto parte del problema como de la solución, tiene un rol
+                  crucial en este proceso? Descubre cómo las
+                  prácticas agrícolas responsables y el apoyo a los pequeños
+                  campesinos pueden ser la clave para un
+                  futuro más sostenible y resiliente. Acompáñanos en este
+                  recorrido para entender cómo cada bocado puede
+                  ser una declaración de principios en la lucha contra el cambio
+                  climático</p>
+                <a
+                  href="https://www.agropinos.com/blog/politicas-por-el-cambio-climatico">
+                  <div class="btn-read-more"> Leer Más</div></a>
+              </div>
+            </div>
+
+            <!-- === Inicia Card Blog 2 ===-->
+            <div class="card-blog blog-2 hidde-blog-2">
+              <div class="container-imgb">
+                <a
+                  href="https://www.agropinos.com/blog/agricultura-y-cuidado-medioambiental">
+                  <img src="../imagenes/Home/blog2.jpg" alt loading="lazy"></a>
+                <div class="button-group-blog">
+                  <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                  <a
+                    href="https://www.agropinos.com/blog/agricultura-y-cuidado-medioambiental">
+                    <span><i class="fa-solid fa-link"></i></span></a>
+                </div>
+              </div>
+              <div class="content-blog">
+                <a
+                  href="https://www.agropinos.com/blog/agricultura-y-cuidado-medioambiental">
+                  <h3>Conectar con lo Nuestro </h3></a>
+                <span> 7/02/2025</span>
+                <p>¿Te has preguntado alguna vez de dónde vienen tus alimentos y
+                  cómo impactan al planeta? Te invitamos
+                  a reconectar con el campo colombiano, valorar nuestras raíces
+                  y adoptar un consumo consciente que
+                  beneficie a los campesinos, proteja la naturaleza y nos brinde
+                  alimentos frescos y nutritivos.
+                  Descubre cómo cada elección alimentaria puede ser un acto de
+                  amor por nuestra tierra y nuestra gente.
+                </p>
+                <a
+                  href="https://www.agropinos.com/blog/agricultura-y-cuidado-medioambiental">
+                  <div class="btn-read-more"> Leer Más</div></a>
+              </div>
+            </div>
+
+            <!-- === Inicia Card Blog 3 ===-->
+            <div class="card-blog blog-3 hidde-blog-3">
+              <div class="container-imgb">
+                <a
+                  href="https://blogagricultura.com/importancia-agricultura-vertical/">
+                  <img src="../imagenes/Home/blog8.jpg" alt loading="lazy"></a>
+                <div class="button-group-blog">
+                  <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                  <a
+                    href="https://blogagricultura.com/importancia-agricultura-vertical/"><span><i
+                        class="fa-solid fa-link"></i></span></a>
+                </div>
+              </div>
+              <div class="content-blog">
+                <a
+                  href="https://blogagricultura.com/importancia-agricultura-vertical/"><h3>Elecciones
+                    Alimentarias </h3></a>
+                <span>01/02/2025</span>
+                <p>Cada alimento que llega a tu mesa tiene una historia detrás:
+                  el esfuerzo de los campesinos, el uso de
+                  recursos naturales, el impacto en el medio ambiente. Descubre
+                  cómo tus elecciones alimentarias pueden
+                  transformar tu salud y la del planeta. ¡Acompáñanos en este
+                  viaje hacia un consumo responsable y
+                  consciente!</p>
+                <a
+                  href="https://blogagricultura.com/importancia-agricultura-vertical/"><div
+                    class="btn-read-more"> Leer Más</div></a>
+              </div>
+            </div>
+            <!-- === Termina Card Blog 3 ===-->
+          </div>
+        </section>
+        <!-- ==== Termina Sección publicciones-Blogs====-->
+
+      </main>
+
+      <!--==== Sección carousel publicidad -->
+      <div class="slider-box">
+        <div class="slider">
+          <div class="move" id="slider-move"></div>
+        </div>
       </div>
-    </footer>
-    
-<!--==== Scripts ====-->
-    <script src="../JS/home.js"></script>
-    <script src="../JS/aboutUs.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-  </body>
-</html>
+
+      <!-- Footer -->
+      <footer id="contacto" class="footer-bottom">
+        <div class="contact&social">
+          <div class="contact&socialContainer">
+            <h2>Contacto y Redes Sociales</h2>
+            <div class="social-links">
+              <a href="#" class="social-link">LinkedIn</a>
+              <a href="#" class="social-link">GitHub</a>
+              <a href="#" class="social-link">Twitter</a>
+            </div>
+            <div class="contact-info">
+              <p>
+                ¿Interesado en trabajar juntos?:
+                <a href="../HTML/contact-form.html">Contáctenos</a>
+              </p>
+              <p>Envíame un mensaje a: contacto@agroapp.com</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!--==== Scripts ====-->
+      <script src="../JS/activeNavbar.js"></script>
+      <script src="../JS/home.js" defer></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    </body>
+  </html>
