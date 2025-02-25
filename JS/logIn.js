@@ -136,8 +136,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("home-button").addEventListener("click", function () {
-      const form = document.querySelector(".form-login");
-      form.reset();
-      window.location.href = "../HTML/home.html"; 
+    const form = document.querySelector(".form-login");
+    form.reset();
+    window.location.href = "../HTML/home.html";
   });
 });
