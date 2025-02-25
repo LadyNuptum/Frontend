@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const aceptTerms = document.getElementById("acept");
   const inputs = form.querySelectorAll("input:not([type='submit'])");
 
-  btnSubmit.disabled = true; // Desactiva el botón inicialmente
+  btnSubmit.disabled = true; // Deshabilitar botón hasta aceptar términos
 
   const patterns = {
     name: /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s]{2,30}$/,
@@ -266,21 +266,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const value = input.value.trim();
 
     if (!value) {
-      showError(input, inputType === "name" ? errorMessages.name : errorMessages.empty);
+      showError(input, errorMessages.empty);
       return false;
     }
 
     if (inputType === "acept" && !input.checked) {
-      showError(input, errorMessages[inputType]);
+      showError(input, errorMessages.acept);
       return false;
     }
 
-    if (inputType === "confirm-password" && value !== document.getElementById("password").value) {
-      showError(input, errorMessages[inputType]);
-      return false;
-    }
-
-    if (patterns[inputType] && !patterns[inputType].test(value)) {
+    if (inputType === "confirm-password") {
+      if (value !== document.getElementById("password").value) {
+        showError(input, errorMessages[inputType]);
+        return false;
+      }
+    } else if (patterns[inputType] && !patterns[inputType].test(value)) {
       showError(input, errorMessages[inputType]);
       return false;
     }
@@ -299,104 +299,75 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Función Asíncrona para Enviar Datos al Backend
-  async function registrarUsuario(e) {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    btnSubmit.disabled = true; 
-
     let isValid = true;
     inputs.forEach((input) => {
       if (!validateField(input)) isValid = false;
     });
 
-    if (!aceptTerms.checked) {
-      showError(aceptTerms, errorMessages["acept"]);
-      isValid = false;
-    }
+    if (!isValid) return;
 
-    if (!isValid) {
-      btnSubmit.disabled = false;
-      return;
-    }
-
-    
-    const overlay = document.getElementById("overlay");
-    overlay.style.display = "flex";
-
- 
     const userData = {
+      correo: document.getElementById("email").value.trim(),
+      contrasena: document.getElementById("password").value.trim(),
       nombre: document.getElementById("name").value.trim(),
       apellido: document.getElementById("lastName").value.trim(),
-      correo: document.getElementById("email").value.trim(),
       telefono: document.getElementById("phone").value.trim(),
-      contrasena: document.getElementById("password").value.trim(),
     };
 
     try {
-      const response = await fetch("http://localhost:8080/usuarios", {
+      const response = await fetch("http://localhost:8080/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userData),
       });
 
+
+      const result = await response.json();
+
       if (!response.ok) {
-        const errorMessage = await response.text();
-        throw new Error(errorMessage);
-    }
+        showError(document.getElementById("email"), result.message || "Error en el registro.");
+        return;
+      }
 
-      mostrarAlerta("Registro exitoso. Redirigiendo al login...");
-      setTimeout(() => window.location.href = "logIn.html", 3000);
-
+      alert("Registro exitoso! Redirigiendo al login...");
+      window.location.href = "logIn.html";
     } catch (error) {
-      console.error("Error en la solicitud:", error);
-        mostrarAlerta(error.message);
-    } finally {
-      overlay.style.display = "none"; 
-      btnSubmit.disabled = false;
+      console.error("Error en el registro:", error);
+      alert("Ocurrió un error inesperado. Intente nuevamente.");
     }
-  }
-
-  // Asociar la función al evento submit del formulario**
-  form.addEventListener("submit", registrarUsuario);
-
-  // Mostrar/Ocultar contraseña**
-  const passInputs = document.querySelectorAll(".pass");
-  const icons = document.querySelectorAll(".bx");
-
-  if (passInputs.length === icons.length) {
-    passInputs.forEach((input, index) => {
-      icons[index].addEventListener("click", () => {
-        if (input.type === "password") {
-          input.type = "text";
-          icons[index].classList.replace("bx-show-alt", "bx-hide");
-        } else {
-          input.type = "password";
-          icons[index].classList.replace("bx-hide", "bx-show-alt");
-        }
+  });
+  
+  const passInputs = document.querySelectorAll('.pass');
+    const icons = document.querySelectorAll('.bx');
+  
+    if (passInputs.length === icons.length) {
+      passInputs.forEach((input, index) => {
+        const icon = icons[index];
+  
+        icon.addEventListener("click", () => {
+          if (input.type === "password") {
+            input.type = "text";
+            icon.classList.remove("bx-show-alt");
+            icon.classList.add("bx-hide");
+          } else {
+            input.type = "password";
+            icon.classList.add("bx-show-alt");
+            icon.classList.remove("bx-hide");
+          }
+        });
       });
-    });
-  } else {
-    console.error("Número de inputs e iconos no coincide.");
-  }
+    } else {
+      console.error("Número de inputs e iconos no coincide.");
+    } 
 });
 
-
-//  alerta 
-function mostrarAlerta(mensaje) {
-  const alertBox = document.getElementById("custom-alert");
-  const alertMessage = document.getElementById("alert-message");
-  alertMessage.textContent = mensaje;
-  alertBox.classList.remove("hidden");
-}
-
-function cerrarAlerta() {
-  document.getElementById("custom-alert").classList.add("hidden");
-}
-
-
-//  Función para regresar a la página de inicio
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("home-button").addEventListener("click", function () {
-    window.location.href = "../HTML/home.html";
+      const form = document.querySelector(".form-register");
+      form.reset();
+      window.location.href = "../HTML/home.html"; 
   });
 });
+

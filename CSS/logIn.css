@@ -95,8 +95,8 @@ span.navbar-text {
 /*==== Botón regresar a Inicio ========*/
 #home-button {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 15px;
   background: none;
   border: none;
   cursor: pointer;

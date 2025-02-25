@@ -21,7 +21,7 @@ function renderCarrito() {
 
   if (carrito.length === 0) {
     contenedorProductos.innerHTML = `
-      <h2 class="empty-cart"> El Carrito está vacío</h2>
+      <h2 class="empty-cart"> El carrito está vacío</h2>
       <div class="img-carrito">   
         <img src="../imagenes/carro-vacio.png" alt="Carrito vacío" class="empty-cart-img">
       </div>
@@ -33,8 +33,8 @@ function renderCarrito() {
     const card = document.createElement("div");
     card.classList.add("card");
     card.innerHTML = `
-      <h2 class="product-title">${producto.name}</h2>
-      <p class="product-description">${producto.description}</p>
+      <h2 class="product-title">${producto.nombre}</h2>
+      <p class="product-description">${producto.descripcion}</p>
       
       <div class="product-actions">
         <button class="btn btn-danger" onclick="eliminarDelCarrito(${index})">Eliminar</button>
@@ -45,7 +45,7 @@ function renderCarrito() {
         <button class="btn-quantity plus" onclick="actualizarCantidad(${index}, 1)">+</button>
       </div>
       <div class="product-price">
-        <span class="price">$ ${formatearPrecio(producto.price * producto.cantidad)}</span>
+        <span class="price">$ ${formatearPrecio(producto.precio * producto.cantidad)}</span>
       </div>
     `;
     contenedorProductos.appendChild(card);
@@ -68,13 +68,13 @@ function renderResumenCompra() {
   let total = 0;
 
   carrito.forEach((producto) => {
-    total += producto.price * producto.cantidad;
+    total += producto.precio * producto.cantidad;
 
     const row = document.createElement("div");
     row.classList.add("summary-row");
     row.innerHTML = `
-      <span>${producto.name}</span>
-      <span>$ ${formatearPrecio(producto.price * producto.cantidad)}</span>
+      <span>${producto.nombre}</span>
+      <span>$ ${formatearPrecio(producto.precio * producto.cantidad)}</span>
     `;
     contenedorResumen.appendChild(row);
   });
@@ -97,20 +97,6 @@ function actualizarCantidad(index, delta) {
   renderResumenCompra();
 }
 
-// Agregar un producto al carrito
-function agregarAlCarrito(producto) {
-  const productoEnCarrito = carrito.find(item => item.id === producto.id);
-
-  if (productoEnCarrito) {
-    productoEnCarrito.cantidad += 1;
-  } else {
-    carrito.push({ ...producto, cantidad: 1 });
-  }
-
-  guardarCarrito();
-  renderCarrito();
-  renderResumenCompra();
-}
 
 // Eliminar un producto del carrito
 function eliminarDelCarrito(index) {
