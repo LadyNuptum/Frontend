@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.navbar-logo a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.navbar-menu ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.navbar-menu ul li {
+    margin-right: 20px;
+}
+
+.navbar-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar-menu ul li a:hover {
+    color: #007bff;
+}
+
+.user-profile {
+    position: relative;
+}
+
+.profile-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    width: 150px;
+}
+
+.dropdown-menu ul {
+    list-style-type: none;
+}
+
+.dropdown-menu ul li {
+    padding: 10px;
+    text-align: center;
+}
+
+.dropdown-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.dropdown-menu ul li:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown-menu ul li a:hover {
+    color: #007bff;
+}
+
+/* Mostrar el menú cuando la clase "show" está presente */
+.show {
+    display: block;
+}
+
+
