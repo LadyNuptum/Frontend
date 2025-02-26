@@ -82,6 +82,30 @@ span.navbar-text {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
+.card-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.product-info {
+  flex: 1;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-image {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
 
 p.description {
   text-align: justify;
@@ -271,6 +295,15 @@ h2.empty-cart {
   .heading-1 {
     font-size: 0.9rem;
     font-weight: 700;
+  }
+
+  .card-container {
+    flex-direction: column-reverse;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 200px;
   }
 
 }
