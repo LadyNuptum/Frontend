@@ -4,7 +4,7 @@ const navbarTitle = document.getElementById("navbar-page-title");
 navbarTitle.textContent = pageTitle;
 
 window.onscroll = function () {
-  
+
   const navbar = document.querySelector("header");
   const titleContainer = document.querySelector(".navbar-title");
 

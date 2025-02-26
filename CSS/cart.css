@@ -6,12 +6,13 @@
   --color-highlight: #f3d914;
   --color-text: #ffffff;
 }
+
 /*banner*/
 .banner {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("/imagenes/fondo-banner.png"); 
+  background-image: url("/imagenes/fondo-banner.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -19,10 +20,10 @@
   height: 7rem;
   position: relative;
   margin-bottom: 2rem;
-  
+
 }
 
-.banner-1{
+.banner-1 {
   position: absolute;
   top: 0;
   left: 0;
@@ -41,12 +42,12 @@
 
 /* Estilos para el texto "Inicio sesión" en el navbar */
 span.navbar-text {
-  font-family: 'Nunito', sans-serif; 
+  font-family: 'Nunito', sans-serif;
   font-size: 1.9rem;
-  font-weight: 600; 
-  color:#ffffff; 
-  margin-left: 3.5rem; 
-  margin-right: auto; 
+  font-weight: 600;
+  color: #ffffff;
+  margin-left: 3.5rem;
+  margin-right: auto;
   /* display: block;
   margin: 0 auto;  */
 }
@@ -59,10 +60,12 @@ span.navbar-text {
   margin-top: 20px;
 }
 
-.fa-solid, .fas {
+.fa-solid,
+.fas {
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
 }
+
 .product-details {
   flex: 2;
 }
@@ -79,6 +82,7 @@ span.navbar-text {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
+
 p.description {
   text-align: justify;
   margin-top: 1rem;
@@ -172,13 +176,14 @@ h3.summary-title {
 }
 
 
-.img-carrito{
-display: flex;
-justify-content: center;
+.img-carrito {
+  display: flex;
+  justify-content: center;
 }
-img.empty-cart-img{
-  width: 50%; 
- }
+
+img.empty-cart-img {
+  width: 50%;
+}
 
 h2.empty-cart {
   font-family: 'nunito';
@@ -187,7 +192,7 @@ h2.empty-cart {
   display: block;
   margin: 0 auto;
   text-align: center;
-  color:#dc3545;
+  color: #dc3545;
   width: 100%;
 }
 
@@ -201,7 +206,7 @@ h2.empty-cart {
   gap: 1rem;
   padding: 1rem 0;
   margin-top: 2rem;
- }
+}
 
 .card-features {
   display: flex;
@@ -225,7 +230,7 @@ h2.empty-cart {
 }
 
 .feature-content span {
-   font-weight: 700;
+  font-weight: 700;
   font-size: 1rem;
   font-family: "Nunito", sans-serif;
   color: var(--color-primary);
@@ -233,17 +238,15 @@ h2.empty-cart {
 
 /*==================== Queries===================*/
 
-
-
 @media (max-width: 768px) {
 
   span.navbar-text {
-    font-family: 'Nunito', sans-serif; 
+    font-family: 'Nunito', sans-serif;
     font-size: 1.9rem;
-    font-weight: 600; 
-    color:#ffffff; 
-    margin-left: 3.5; 
-    margin-right: auto; 
+    font-weight: 600;
+    color: #ffffff;
+    margin-left: 3.5;
+    margin-right: auto;
     /* display: block;
     margin: 0 auto;  */
   }
@@ -259,13 +262,14 @@ h2.empty-cart {
   }
 
   .feature-content span {
-   
+
     font-weight: 200;
     font-size: 0.8rem;
-   
+
   }
+
   .heading-1 {
-    font-size:0.9rem;
+    font-size: 0.9rem;
     font-weight: 700;
   }
 
@@ -274,22 +278,23 @@ h2.empty-cart {
 
 @media (max-width: 567px) {
 
-  
+
   span.navbar-text {
-    font-family: 'Nunito', sans-serif; 
+    font-family: 'Nunito', sans-serif;
     font-size: 1.9rem;
-    font-weight: 600; 
-    color:#ffffff; 
-    margin-left: 3.5; 
-    margin-right: auto; 
+    font-weight: 600;
+    color: #ffffff;
+    margin-left: 3.5;
+    margin-right: auto;
     /* display: block;
     margin: 0 auto;  */
   }
-  img.empty-cart-img{
+
+  img.empty-cart-img {
     width: 80%;
   }
 
-  h3.summary-title{
+  h3.summary-title {
     font-size: 1.2rem;
     width: 100%;
     font-weight: bold;
@@ -313,13 +318,13 @@ h2.empty-cart {
     display: block;
     margin: 0 auto;
     text-align: center;
-    color:#dc3545;
+    color: #dc3545;
     width: 90%;
   }
 }
 
 @media (max-width: 467px) {
-  
+
 
   .btn-checkout {
     width: 100%;
@@ -330,7 +335,8 @@ h2.empty-cart {
   .cart-layout {
     flex-direction: column-reverse;
   }
-  .cart-layout .order-summary{
+
+  .cart-layout .order-summary {
     align-self: center;
   }
 
@@ -343,11 +349,9 @@ h2.empty-cart {
     text-align: center;
     overflow: hidden;
   }
+
   .card-features i {
     font-size: 1.5rem;
-    
+
   }
 }
-
-
-

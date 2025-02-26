@@ -6,12 +6,13 @@
   --color-highlight: #f3d914;
   --color-text: #ffffff;
 }
+
 /*banner*/
 .banner {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("/imagenes/fondo-banner.png"); 
+  background-image: url("/imagenes/fondo-banner.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -19,10 +20,10 @@
   height: 7rem;
   position: relative;
   margin-bottom: 2rem;
-  
+
 }
 
-.banner-1{
+.banner-1 {
   position: absolute;
   top: 0;
   left: 0;
@@ -38,28 +39,16 @@
   padding: 1rem 2rem;
 }
 
-
-/* Estilos para el texto "Inicio sesión" en el navbar */
-/* span.navbar-text {
-  font-family: 'Nunito', sans-serif; 
-  font-size: 1.9rem;
-  font-weight: 600; 
-  color:#ffffff; 
-  margin-left: 3rem; 
-  margin-right: auto; 
-  display: block;
-  margin: 0 auto; 
-} */
-
 /* Estilo de textos */
 .about-text {
   text-align: justify;
 }
+
 /* ===  Estilos para ACtive navbar ===*/
 .navbar-nav .nav-link.active {
   font-weight: bold;
-  color: #28a745 !important; 
-    text-decoration: none !important;
+  color: #28a745 !important;
+  text-decoration: none !important;
 }
 
 /* Estilos generales */
@@ -71,6 +60,7 @@ body {
   flex-direction: column;
   font-family: 'nunito';
 }
+
 /* Header - Navegación */
 header {
   position: fixed;
@@ -87,11 +77,10 @@ header {
 }
 
 
-
 .navbar-title {
-  
+
   font-family: "nunito";
-  font-size: 1.5rem; 
+  font-size: 1.5rem;
   color: var(--color-text);
   margin-right: 2.5rem;
   font-weight: bold;
@@ -100,8 +89,8 @@ header {
 }
 
 .sticky-navbar .navbar-title {
-  
-  opacity: 1; 
+
+  opacity: 1;
 }
 
 .navbar {
@@ -123,17 +112,17 @@ header {
 }
 
 .nav-link {
-  color: var(--color-text)!important;
+  color: var(--color-text) !important;
   font-size: 1rem;
   margin: 0 1rem;
   transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-  color: var(--color-secondary)!important;
+  color: var(--color-secondary) !important;
 }
 
-.banner{
+.banner {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -333,7 +322,7 @@ footer {
   color: white;
   padding: 1rem 5rem 0rem 5rem;
   text-align: center;
-  margin-top:2rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -342,15 +331,16 @@ footer {
 
 .contact&socialContainer {
   width: 100%;
-  max-width: 600px; /* Ajusta según necesidad */
+  max-width: 600px;
+  /* Ajusta según necesidad */
   text-align: center;
 }
 
 
 .social-links {
   display: flex;
-  justify-content:center;
- }
+  justify-content: center;
+}
 
 .contact-info p a {
   text-decoration: underline;
@@ -360,7 +350,7 @@ footer {
 
 .contact-info {
   text-decoration: underline;
-  margin: 1rem ;
+  margin: 1rem;
   text-decoration: none;
 }
 
@@ -368,7 +358,7 @@ footer {
 .contact\&socialContainer {
   max-width: 1200px;
   margin-top: 5px;
- 
+
 }
 
 .social-link {
@@ -380,7 +370,7 @@ footer {
   margin: 1rem;
 }
 
-.contact\&socialContainer h2{
+.contact\&socialContainer h2 {
   margin-bottom: 2rem;
 }
 
@@ -398,7 +388,7 @@ footer {
   .team-card .card-img-top {
     height: 200px;
   }
-  
+
 }
 
 @media (max-width: 768px) {
@@ -417,24 +407,24 @@ footer {
   .descriptionBanner {
     font-size: 1.2rem;
   }
-  
-  
+
+
 }
 
 @media (max-width: 470px) {
   .title {
     font-size: 1.8rem;
   }
-  
+
   footer {
-   padding: 1rem 1rem 0rem 1rem;
-  
+    padding: 1rem 1rem 0rem 1rem;
+
   }
 
- .social-link {
-   padding: 0.3rem 0.3rem;
-  margin: 0.3rem;
-  flex-wrap: wrap;
-}
-  
+  .social-link {
+    padding: 0.3rem 0.3rem;
+    margin: 0.3rem;
+    flex-wrap: wrap;
+  }
+
 }

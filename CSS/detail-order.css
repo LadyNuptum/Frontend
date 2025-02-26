@@ -1,157 +1,163 @@
 :root {
-    --color-primary: #0b2d26;
-    --color-secondary: #097b35;
-    --color-accent: #7dba36;
-    --color-background: #ffffff;
-    --color-highlight: #f3d914;
-    --color-text: #ffffff;
-  }
-
-  body{
-    
-    font-family: 'nunito';
-  }
-
-h1.text-center{
-    color: #097b35;
-    font-size: 2.5rem;
-    font-weight: 600;
+  --color-primary: #0b2d26;
+  --color-secondary: #097b35;
+  --color-accent: #7dba36;
+  --color-background: #ffffff;
+  --color-highlight: #f3d914;
+  --color-text: #ffffff;
 }
 
-h2{
-    text-align: center;
+body {
+
+  font-family: 'nunito';
+}
+
+h1.text-center {
+  color: #097b35;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+h2 {
+  text-align: center;
 }
 
 
 
-#username{
-    color:rgb(8, 8, 145);
-    font-size: 1.5rem;
-    font-family: 'nunito';
-    font-weight: 700;
+#username {
+  color: rgb(8, 8, 145);
+  font-size: 1.5rem;
+  font-family: 'nunito';
+  font-weight: 700;
 }
 
-p.text-center{
-    text-align: center;
-    color: #0b2d26;
-    font-weight: 600;    
-    font-size: 1.5rem;
+p.text-center {
+  text-align: center;
+  color: #0b2d26;
+  font-weight: 600;
+  font-size: 1.5rem;
 }
 
-  /* Estilos para los botones de acción */
+/* Estilos para los botones de acción */
 .order-actions {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-    justify-content: center;
-    flex-wrap: wrap; /* Para que los botones se ajusten en pantallas pequeñas */
-  }
-  
-  .order-actions .btn {
-    font-size: 1rem;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .order-actions .btn i {
-    font-size: 1.2rem;
-  }
-  
-  /* Estilos generales */
-  .order-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .order-details {
-    margin-top: 2rem; background-color: #ffffff;
-    padding: 1.5rem;
-    border-radius: 10px;
-    border: rgb(29, 121, 102, 0.3) 1px solid;
-    margin-top: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .order-details h3 {
-    font-size: 2rem;
-    color: var(--color-secondary);
-    margin-bottom: 2rem;
-    text-align: center;
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* Para que los botones se ajusten en pantallas pequeñas */
+}
 
-  }
-  
-  .order-summary {
-    background-color: #ffffff;
-    padding: 1.5rem;
-    border-radius: 10px;
-    border: rgb(29, 121, 102, 0.3) 1px solid;
-    margin-top: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.order-actions .btn {
+  font-size: 1rem;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
-  }
-  
-  .order-summary h3 {
-    font-size: 2rem;
-    color: var(--color-secondary);
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-  
-  .order-summary div {
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-  }
-  
+.order-actions .btn i {
+  font-size: 1.2rem;
+}
 
-  
-  .email-form {
-    margin-top: 2rem;
-    display: none;
-    text-align: center;
-  }
-  
-  .email-form h3 {
-    font-size: 1.5rem;
-    color: var(--color-primary);
-    margin-bottom: 1rem;
-  }
-  
-  .email-form input {
-    width: 100%;
-    max-width: 300px;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 1rem;
-  }
-  
-  .email-form button {
-    width: 100%;
-    max-width: 300px;
-  }
-  
-  /* Estilos para el recibo */
+/* Estilos generales */
+.order-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-  #order-number, #order-payment-method, #order-total {
-    color:#0b2d26;
-    text-align: center;
-  }
-  #order-total{
-    font-size: 1.3rem;
-  }
-  #order-items .summary-row {
-    display: flex;
-    justify-content: space-around;
-    padding: 5.5rem rem;
+.order-details {
+  margin-top: 2rem;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: rgb(29, 121, 102, 0.3) 1px solid;
+  margin-top: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-  }
-  
-  #order-items .summary-row:last-child {
-    border-bottom: none;
-  }
+.order-details h3 {
+  font-size: 2rem;
+  color: var(--color-secondary);
+  margin-bottom: 2rem;
+  text-align: center;
+
+}
+
+.order-summary {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: rgb(29, 121, 102, 0.3) 1px solid;
+  margin-top: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.order-summary h3 {
+  font-size: 2rem;
+  color: var(--color-secondary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.order-summary div {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+
+
+.email-form {
+  margin-top: 2rem;
+  display: none;
+  text-align: center;
+}
+
+.email-form h3 {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.email-form input {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.email-form button {
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Estilos para el recibo */
+
+#order-number,
+#order-payment-method,
+#order-total {
+  color: #0b2d26;
+  text-align: center;
+}
+
+#order-total {
+  font-size: 1.3rem;
+}
+
+#order-items .summary-row {
+  display: flex;
+  justify-content: space-around;
+  padding: 5.5rem rem;
+
+}
+
+#order-items .summary-row:last-child {
+  border-bottom: none;
+}
