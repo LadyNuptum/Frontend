@@ -41,18 +41,25 @@ function renderCarrito() {
     const card = document.createElement("div");
     card.classList.add("card");
     card.innerHTML = `
-      <h2 class="product-title">${producto.nombre}</h2>
-      <p class="product-description">${producto.descripcion}</p>
-      <div class="product-actions">
-        <button class="btn btn-danger" onclick="eliminarDelCarrito(${index})">Eliminar</button>
-      </div>
-      <div class="product-quantity">
-        <button class="btn-quantity minus" onclick="actualizarCantidad(${index}, -1)">-</button>
-        <span class="quantity">${producto.cantidad}</span>
-        <button class="btn-quantity plus" onclick="actualizarCantidad(${index}, 1)">+</button>
-      </div>
-      <div class="product-price">
-        <span class="price">$ ${formatearPrecio(producto.precio * producto.cantidad)}</span>
+      <div class="card-container">
+        <div class="product-info">
+          <h2 class="product-title">${producto.nombre}</h2>
+          <p class="product-description">${producto.descripcion}</p>
+          <div class="product-actions">
+            <button class="btn btn-danger" onclick="eliminarDelCarrito(${index})">Eliminar</button>
+          </div>
+          <div class="product-quantity">
+            <button class="btn-quantity minus" onclick="actualizarCantidad(${index}, -1)">-</button>
+            <span class="quantity">${producto.cantidad}</span>
+            <button class="btn-quantity plus" onclick="actualizarCantidad(${index}, 1)">+</button>
+          </div>
+          <div class="product-price">
+            <span class="price">$ ${formatearPrecio(producto.precio * producto.cantidad)}</span>
+          </div>
+        </div>
+        <div class="product-image">
+          <img src="${producto.imagen}" alt="${producto.nombre}">
+        </div>
       </div>
     `;
     contenedorProductos.appendChild(card);
