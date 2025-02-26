@@ -4,14 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro</title>
-    <link rel="shortcut icon" href="../imagenes/agroapp_logo-01.png" type="image/x-icon"/>
-    <link rel="stylesheet" href="../CSS/singUp.css"/>
+    <link
+      rel="shortcut icon"
+      href="../imagenes/agroapp_logo-01.png"
+      type="image/x-icon" />
+    <link rel="stylesheet" href="../CSS/singUp.css" />
     <link rel="stylesheet" href="../CSS/styles.css" />
-    <link rel="stylesheet" href="../CSS/products.css"/>
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <link rel="stylesheet" href="../CSS/products.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
   </head>
   <div id="overlay" class="overlay" style="display: none">
     <div id="spinner" class="spinner-container">
@@ -20,7 +31,6 @@
     </div>
   </div>
   <body>
-
     <div class="container-register">
       <div class="container-left">
         <div class="info-register">
@@ -33,33 +43,60 @@
       </div>
 
       <div class="register-content">
-        <button id="home-button">Volver <i class="fa-solid fa-house"></i></button>
-          <form action="ruta_del_backend_aqui" method="POST" class="form-register">
+        <button id="home-button">
+          Volver <i class="fa-solid fa-house"></i>
+        </button>
+        <form
+          action="ruta_del_backend_aqui"
+          method="POST"
+          class="form-register">
           <h2>¡Regístrate aquí!</h2>
           <div class="register-group">
             <div class="register-row s-center">
               <input type="text" id="name" name="name" placeholder="Nombre *" />
             </div>
             <div class="register-row">
-              <input type="text" id="lastName" name="lastName" placeholder="Apellido *" />
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                placeholder="Apellido *" />
             </div>
           </div>
           <div class="register-group">
             <div class="register-row">
-              <input type="text" id="email" name="email" placeholder="ejemplo@correo.com *" />
+              <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder="ejemplo@correo.com *" />
             </div>
             <div class="register-row">
-              <input type="text" id="phone" name="phone" placeholder="Teléfono *" />
+              <input
+                type="text"
+                id="phone"
+                name="phone"
+                placeholder="Teléfono *" />
             </div>
           </div>
 
           <div class="register-group">
             <div class="register-row">
-              <input type="password" class="pass" id="password" name="password" placeholder="Contraseña *" />
+              <input
+                type="password"
+                class="pass"
+                id="password"
+                name="password"
+                placeholder="Contraseña *" />
               <span id="password-icon"><i class="bx bx-show-alt"></i></span>
             </div>
             <div class="register-row">
-              <input type="password" class="pass" id="confirm-password" name="confirm-password" placeholder="Confirmar*" />
+              <input
+                type="password"
+                class="pass"
+                id="confirm-password"
+                name="confirm-password"
+                placeholder="Confirmar*" />
               <span id="password-icon"><i class="bx bx-show-alt"></i></span>
             </div>
           </div>
@@ -68,7 +105,8 @@
             <input type="checkbox" id="acept" name="acept" />
             <label for="acept">
               Acepto
-              <a href="/files/terms.pdf" target="_blank">términos y condiciones</a>
+              <a href="/files/terms.pdf" target="_blank">términos y
+                condiciones</a>
               <span>*</span>
             </label>
           </div>
@@ -90,6 +128,9 @@
   </div>
 
     <script src="../JS/singUp.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
   </body>
 </html>

@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
         body: JSON.stringify(userData),
       });
 
-      const data = await response.json().catch(() => ({}));
+      const data = await response.json().catch(() => ({})); // Manejar el error en caso de que la respuesta no sea JSON
 
       if (!response.ok) {
         const errorMsg = data.message || "Correo o contraseña incorrectos.";
@@ -197,12 +197,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Guardar token y userId en sessionStorage si están presentes
       sessionStorage.setItem("token", data.token);
-      if (data.userId) {
-        sessionStorage.setItem("userId", data.userId);
-      } else {
-        console.warn("La respuesta no incluye userId.");
-      }
-
+      sessionStorage.setItem("nombre", data.nombre);
+      sessionStorage.setItem("apellido", data.apellido);
       window.location.href = "../HTML/home.html";
     } catch (error) {
       console.error("Error en la solicitud:", error);

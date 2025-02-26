@@ -6,12 +6,13 @@
   --color-highlight: #f3d914;
   --color-text: #ffffff;
 }
+
 /*banner*/
 .banner {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("/imagenes/fondo-banner.png"); 
+  background-image: url("/imagenes/fondo-banner.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -19,10 +20,10 @@
   height: 7rem;
   position: relative;
   margin-bottom: 2rem;
-  
+
 }
 
-.banner-1{
+.banner-1 {
   position: absolute;
   top: 0;
   left: 0;
@@ -41,14 +42,14 @@
 
 /* Estilos para el texto "Inicio sesión" en el navbar */
 span.navbar-text {
-  font-family: 'Nunito', sans-serif; 
+  font-family: 'Nunito', sans-serif;
   font-size: 1.9rem;
-  font-weight: 600; 
-  color:#ffffff; 
-  margin-left: 3.5rem; 
-  margin-right: auto; 
+  font-weight: 600;
+  color: #ffffff;
+  margin-left: 3.5rem;
+  margin-right: auto;
   display: flex;
-  align-items: center; 
+  align-items: center;
 }
 
 /* modificaciones Generales*/
@@ -83,7 +84,8 @@ span.navbar-text {
 
 .slider .box {
   flex: 0 0 auto;
-  width: 14.285%; /* Ancho personalizable- Dividir (7 → 14.285) (3.5 → 28.57) (2.5 → 42.285) */
+  width: 14.285%;
+  /* Ancho personalizable- Dividir (7 → 14.285) (3.5 → 28.57) (2.5 → 42.285) */
   height: auto;
 }
 
@@ -249,6 +251,7 @@ span.navbar-text {
 button:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
+
 /* ======================== */
 
 /* =========  publicaciones ========== */
@@ -437,6 +440,7 @@ button:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
 }
+
 /*========= Termina  Sección Blogs ===========*/
 
 /*=== Movimiento infinito carousel publicidad ===*/
@@ -457,6 +461,7 @@ button:hover {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -466,6 +471,7 @@ button:hover {
   from {
     opacity: 1;
   }
+
   to {
     opacity: 0;
   }
@@ -477,6 +483,7 @@ button:hover {
   .card-blog .content-blog p {
     font-size: 90%;
   }
+
   .heading-1 {
     font-size: 2rem;
     font-weight: 700;
@@ -497,6 +504,7 @@ button:hover {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
+
   .hidde-blog-3 {
     display: none;
   }
@@ -516,6 +524,7 @@ button:hover {
   .container-categories {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }
+
   .card-category {
     height: 6rem;
   }
@@ -534,6 +543,7 @@ button:hover {
     height: 80%;
     align-self: center;
   }
+
   .content-blog h3 {
     font-size: 1rem;
   }
@@ -543,6 +553,7 @@ button:hover {
     grid-template-columns: 1fr;
     gap: 6rem;
   }
+
   .hidde-blog-2,
   .hidde-blog-3 {
     display: none;
@@ -555,6 +566,7 @@ button:hover {
   .content-blog p {
     font-size: 1.2rem;
   }
+
   .btn-read-more {
     padding: 0.9rem 1.9rem;
     font-size: 0.7rem;

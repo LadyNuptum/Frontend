@@ -6,12 +6,13 @@
   --color-highlight: #f3d914;
   --color-text: #ffffff;
 }
+
 /*banner*/
-.banner{
+.banner {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("/imagenes/fondo-banner.png"); 
+  background-image: url("/imagenes/fondo-banner.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -19,7 +20,7 @@
   height: 7rem;
   position: relative;
   margin-bottom: 2rem;
-  
+
 }
 
 .banner-1 {
@@ -37,14 +38,14 @@
 
 /* Estilos para el texto "Inicio sesión" en el navbar */
 span.navbar-text {
-  font-family: 'Nunito', sans-serif; 
+  font-family: 'Nunito', sans-serif;
   font-size: 1.9rem;
-  font-weight: 600; 
-  color:#ffffff; 
-  margin-left: 3rem; 
-  margin-right: auto; 
+  font-weight: 600;
+  color: #ffffff;
+  margin-left: 3rem;
+  margin-right: auto;
   display: flex;
-  align-items: center; 
+  align-items: center;
 }
 
 
@@ -217,6 +218,7 @@ p .description {
   border-radius: 0.6rem;
   padding: 1rem;
 }
+
 #cart-sidebar {
   position: fixed;
   top: 0;
