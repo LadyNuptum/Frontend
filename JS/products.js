@@ -11,7 +11,7 @@ function guardarCarrito() {
     localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
-// Renderizar los productos
+// Renderizar los productos 
 async function renderProductos() {
     const contenedorProductos = document.getElementById("products-container");
     contenedorProductos.innerHTML = "";
@@ -68,7 +68,7 @@ function mostrarProductosPorCategoria(categoria, productosPorCategoria, contened
             <h3>${producto.nombre}</h3>
             <p class="description">${producto.descripcion}</p>
             <div class="info-container">
-              <p class="cant">${producto.medido}</p>
+              <p class="cant">${producto.medida}</p>
               <p class="price">Precio: $${formatearPrecio(producto.precio)}</p>
             </div>
             <button class="add-to-cart" onclick="agregarAlCarrito(${producto.idProducto})">🛒 Agregar</button>

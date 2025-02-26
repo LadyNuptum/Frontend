@@ -71,7 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const data = await response.json().catch(() => ({})); // Manejar el error en caso de que la respuesta no sea JSON
 
-
       if (!response.ok) {
         const errorMsg = data.message || "Correo o contraseña incorrectos.";
         showError(document.getElementById("email"), errorMsg);
@@ -80,6 +79,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       sessionStorage.setItem("token", data.token);
+      sessionStorage.setItem("nombre", data.nombre);
+      sessionStorage.setItem("apellido", data.apellido);
       window.location.href = "../HTML/home.html";
     } catch (error) {
       console.error("Error en la solicitud:", error);
