@@ -1,5 +1,7 @@
 let carrito = [];
 
+const loggedInUser = sessionStorage.getItem("token");
+
 // Cargar el carrito desde localStorage
 function cargarCarrito() {
   const carritoGuardado = localStorage.getItem("carrito");
@@ -7,11 +9,11 @@ function cargarCarrito() {
 
   carrito = carrito.map((producto) => ({
     ...producto,
-    quantity: producto.quantity || 1,
+    cantidad: producto.cantidad || 1, // Asegurarse de que la propiedad sea "cantidad"
   }));
 
   renderCarrito();
-  renderResumenCompra(); 
+  renderResumenCompra();
 }
 
 // Renderizar los productos en el carrito
@@ -21,15 +23,15 @@ function renderCarrito() {
 
   if (carrito.length === 0) {
     contenedorProductos.innerHTML = `
-      <h2 class="empty-cart"> El carrito está vacío</h2>
+      <h2 class="empty-cart">El carrito está vacío</h2>
       <div class="img-carrito">   
         <img src="../imagenes/carro-vacio.png" alt="Carrito vacío" class="empty-cart-img">
       </div>
       <div>
-      <p>¿Quieres realizar otra compra?</p>
-      <button class="btn btn-success" onclick="irAProductos()">
-      <i class="fas fa-shopping-cart"></i> Realizar otra compra
-      </button>
+        <p>¿Quieres realizar otra compra?</p>
+        <button class="btn btn-success" onclick="irAProductos()">
+          <i class="fas fa-shopping-cart"></i> Realizar otra compra
+        </button>
       </div>
     `;
     return;
@@ -41,7 +43,6 @@ function renderCarrito() {
     card.innerHTML = `
       <h2 class="product-title">${producto.nombre}</h2>
       <p class="product-description">${producto.descripcion}</p>
-      
       <div class="product-actions">
         <button class="btn btn-danger" onclick="eliminarDelCarrito(${index})">Eliminar</button>
       </div>
@@ -92,7 +93,6 @@ function renderResumenCompra() {
 function actualizarCantidad(index, delta) {
   carrito[index].cantidad += delta;
 
-  // Evitar cantidades negativas, si es menor a cero lo elimino
   if (carrito[index].cantidad <= 0) {
     eliminarDelCarrito(index);
     return;
@@ -116,7 +116,7 @@ function guardarCarrito() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
-// Formatear precios según la configuración local
+// Formatear precios
 function formatearPrecio(precio) {
   return precio.toLocaleString("es-CO", {
     minimumFractionDigits: 0,
@@ -132,15 +132,21 @@ function vaciarCarrito() {
   renderResumenCompra();
 }
 
-// Función para redirigir a la página de productos
+// Redirigir a la página de productos
 function irAProductos() {
   window.location.href = "../HTML/products.html";
 }
 
-// Función para mostrar el modal de checkout
+// Mostrar el modal de checkout
 function mostrarCheckout() {
   if (carrito.length === 0) {
     alert("El carrito está vacío.");
+    return;
+  }
+
+  // Verificar si el usuario ha iniciado sesión
+  if (!loggedInUser) {
+    mostrarModalLogin();
     return;
   }
 
@@ -150,16 +156,15 @@ function mostrarCheckout() {
   let total = 0;
 
   carrito.forEach((producto) => {
-    total += producto.price * producto.cantidad;
+    total += producto.precio * producto.cantidad;
   });
 
-  // Mostrar total y métodos de pago
   checkoutSummary.innerHTML = `
     <div class="summary-row">
       <span><strong>Total</strong></span>
       <span><strong>$ ${formatearPrecio(total)}</strong></span>
     </div>
-    <div class="payment-methods">
+    <div class="paymentMethods">
       <h4>Métodos de Pago</h4>
       <label>
         <input type="radio" name="payment" value="transferencia"> Transferencia
@@ -173,35 +178,85 @@ function mostrarCheckout() {
     </div>
   `;
 
-  // Mostrar el modal
-  const checkoutModal = new bootstrap.Modal(document.getElementById('checkoutModal'));
+  const checkoutModal = new bootstrap.Modal(document.getElementById("checkoutModal"));
   checkoutModal.show();
 }
 
-// Función para finalizar la compra
-function finalizarCompra() {
-  const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
-  localStorage.setItem("paymentMethod", paymentMethod);
+// Mostrar el modal de login
+function mostrarModalLogin() {
+  const loginModalContent = document.getElementById("idModal");
+  loginModalContent.innerHTML = `
+    <div class="modal-header">
+      <h5 class="modal-title">Iniciar Sesión</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <p>Debes iniciar sesión para continuar con la compra.</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      <button type="button" class="btn btn-primary" onclick="irALogin()">Ir a Iniciar Sesión</button>
+    </div>
+  `;
 
-  // Guardar detalles de la compra
+  const loginModal = new bootstrap.Modal(document.getElementById("Modal"));
+  loginModal.show();
+}
+
+// Redirigir a la página de login
+function irALogin() {
+  window.location.href = "login.html";
+}
+
+// Finalizar la compra
+function finalizarCompra() {
+  if (!loggedInUser) {
+    mostrarModalLogin();
+    return;
+  }
+
+  const paymentMethod = document.querySelector('input[name="payment"]:checked');
+
+  if (!paymentMethod) {
+    const paymentMethodsContainer = document.querySelector(".paymentMethods");
+    showError(paymentMethodsContainer, "Por favor, seleccione un método de pago.");
+    return;
+  }
+
+  localStorage.setItem("paymentMethod", paymentMethod.value);
   localStorage.setItem("orderDetails", JSON.stringify(carrito));
 
-  // Limpiar el carrito
   carrito = [];
-  guardarCarrito(); // Guardar el carrito vacío en localStorage
-  renderCarrito(); // Actualizar la vista del carrito
-  renderResumenCompra(); // Actualizar el resumen de la compra
+  guardarCarrito();
+  renderCarrito();
+  renderResumenCompra();
 
-  // Cerrar el modal
-  const checkoutModal = bootstrap.Modal.getInstance(document.getElementById('checkoutModal'));
+  const checkoutModal = bootstrap.Modal.getInstance(document.getElementById("checkoutModal"));
   checkoutModal.hide();
 
-  // Redirigir a detail-order.html en una nueva pestaña
-  window.open("detail-order.html", "_blank");
+  window.location.href = "detail-order.html";
+}
+
+// Mostrar un mensaje de error
+function showError(input, message) {
+  clearError(input);
+  const errorDiv = document.createElement("div");
+  errorDiv.className = "error-message";
+  errorDiv.textContent = message;
+  errorDiv.style.color = "red";
+  errorDiv.style.fontSize = "0.7rem";
+  input.style.border = "2px solid red";
+  input.parentElement.appendChild(errorDiv);
+}
+
+// Limpiar el mensaje de error
+function clearError(input) {
+  const errorDiv = input.parentElement.querySelector(".error-message");
+  if (errorDiv) {
+    errorDiv.remove();
+  }
+  input.style.border = "";
 }
 
 // Cargar el carrito al cargar la página
 document.addEventListener("DOMContentLoaded", cargarCarrito);
-
-
-

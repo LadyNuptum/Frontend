@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     const orderDetails = JSON.parse(localStorage.getItem("orderDetails"));
-    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+    const nombreUsuario = sessionStorage.getItem("nombre");
+    const apellidoUsuario = sessionStorage.getItem("apellido");
+    console.log(nombreUsuario);
+    console.log(apellidoUsuario);
   
     const orderItemsContainer = document.getElementById("order-items");
     const orderTotalContainer = document.getElementById("order-total");
@@ -8,21 +11,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const orderNumberContainer = document.getElementById("order-number");
     const usernameContainer = document.getElementById("username");
   
-    if (orderDetails && orderDetails.length > 0 && loggedInUser) {
+    if (orderDetails && orderDetails.length > 0 && nombreUsuario) {
       let total = 0;
   
       // Mostrar nombre de usuario
-      usernameContainer.textContent = `${loggedInUser.name} ${loggedInUser.lastName}`;
+      usernameContainer.textContent = `${nombreUsuario} ${apellidoUsuario}`;
   
       // Mostrar detalles del pedido
       orderDetails.forEach((producto) => {
-        total += producto.price * producto.cantidad;
+        total += producto.precio * producto.cantidad;
   
         const row = document.createElement("div");
         row.classList.add("summary-row");
         row.innerHTML = `
-          <span>${producto.name} (x${producto.cantidad})</span>
-          <span>$ ${formatearPrecio(producto.price * producto.cantidad)}</span>
+          <span>${producto.nombre} (x${producto.cantidad})</span>
+          <span>$ ${formatearPrecio(producto.precio * producto.cantidad)}</span>
         `;
         orderItemsContainer.appendChild(row);
       });

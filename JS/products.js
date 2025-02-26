@@ -11,7 +11,7 @@ function guardarCarrito() {
     localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
-// Renderizar los productos
+// Renderizar los productos 
 async function renderProductos() {
     const contenedorProductos = document.getElementById("products-container");
     contenedorProductos.innerHTML = "";
