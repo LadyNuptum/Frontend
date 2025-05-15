@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     try {
-      const response = await fetch("http://localhost:8080/auth/login", {
+      const response = await fetch("https://3im9pypvur.us-east-1.awsapprunner.com/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
