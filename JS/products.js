@@ -23,7 +23,7 @@ async function renderProductos() {
     // Agrupar productos por categoría
     const productosPorCategoria = new Map();
     try {
-        const response = await fetch("https://3im9pypvur.us-east-1.awsapprunner.com/producto");
+        const response = await fetch("https://3im9ypvpur.us-east-1.awsapprunner.com/producto");
         const data = await response.json();
         const productos = data;
         localStorage.setItem("productos", JSON.stringify(productos));
