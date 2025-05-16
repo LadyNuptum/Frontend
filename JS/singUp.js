@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
 
     const userData = {
-      email: document.getElementById("email").value.trim(),
+      correo: document.getElementById("email").value.trim(),
       contrasena: document.getElementById("password").value.trim(),
       nombre: document.getElementById("name").value.trim(),
       apellido: document.getElementById("lastName").value.trim(),
